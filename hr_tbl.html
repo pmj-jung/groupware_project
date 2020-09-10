@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home_user | Project</title>
+    <title>HR table | Project</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/headNmenu.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/hr_tblCont.css">
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -19,6 +19,7 @@
         </div>
 
         <div class="info">
+
             <div class="userInfo">
                 <span class="userPic">
                     <img src="images/idPhoto.png">
@@ -162,72 +163,132 @@
         </div>
 
         <div class="mainContent">
-            <div class="h-dashboard">
-                <div class="h-calendar">
-                    <h3>캘린더</h3>
-                    <div class="Container">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corporis, officiis nemo
-                            corrupti, numquam eaque quaerat tenetur vitae aut labore possimus officia optio quam ut!
-                            Beatae soluta velit, similique necessitatibus non atque. Eligendi magnam quidem recusandae
-                            nisi error natus exercitationem amet, non dicta ut nemo quaerat. Quas, aut placeat? Facilis?
-                        </p>
-                    </div>
+            <div class="contentHead">
+                <h3>인사관리 > 사원명부</h3>
+                <div class="search-box">
+                    <form name="search-frm" class="search-frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">이름</option>
+                            <option value="">휴대전화</option>
+                            <option value="">부서명</option>
+                        </select>
+                        <input name="search" id="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" id="btn" class="btn">사원검색</button>
+                    </form>
                 </div>
-                <div class="h-mail">
-                    <h3>메일</h3>
-                    <div class="Container">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus odio ipsum temporibus
-                            laborum, numquam reprehenderit earum eaque quibusdam maxime obcaecati cumque nulla ratione
-                            laudantium, veniam ab expedita odit minima accusamus esse similique vero quo deleniti!
-                            Accusamus asperiores magnam quis molestias. Magnam sunt facere repellat vitae fugiat eos
-                            quis maxime cupiditate deserunt modi! Voluptas explicabo possimus dignissimos pariatur qui
-                            odit, iusto repellendus nemo officia. Eum consequatur aspernatur tempore ipsum
-                            necessitatibus, quas officia ut ex! Delectus error maiores eius beatae laborum repellat
-                            saepe aspernatur repellendus doloremque vitae culpa omnis cupiditate facere autem aperiam
-                            quos, reprehenderit veniam magnam illo eligendi. Laboriosam, sed voluptatum!</p>
-                    </div>
-                </div>
-                <div class="h-notice">
-                    <h3>공지사항</h3>
-                    <div class="Container">
-                        <table class="h-noticeTbl">
-                            <tr>
-                                <td>2020년도 건강검진 안내</td>
-                                <td>윤부장</td>
-                                <td>2020.09.01</td>
-                            </tr>
-                            <tr>
-                                <td>9월 구내식당 메뉴 안내</td>
-                                <td>구내식당</td>
-                                <td>2020.08.29</td>
-                            </tr>
-                            <tr>
-                                <td>회사 소개자료 공유</td>
-                                <td>김차장</td>
-                                <td>2020.01.13</td>
-                            </tr>
-                            <tr>
-                                <td>공지사항 테스트용</td>
-                                <td>관리자</td>
-                                <td>2020.01.01</td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="h-memo">
-                    <h3>메모</h3>
-                    <div class="Container">
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit obcaecati non dolorum
-                            nisi saepe aut quisquam nulla dolor nostrum? Repellat error rerum adipisci perferendis
-                            provident praesentium debitis illo modi dignissimos obcaecati, necessitatibus et accusamus
-                            cum quis possimus distinctio aliquid aut, doloremque nesciunt vel aliquam culpa eius
-                            voluptas. Ducimus, odit. Magni hic labore voluptatem beatae perferendis repellendus
-                            explicabo eos dolorum adipisci accusantium? Id ducimus in quae tempore minima vel ea eveniet
-                            deserunt aliquam, rem ut unde odio commodi, necessitatibus magni voluptatum?</p>
-                    </div>
-                </div>
-
             </div>
+            <div class="member-tbl">
+                <table>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>번호</td>
+                        <td>사원명</td>
+                        <td>성별</td>
+                        <td>부서</td>
+                        <td>직급</td>
+                        <td>이메일</td>
+                        <td>휴대번호</td>
+                        <td>직통번호</td>
+                        <td>내선번호</td>
+                        <td>입사일</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>6</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>01052528282</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>5</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>01052528282</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>4</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>01052528282</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>3</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>01052528282</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>2</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>01052528282</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>밧대리</td>
+                        <td>여자</td>
+                        <td>경영지원실</td>
+                        <td>대리</td>
+                        <td>batterley@hanmail.net</td>
+                        <td>01177978875</td>
+                        <td>0510335588</td>
+                        <td>8282</td>
+                        <td>1999/05/15</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
         </div>
     </main>
 </body>
