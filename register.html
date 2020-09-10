@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/register.css">
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div name="" id="" class="logo">
+            <i class="fab fa-digg"></i>
+        </div>
+    </header>
+    <main>
+        
+        <form name="" method="post" class="register">
+
+            <h3>개인정보</h3>
+
+            <p>아이디</p>
+            <input type="text" name="" id="userid" class="userid" required>
+
+            <p>비밀번호</p>
+            <input type="password" name="" id="userPwd" class="userPwd" required minlength="8">
+            
+            <p>이름</p>
+            <input type="text" name="" id="userName" class="userName" required>
+            
+            <p>성별</p>
+            <div class="gender-wrap">
+                <span>남성</span>
+                <input type="radio" name="gender" value="male" checked>
+                <span>여성</span>
+                <input type="radio" name="gender" value="female">
+            </div>
+
+            <p>생년월일</p>
+            <div class="birth-wrap">
+                <input type="text" name="" id="" class="userBirth_Y" placeholder="년(4자)">
+                <input type="text" name="" id="" class="userBirth_M" placeholder="월">
+                <input type="text" name="" id="" class="userBirth_D" placeholder="일">
+            </div>
+            
+            <p>이메일</p>
+            <input type="text" name="" id="" class="userEmail">
+
+            <p>휴대전화</p>
+            <input type="text" name="" id="" class="userCell" required>
+
+            <p>주소</p>
+            <input type="text" name="" id="" class="userAddr">
+            
+            <hr/>
+
+            <!-- 회사정보 : 부서, 직급, 사내이메일, 직통번호, 내선번호, 입사일, 사진등록 -->
+            <h3>회사정보</h3>
+            <div class="deptNrank">
+                <p>부서</p>
+                <select id="dept" name="dept">
+                    <option value="" selected disabled hidden>선택</option>
+                    <option value="salesDept">영업부</option>
+                    <option value="hrDept">인사부</option>
+                    <option value="developDept">개발부</option>
+                    <option value="MADept">경영지원실</option>
+                </select>
+
+                <p>직급</p>
+                <select id="rank" name="rank">
+                    <option value="" selected disabled hidden>선택</option>
+                    <option value="execDir">전무이사</option>
+                    <option value="Rep">대표</option>
+                    <option value="execMngr">부장</option>
+                    <option value="teamMngr">팀장</option>
+                    <option value="dgMngr">차장</option>
+                    <option value="deptMngr">과장</option>
+                    <option value="asstMngr">대리</option>
+                    <option value="staff">사원</option>
+                </select>
+            </div>
+            <p>사내 이메일</p>
+            <input type="text" name="in-houseEmail" id="in-houseEmail" class="in-houseEmail">
+
+            <p>직통 번호</p>
+            <input type="text" name="directNum" id="directNum" class="directNum">
+
+            <p>내선번호</p>
+            <input type="text" name="extNum" id="extNum" class="extNum">
+
+            <p>입사일</p>
+            <div class="enter-wrap">
+                <input type="text" name="" id="" class="entDate_Y" placeholder="년(4자)">
+                <input type="text" name="" id="" class="entDate_M" placeholder="월">
+                <input type="text" name="" id="" class="entDate_D" placeholder="일">
+            </div>
+
+            <p>사진 등록</p>
+            <input type="file" name="userPic" id="userPic" class="userPic">
+
+            <input type="submit" name="submit" id="submit" class="btn_submit" value="가입하기">
+
+        </form>
+    </main>
+</body>
+</html>

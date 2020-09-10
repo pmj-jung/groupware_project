@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Project</title>
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="company-logo">
+        <h1><i class="fab fa-digg"></i></h1>
+    </div>
+    <div class="clearfix"></div>
+
+    <div class="login-wrap">
+
+        <div class="login-logo">
+            <h2>Login</h2>
+        </div>
+
+        <div class="login-box">
+            
+            <form name="" id="" class="login-form" method="post">
+                <div name="" class="login-input">
+                    <input type="text" id="userid" class="userid" placeholder="아이디" autofocus required/>
+                    <input type="password" id="password" class="password" placeholder="비밀번호" required />
+                </div>
+                <button type="submit" id="login-submit" class="login-submit">로그인</button>
+            </form>
+            
+            <div class="chk_continer">
+                <input type="checkbox" name="chk_save" class="save-id">
+                <span>아이디저장</span>
+            </div>
+        </div>
+
+        <div class="a-container">
+            <a href="#" id="find_id">아이디 찾기</a>
+            <a href="#" id="find_password">비밀번호 찾기</a>
+            <a href="#" id="register">회원가입</a>
+        </div>
+        
+
+    </div>
+</body>
+<script>
+    $(function(){
+        $("#userid").click(function(){
+            $("#userid").css("border","1px solid #000");
+        });
+        $("#password").click(function(){
+            $("#password").css("border","1px solid #000");
+        });
+    });
+</script>
+</html>

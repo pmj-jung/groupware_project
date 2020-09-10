@@ -1,0 +1,110 @@
+@charset 'utf-8';
+
+header {
+    width:100%;
+    height: 60px;
+    background-color: #005AA7;
+    border-bottom: 2px solid #eee;
+}
+
+header .logo {
+    float:left;
+    line-height: 60px;
+    margin:0 20px;
+    color:#fff;
+    font-size:50px;
+    min-width:100px;
+}
+
+.info {
+    display: flex;
+    justify-content: flex-end;/*가로배치*/
+    align-items:center;/*세로배치(꼭 높이값이 같이있어야한다)*/
+    height:60px;
+}
+
+.info > div {
+    margin-right:30px;
+}
+
+.search-wrap .search {
+    padding-left: 12px;
+    border:0;
+    outline:0;
+    width:250px;
+    height:30px;
+    border-radius: 50px;
+}
+
+.pic .user img{
+    background-color: #fff;
+    display:inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* header Fisnish Line */
+/* main Start Line */
+
+main {
+    display: flex;
+    height:100vh;
+}
+
+main .menu {
+    width: 15%;
+    min-width: 120px;
+    height: 100%;
+    /* background-color:#ff0; */
+    border-right:2px solid #eee;
+    padding: 10px;
+    text-align:left;
+}
+
+main .main {
+    width:85%;
+    height:100%;
+    /* background-color:#f00; */
+    padding: 10px;
+}
+
+.menu .menu-top {
+    width:100%;
+    height: 40px;
+    text-align: center;
+    line-height:40px;
+}
+
+.menu > ul > li {
+    list-style:none;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.menu ul li a {
+    font-size: 15px;
+}
+
+.menu > ul > li:before {
+    content:'▶';
+    font-size: 1px;
+    color: #666;
+    margin-right:10px;
+}
+
+
+.board_sub, .mail_sub {
+    display: none;
+    background-color: #eee;
+    padding: 10px;
+    list-style:none;
+    margin-bottom: 10px;
+}
+
+
+.clearfix {
+    clear: both;
+}

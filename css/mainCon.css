@@ -1,0 +1,120 @@
+@charset 'utf-8';
+
+.member-tbl {
+    background-color: #fff;
+}
+
+table {
+    width:100%;
+    padding: 0 20px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+tr {
+    text-align: center;
+    height: 45px;
+}
+
+tr:first-child {
+    background-color: #6f809a;
+    color: #fff;
+}
+
+td:nth-child(1) {
+    width: 5%;
+}
+
+td:nth-child(2) {
+    width: 8%;
+}
+
+td:nth-child(3) {
+    width: 5%;
+}
+
+td:nth-child(4) {
+    width: 8%;
+}
+
+td:nth-child(5) {
+    width: 8%;
+}
+
+td:nth-child(6) {
+    width: 23%;
+}
+
+td:nth-child(7) {
+    width: 12%;
+}
+
+td:nth-child(8) {
+    width: 12%;
+}
+
+td:nth-child(9) {
+    width: 8%;
+}
+
+td:nth-child(10) {
+    width: 11%;
+}
+
+tr:nth-child(2n) {
+    background-color: #eee;
+}
+
+/* search form css */
+
+.contentHead {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.mainContent h3, .search-box {
+    display: inline-block;
+}
+
+.sel {
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+}
+
+.input {
+    width: 200px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+}
+
+.btn {
+    background-color: #3f5ab5;
+    width: 60px;
+    height: 30px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.search-box {
+    text-align: right;
+}
+
+/* page css */
+.page-grp {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.page {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    /*line-height는 한줄만 있을 때 서야함!*/
+    border: 1px solid #ddd;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/mainCon.css">
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <div name="logo" id="logo" class="logo">
+            <i class="fab fa-digg"></i>
+        </div>
+
+        <div class="info">
+            <div class="search-wrap">
+                <input type="text" class="search" placeholder="검색">    
+            </div>
+
+            <div class="userInfo">
+                <span class="userPic">
+                    <img src="images/idPhoto.png">
+                </span>
+            </div>
+
+            <div class="userInfo">
+                <form>
+                    <span class="userName">
+                        <p>직원명</p>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="clearfix"></div>
+
+    <main>
+        <div class="menu-wrap">
+            <div class="menu-top"><a href="#">홈</a></div>
+            <ul>
+                <li><a href="#" class="menu">메일</a></li>
+                    <ul class="submenu">
+                        <li><a href="">전체메일</a></li>
+                        <li><a href="">받은메일함</a></li>
+                        <li><a href="">내게쓴메일함</a></li>
+                        <li><a href="">보낸메일함</a></li>
+                        <li><a href="">임시저장함</a></li>
+                        <li><a href="">외부메일함</a></li>
+                        <li><a href="">내 메일함</a></li>
+                        <li><a href="">스팸메일함</a></li>
+                        <li><a href="">휴지통</a></li>
+                    </ul>
+                <li><a href="#" class="menu">전자결재</a></li>
+                <li><a href="#" class="menu">게시판</a></li>
+                <li><a href="#" class="menu">일정관리</a></li>
+                <li><a href="#" class="menu">인사관리</a></li>
+                <li><a href="#" class="menu">주소록</a></li>
+                <li><a href="#" class="menu">SMS</a></li>
+                <li><a href="#" class="menu">예약</a></li>
+                <li><a href="#" class="menu">관리자 전용</a></li>
+            </ul>
+        </div>
+
+        <!-- <div class="mainContent">
+            <div class="calendar">
+                <div>일정관리</div>
+            </div>
+            <div class="mail">메일</div>
+            <div class="eletPymt">전자결재</div>
+            <div class="notice">공지사항</div>
+            <div class="live-chat">
+                <div class="chat-wrap">
+                    <h4>그린컴퓨터학원</h4>
+                    <a class="chat-close">X</a>
+                    <span class="chat-msg-counter">1</span>
+                </div>
+                
+                <div class="chat-history">
+                    <div class="chat-msg-wrap">
+                        <span class="icon">
+                            <img src="images/g.png" />
+                        </span>
+                        <div class="chat-msg-box">
+                            <div class="msg-header">
+                                <h4>행정담당자</h4>
+                                <span class="chat-time">11:32</span>
+                            </div>
+                            <div class="msg-body">
+                                <p>안녕하세요. 부산 그린컴퓨터학원 경성대점입니다. 자바디지털컨버전스 과정에
+                                대해 궁금한 점이 있으시면 문의하세요.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="chat-msg-wrap">
+                        <span class="icon">
+                            <img src="images/f1.png" />
+                        </span>
+                        <div class="chat-msg-box">
+                            <div class="msg-header">
+                                <h4>클라이언트</h4>
+                                <span class="chat-time">17:32</span>
+                            </div>
+                            <div class="msg-body">
+                                <p>A시안으로 해주세요</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                </div>
+                <div class="chat-frm">
+                    <form method="post">
+                        <input type="text" placeholder="메세지 입력" autofocus />
+                    </form>
+                </div>  
+            </div>
+        </div> -->
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3>인사관리 > 사원정보목록</h3>
+                <div class="search-box">
+                    <form onSubmit="return searchCheck();" name="frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">이름</option>
+                            <option value="">휴대전화</option>
+                            <option value="">부서명</option>
+                        </select>
+                        <input name="search" id="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" id="btn" class="btn">사원검색</button>
+                    </form>
+                </div>
+            </div>
+            <div class="member-tbl">
+                <table>
+                    <tr>
+                        <td>번호</td>
+                        <td>사원명</td>
+                        <td>성별</td>
+                        <td>부서</td>
+                        <td>직급</td>
+                        <td>이메일</td>
+                        <td>휴대번호</td>
+                        <td>직통번호</td>
+                        <td>내선번호</td>
+                        <td>입사일</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>01052528282</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+                        <td>밧대리</td>
+                        <td>여자</td>
+                        <td>경영지원실</td>
+                        <td>대리</td>
+                        <td>batterley@hanmail.net</td>
+                        <td>01177978875</td>
+                        <td>0510335588</td>
+                        <td>8282</td>
+                        <td>1999/05/15</td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
+        </div>
+    </main>
+</body>
+<script src="js/home.js"></script>
+</html>

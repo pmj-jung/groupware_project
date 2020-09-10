@@ -1,0 +1,106 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Roboto:wght@400;900&display=swap');
+
+html, body {
+    background: linear-gradient(to bottom right, #005AA7, #FFFDE4);
+    width: 100%;
+    height: 100%;
+}
+
+
+.clearfix {
+    clear: both;
+}
+
+.company-logo {
+    float: left;
+    margin-left: 30px;
+    font-size:40px;
+    color: #fff;
+}
+
+.login-wrap {
+    background-color: rgba(255,255,255,0.4);
+    width: 400px;
+    height: 500px;
+    padding: 50px;
+    border-radius: 5px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.login-logo {
+    /* background-color:#f00; */
+    width:100%;
+    margin:20px auto;
+
+    text-align:center;
+    font-size:25px;
+    font-weight:900;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login-box {
+    /* background-color:#ff0; */
+    height: 300px;
+    width: 100%;
+    padding: 20px;
+}
+
+.login-input {
+    width:100%;
+    height: 150px;
+    padding:40px 0;
+}
+
+.login-form .login-submit {
+    width:100%;
+    height: 40px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+#userid, #password {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 15px;
+    padding: 1px 4px;
+
+    border:0;
+    background-color: rgba(255,255,255,0.8);
+    outline:0;
+    border-radius: 2px;
+}
+
+.login-form .login-submit {
+    background-color: #a4a4a4;
+    border:0;
+    outline:0;
+}
+
+.chk_continer {
+    margin: 10px 0;
+    text-align: left;
+}
+
+.chk_continer span {
+    font-size: 14px;
+    color: #6e6e6e;
+}
+
+.a-container {
+    width: 100%;
+    display:flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.a-container a {
+    text-decoration:none;
+    color: #6e6e6e;
+    font-size:14px;
+}
+
