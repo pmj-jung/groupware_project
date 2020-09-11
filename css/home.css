@@ -4,14 +4,12 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    font-size: 15px;
 }
 
 .h-dashboard h3 {
     background-color: rgba(0, 90, 167, 0.8);
     padding: 10px;
     color: #eee;
-    font-size: 18px;
 }
 
 .h-calendar,
@@ -45,7 +43,6 @@
 }
 
 .h-noticeTbl tr {
-    font-size: 15px;
     border: 5px solid transparent;
 }
 

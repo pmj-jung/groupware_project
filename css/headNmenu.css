@@ -12,7 +12,7 @@ header {
     padding: 0 20px;
 }
 
-.logo {
+.logo i {
     display: inline-block;
     height:60px;
     line-height: 60px;
@@ -44,13 +44,12 @@ header {
     margin-right:20px;
     color:#fff;
     font-size:14px;
-}
 
-.userInfo_detail, .ch-status {
     display:flex;
     flex-direction: column;
     justify-content: space-around;
 }
+
 
 /* header Fisnish */
 /* main */
@@ -74,16 +73,10 @@ main {
 
 main .mainContent {
     width: 90%;
-    padding: 20px;
+    padding: 10px;
     background-color: #f7f7f7;
 }
 
-.menu-top {
-    display: none;
-    width: 100%;
-    text-align: center;
-    line-height: 40px;
-}
 
 .menu-wrap ul li {
     width: 100%;

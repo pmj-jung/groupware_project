@@ -7,6 +7,8 @@
     <title>Admin_home | Project</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/hr_tblCont.css">
+    <link rel="stylesheet" href="css/admin.css">
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
@@ -15,6 +17,7 @@
     <header>
         <div class="logo">
             <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
         </div>
 
         <div class="info">
@@ -26,142 +29,206 @@
             <div class="userInfo_detail">
                 <span class="userName">김대리</span>
                 <span class="userEmail">kimdaeri@naver.com</span>
-            </div>
-            <div class="ch-status">
-                <div class="logout">
-                    <a href="login.html">로그아웃</a>
-                </div>
-                <div class="admin-mode">관리자모드</div>
+                
             </div>
         </div>
     </header>
 
     <main>
         <div class="menu-wrap">
-            <div class="menu-top"><a href="#">핵심사항</a></div>
             <ul class="menu">
-                <li><a href="#">메일</a>
+                <li><a href="#">사용자 관리</a>
                     <ul class="submenu">
-                        <li><a href="">전체메일</a></li>
-                        <li><a href="">받은메일함</a></li>
-                        <li><a href="">내게쓴메일함</a></li>
-                        <li><a href="">보낸메일함</a></li>
-                        <li><a href="">임시저장함</a></li>
-                        <li><a href="">외부메일함</a></li>
-                        <li><a href="">내 메일함</a></li>
-                        <li><a href="">스팸메일함</a></li>
-                        <li><a href="">휴지통</a></li>
+                        <li><a href="">사용자 목록</a></li>
+                        <li><a href="">사용자 신청 목록</a></li>
+                        <li><a href="">등록 양식 설정</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">메일 관리</a>
+                    <ul class="submenu">
+                        <li><a href="">추가예정</a></li>
                     </ul>
                 </li>
                 <li><a href="#">전자결재</a>
                     <ul class="submenu">
-                        <li><a href="">기안함</a>
-                            <ul class="ssubmenu">
-                                <li><a href="#">종결</a></li>
-                                <li><a href="#">회수</a></li>
-                                <li><a href="#">임시저장</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">결재함</a>
-                            <ul>
-                                <li><a href="#">미결</a></li>
-                                <li><a href="#">종결</a></li>
-                                <li><a href="#">열람/공람</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">부서문서함</a>
-                            <ul>
-                                <li><a href="#">승인</a></li>
-                                <li><a href="#">반려</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">휴가관리</a>
-                            <ul>
-                                <li><a href="#">휴가 신청</a></li>
-                                <li><a href="#">휴가 조회</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="">증명서 신청</a></li>
-                        <li><a href="">문서철 관리</a></li>
-                        <li><a href="">결재 문서 관리</a>
-                            <ul>
-                                <li><a href="#">미결</a></li>
-                                <li><a href="#">승인</a></li>
-                                <li><a href="#">반려</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="">추가예정</a></li>
                     </ul>
                 </li>
                 <li><a href="#">게시판</a>
                     <ul class="submenu">
-                        <li><a href="#">즐겨찾는 게시판</a></li>
-                        <li><a href="#">공지 게시판</a></li>
-                        <li><a href="#">일반 게시판</a>
-                            <ul>
-                                <li><a href="#">정보보안뉴스</a></li>
-                                <li><a href="#">도서 신청</a></li>
-                                <li><a href="#">업데이트 게시판</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">익명 게시판</a></li>
+                        <li><a href="">추가예정</a></li>
                     </ul>
                 </li>
                 <li><a href="#">일정관리</a>
                     <ul class="submenu">
-                        <li><a href="#">전체 캘린더</a></li>
-                        <li><a href="#">내 캘린더</a></li>
-                        <li><a href="#">공유 캘린더</a></li>
+                        <li><a href="#">추가예정</a></li>
                     </ul>
                 </li>
                 <li><a href="#">인사관리</a>
                     <!-- 인사담당자 access only -->
                     <ul class="submenu">
-                        <li><a href="#">인사카드</a>
-                            <ul>
-                                <li><a href="#">재직자</a></li>
-                                <li><a href="#">퇴직자</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">사원 명부</a></li>
-                        <li><a href="#">휴가 관리</a>
-                            <ul>
-                                <li><a href="#">연차 관리</a></li>
-                                <li><a href="#">휴가 현황 조회</a></li>
-                                <li><a href="#">휴가 신청 이력</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">증명서 관리</a>
-                            <ul>
-                                <li><a href="#">증명서 발급</a></li>
-                                <li><a href="#">발급 정보 관리</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="#">추가예정</a></li>
                     </ul>
                 </li>
                 <li><a href="#">주소록</a>
                     <ul class="submenu">
-                        <li><a href="#">개인 주소록</a></li>
-                        <li><a href="#">공용 주소록</a></li>
-                        <li><a href="#">사내 연락처</a></li>
-                        <li><a href="#">주소록 가져오기</a></li>
-                        <li><a href="#">주소록 내보내기</a></li>
+                        <li><a href="#">추가예정</a></li>
                     </ul>
                 </li>
                 <li><a href="#">사용자 설정</a>
                     <ul class="submenu">
-                        <li><a href="#">사용자 설정</a></li>
-                        <li><a href="#">전자결재 설정</a></li>
-                        <li><a href="#">메일 설정</a></li>
-                        <li><a href="#">스팸 설정</a></li>
-                        <li><a href="#">알림 설정</a></li>
-                        <li><a href="#">로그인 기록</a></li>
+                        <li><a href="#">추가예정</a></li>
                     </ul>
                 </li>
             </ul>
         </div>
 
         <div class="mainContent">
-            
+            <div class="contentHead">
+                <h3>사용자 관리 > 사용자 목록</h3>
+                <div class="search-box">
+                    <form name="search-frm" class="search-frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">이름</option>
+                            <option value="">휴대전화</option>
+                            <option value="">부서명</option>
+                        </select>
+                        <input name="search" id="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" id="btn" class="btn">사원검색</button>
+                    </form>
+                </div>
+            </div>
+            <div class="member-tbl">
+                <table>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>번호</td>
+                        <td>사원명</td>
+                        <td>성별</td>
+                        <td>부서</td>
+                        <td>직급</td>
+                        <td>이메일</td>
+                        <td>직통번호</td>
+                        <td>내선번호</td>
+                        <td>입사일</td>
+                        <td>관리</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>6</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="btn-modify" onClick="location.href=''">수정</button>
+                            <button type="button" class="btn-delete">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>5</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="btn-modify" onClick="location.href=''">수정</button>
+                            <button type="button" class="btn-delete">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>4</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="btn-modify" onClick="location.href=''">수정</button>
+                            <button type="button" class="btn-delete">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>3</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="btn-modify" onClick="location.href=''">수정</button>
+                            <button type="button" class="btn-delete">삭제</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>2</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="btn-modify" onClick="location.href=''">수정</button>
+                            <button type="button" class="btn-delete">삭제</button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>밧대리</td>
+                        <td>여자</td>
+                        <td>경영지원실</td>
+                        <td>대리</td>
+                        <td>batterley@hanmail.net</td>
+                        <td>0510335588</td>
+                        <td>8282</td>
+                        <td>1999/05/15</td>
+                        <td>
+                            <button type="button" class="btn-modify" onClick="location.href=''">수정</button>
+                            <button type="button" class="btn-delete">삭제</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
+        </div>
         </div>
     </main>
 </body>

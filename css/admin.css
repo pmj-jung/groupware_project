@@ -1,0 +1,13 @@
+@charset 'utf-8';
+
+.logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.logo-admin {
+    color:#fff;
+    padding-left: 10px;
+    font-family: 'Roboto', sans-serif;
+}

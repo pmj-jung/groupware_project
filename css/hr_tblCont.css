@@ -8,7 +8,6 @@ table {
     width: 100%;
     padding: 0 20px;
     border-collapse: collapse;
-    font-size: 14px;
 }
 
 tr {
@@ -90,14 +89,12 @@ tr:nth-child(2n) {
 .sel {
     width: 100px;
     height: 30px;
-    font-size: 12px;
     border: 1px solid #ddd;
 }
 
 .input {
     width: 200px;
     height: 30px;
-    font-size: 12px;
     border: 1px solid #ddd;
 }
 
@@ -105,7 +102,6 @@ tr:nth-child(2n) {
     background-color: #6f809a;
     width: 60px;
     height: 30px;
-    font-size: 12px;
     color: #fff;
     border: 0;
     outline: 0;
