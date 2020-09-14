@@ -71,6 +71,25 @@ header {
     cursor: pointer;
 }
 
+.changeStatus {
+    position: absolute;
+    right:20px;
+    top:55px;
+
+    display:flex;
+    flex-direction: column;
+    align-content: space-around;
+
+    width:150px;
+}
+.changeStatus span {
+    padding: 10px;
+    background-color:#69A2D3;
+}
+.logout a, .adminPage a {
+    color:#fff;
+}
+
 
 /* header Fisnish */
 /* main */
@@ -100,26 +119,37 @@ main .mainContent {
     background-color: #f7f7f7;
 }
 
-.menu-wrap ul li {
+.menu {
     width: 100%;
     line-height: 40px;
     font-size: 14px;
 }
 
-.menu-wrap >ul>li:before {
+.menu:before {
     content: '▶';
     font-size: 1px;
     color: #777;
     margin-right: 10px;
 }
 
-ul li:hover {
-    background-color: #eee;
-    font-weight: 700;
+.menu.changed:before {
+    content: '▼';
+    font-size: 1px;
+    color: #777;
+    margin-right: 10px;
+}
+
+.menu:hover {
+    cursor: pointer;
 }
 
 .submenu {
-    /* display: none; */
+    display: none;
     padding-left: 20px;
     list-style: none;
+}
+
+.submenu > li:hover {
+    /* font-weight:700; */
+    background-color:#eee;
 }

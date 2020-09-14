@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Project</title>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/register.css">
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -13,15 +14,15 @@
 
 <body>
     <header>
-        <div name="" id="" class="logo">
+        <div name="" id="" class="logo center">
             <i class="fab fa-digg"></i>
         </div>
     </header>
-    <main>
+    <main class="p-tb20">
 
-        <form name="" method="post" class="register">
+        <form name="" method="post" class="register p-tb20 p-lr40">
 
-            <h3>개인정보</h3>
+            <h3 class="center">개인정보</h3>
 
             <p>아이디</p>
             <input type="text" name="" id="userid" class="userid" required>
@@ -33,7 +34,7 @@
             <input type="text" name="" id="userName" class="userName" required>
 
             <p>성별</p>
-            <div class="gender-wrap">
+            <div class="gender-wrap flex">
                 <span>남성</span>
                 <input type="radio" name="gender" value="male" checked>
                 <span>여성</span>
@@ -41,7 +42,7 @@
             </div>
 
             <p>생년월일</p>
-            <div class="birth-wrap">
+            <div class="birth-wrap flex flex-justify">
                 <input type="text" name="" id="" class="userBirth_Y" placeholder="년(4자)">
                 <input type="text" name="" id="" class="userBirth_M" placeholder="월">
                 <input type="text" name="" id="" class="userBirth_D" placeholder="일">
@@ -59,10 +60,10 @@
             <hr />
 
             <!-- 회사정보 : 부서, 직급, 사내이메일, 직통번호, 내선번호, 입사일, 사진등록 -->
-            <h3>회사정보</h3>
-            <div class="deptNrank">
+            <h3 class="center">회사정보</h3>
+            <div class="deptNrank flex flex-justify m-b10">
                 <p>부서</p>
-                <select id="dept" name="dept" required>
+                <select id="dept" class="dept" required>
                     <option value="" selected disabled hidden>선택</option>
                     <option value="salesDept">영업부</option>
                     <option value="hrDept">인사부</option>
@@ -71,7 +72,7 @@
                 </select>
 
                 <p>직급</p>
-                <select id="rank" name="rank" required>
+                <select id="rank" class="rank" required>
                     <option value="" selected disabled hidden>선택</option>
                     <option value="execDir">전무이사</option>
                     <option value="Rep">대표</option>
@@ -90,7 +91,7 @@
             <input type="text" name="extNum" id="extNum" class="extNum">
 
             <p>입사일</p>
-            <div class="enter-wrap">
+            <div class="enter-wrap flex flex-justify">
                 <input type="text" name="" id="" class="entDate_Y" placeholder="년(4자)">
                 <input type="text" name="" id="" class="entDate_M" placeholder="월">
                 <input type="text" name="" id="" class="entDate_D" placeholder="일">
@@ -99,8 +100,8 @@
             <p>사진 등록</p>
             <input type="file" name="userPic" id="userPic" class="userPic">
 
-            <input type="submit" name="submit" id="submit" class="btn_submit" value="가입하기">
-            <div class="login">
+            <button type="submit" name="submit" id="submit" class="btn_submit font18 m-tb10 p-tb10 weight700" value="">가입하기</button>
+            <div class="login right">
                 <a href="login.html">로그인</a>
             </div>
         </form>

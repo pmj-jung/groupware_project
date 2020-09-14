@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/home.css">
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
 </head>
 
 <body>
@@ -27,15 +28,22 @@
             <div class="userInfo_detail">
                 <span class="userName">김대리</span>
                 <span class="userEmail">kimdaeri@naver.com</span>
-                <span class="detail-btn"><i class="fas fa-caret-down"></i></span>
+                <span class="detail-btn">
+                    <i class="chgBtn fas fa-caret-down">
+                        <div class="changeStatus">
+                            <span class="logout"><a href="login.html">로그아웃</a></span>
+                            <span class="adminPage"><a href="adminhome.html">관리자페이지</a></span>
+                        </div>
+                    </i>
+                </span>
             </div>
         </div>
     </header>
 
     <main>
         <div class="menu-wrap">
-            <ul class="menu">
-                <li><a href="#">메일</a>
+            <ul>
+                <li class="menu">메일
                     <ul class="submenu">
                         <li><a href="">전체메일</a></li>
                         <li><a href="">받은메일함</a></li>
@@ -48,7 +56,7 @@
                         <li><a href="">휴지통</a></li>
                     </ul>
                 </li>
-                <li><a href="#">전자결재</a>
+                <li class="menu">전자결재
                     <ul class="submenu">
                         <li><a href="">기안함</a>
                             <ul class="ssubmenu">
@@ -87,7 +95,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">게시판</a>
+                <li class="menu">게시판
                     <ul class="submenu">
                         <li><a href="#">즐겨찾는 게시판</a></li>
                         <li><a href="#">공지 게시판</a></li>
@@ -101,14 +109,14 @@
                         <li><a href="#">익명 게시판</a></li>
                     </ul>
                 </li>
-                <li><a href="#">일정관리</a>
+                <li class="menu">일정관리
                     <ul class="submenu">
                         <li><a href="#">전체 캘린더</a></li>
                         <li><a href="#">내 캘린더</a></li>
                         <li><a href="#">공유 캘린더</a></li>
                     </ul>
                 </li>
-                <li><a href="#">인사관리</a>
+                <li class="menu">인사관리
                     <!-- 인사담당자 access only -->
                     <ul class="submenu">
                         <li><a href="#">인사카드</a>
@@ -133,7 +141,7 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#">주소록</a>
+                <li class="menu">주소록
                     <ul class="submenu">
                         <li><a href="#">개인 주소록</a></li>
                         <li><a href="#">공용 주소록</a></li>
@@ -142,7 +150,7 @@
                         <li><a href="#">주소록 내보내기</a></li>
                     </ul>
                 </li>
-                <li><a href="#">사용자 설정</a>
+                <li class="menu">사용자 설정
                     <ul class="submenu">
                         <li><a href="#">사용자 설정</a></li>
                         <li><a href="#">전자결재 설정</a></li>
@@ -225,6 +233,4 @@
         </div>
     </main>
 </body>
-<script src="js/hr_tbl.js"></script>
-
 </html>

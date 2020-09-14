@@ -10,38 +10,27 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
-header {
-    width: 100%;
-}
-
 .logo {
     display: inline-block;
     width:100%;
-    text-align:center;
     font-size: 80px;
     color: #fff;
 }
 
 /* ****** */
-main {
-    padding: 20px 0;
-}
 form {
     width: 400px;
-    height: 100%;
     background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
     border-radius: 2px;
-    padding: 20px 40px;
 }
 
 form p {
     margin-bottom: 2px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 form h3 {
-    text-align: center;
     margin: 10px 0 20px 0;
 }
 
@@ -57,19 +46,12 @@ form h3 {
 }
 
 .gender-wrap {
-    display: flex;
     margin: 5px auto;
 }
 
 .gender-wrap input {
     width: 40px;
     height: 25px;
-}
-
-.birth-wrap,
-.enter-wrap {
-    display: flex;
-    justify-content: space-between;
 }
 
 .birth-wrap input,
@@ -81,39 +63,21 @@ hr {
     width: 100%;
     color: #ccc;
     size: 2;
-
     margin: 10px auto;
 }
 
 /* ********여기서 부터 회사정보********* */
-
-.deptNrank {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.deptNrank #dept,
-.deptNrank #rank {
+.deptNrank .dept, .deptNrank .rank {
     width: 100px;
     height: 26px;
     padding: 2px;
 }
 
-#submit {
+.btn_submit {
+    width:100%;
     display: inline-block;
     color: #eee;
     border: 0;
-    padding: 0;
-    background-color: rgba(0, 90, 167, 0.7);
+    background-color: #2F7BBD;
     cursor: pointer;
-    height: 50px;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 10px;
-}
-
-.login{
-    text-align:right;
 }

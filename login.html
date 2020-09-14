@@ -8,39 +8,40 @@
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/login.css">
 </head>
 
 <body>
     <header>
-        <div name="" id="" class="logo">
+        <div name="" id="" class="logo center">
             <i class="fab fa-digg"></i>
         </div>
     </header>
-    <main>
+    <main class="flex">
         <div class="login-wrap">
             <!-- <div class="login-logo"> -->
-            <h1>Login</h1>
-            <div class="login-box">
+            <h1 class="center p-tb20">Login</h1>
+            <div class="login-box p20">
 
                 <form class="login-form" method="post" action="userhome.html" autocomplete="off">
-                    <div name="" class="login-input">
-                        <input type="text" id="userid" class="userid" placeholder="아이디" autofocus required />
-                        <input type="password" id="password" class="password" placeholder="비밀번호" required />
+                    <div name="" class="login-input p-tb10">
+                        <input type="text" id="userid" class="userid p-tb10 p-lr5" placeholder="아이디" autofocus required />
+                        <input type="password" id="password" class="password p-tb10 p-lr5" placeholder="비밀번호" required />
                     </div>
-                    <button type="submit" class="login-submit" onclick="location.href='userhome.html'">로그인</button>
+                    <input type="submit" class="login-submit p-tb15" value="로그인"/>
                 </form>
 
-                <div class="chk_continer">
+                <div class="chk_continer left p-tb10">
                     <input type="checkbox" class="save-id">
-                    <span>아이디저장</span>
+                    <span class="font14">아이디저장</span>
                 </div>
             </div>
 
-            <div class="a-container">
-                <a href="#">아이디 찾기</a>
-                <a href="#">비밀번호 찾기</a>
-                <a href="register.html">회원가입</a>
+            <div class="a-container flex flex-justify p-lr20">
+                <a href="#" class="font14">아이디 찾기</a>
+                <a href="#" class="font14">비밀번호 찾기</a>
+                <a href="register.html" class="font14">회원가입</a>
             </div>
         </div>
     </main>
