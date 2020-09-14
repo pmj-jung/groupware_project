@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/TempoStyle.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<style>
+    td {
+        border:1px solid #ccc;
+        border-radius: 2px;
+    }
+    td:nth-child(2n+1) {
+        background-color: #eee;
+    }
+        
+    .upperArea {
+        width:100%;
+    }
+
+    .photoArea {
+        width:11%;
+        /* height:100%; */
+        max-width:192px;
+    }
+
+    .photoImg img{
+        width:100%;
+        height:100%;
+        display: inline-block;
+    }
+
+    .upperInfoTbl {
+        width:88.7%;
+        max-width:1728px;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn"><i class="fas fa-caret-down"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul class="menu">
+                <li><a href="member_tbl.html">사용자 관리</a>
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="">사용자 신청 목록</a></li>
+                        <li><a href="">사용자 그룹 설정</a></li>
+                        <li><a href="">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">전자결재</a>
+                    <ul class="submenu">
+                        <li><a href="">전자결재 설정</a></li>
+                        <li><a href="">전사문서함 관리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">게시판</a>
+                    <ul class="submenu">
+                        <li><a href="">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">환경설정</a>
+                    <ul class="submenu">
+                        <li><a href="#">관리자 목록</a></li>
+                        <li><a href="#">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3>사용자 관리 > 사용자 등록</h3>
+            </div>
+            <div class="member-insert">
+                <div class="memberInfo">
+                    <form name="" method="POST">
+                        <div class="upperArea flex flex-justify">
+                            <div class="photoArea">
+                                <div class="photoImg">
+                                    <img src="images/idPhoto2.jpg">
+                                </div>
+                                <div class="photoBtn center">
+                                    <button type="button" class="s-btn-on">등록</button>
+                                    <button type="reset" class="s-btn-off">삭제</button>
+                                </div>
+                            </div>
+                            <table class="upperInfoTbl">
+                                <tr class="center">
+                                    <td class="td-10">이름</td>
+                                    <td class="td-15 p-lr5">
+                                        <input type="text" name="" id="" class="input-100" autofocus />
+                                    </td>
+                                    <td class="td-10">부서</td>
+                                    <td class="td-15 p-lr5">
+                                        <input type="text" name="" id="" class="input-100"/>
+                                    </td>
+                                    <td class="td-10">직위/직책</td>
+                                    <td class="td-15 p-lr5">
+                                        <input type="text" name="" id="" class="input-100"/>
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>성별</td>
+                                    <td class="p-lr5">
+                                        <select name="" id="" class="sel-100">
+                                            <option value="">남자</option>
+                                            <option value="">여자</option>
+                                        </select>
+                                    </td>
+                                    <td>사번</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" autofocus />
+                                    </td>
+                                    <td>내선번호</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100"/>
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>휴대번호</td>
+                                    <td colspan="2" class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100"/>
+                                    </td>
+                                    <td>이메일</td>
+                                    <td colspan="2" class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100"/>
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>생년월일</td>
+                                    <td class="flex flex-justify p-lr5">
+                                        <input type="text" name="" id="" class="input-65"/>
+                                        <select name="" id="" class="sel-35">
+                                            <option value="">양력</option>
+                                            <option value="">음력</option>
+                                        </select>
+                                    </td>
+                                    <td>입사일</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>직원구분</td>
+                                    <td class="p-lr5">
+                                        <select name="" id="" class="sel-100">
+                                            <option value="">인턴</option>
+                                            <option value="">계약직</option>
+                                            <option value="">정직원</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>주소</td>
+                                    <td colspan="5" class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="lowerArea p-tb10">
+                            <table class="lowerInfoTbl">
+                                <tr class="center">
+                                    <td class="td-10">결혼여부</td>
+                                    <td class="td-10 p-lr5">
+                                        <select name="" id="" class="">
+                                            <option value="">미혼</option>
+                                            <option value="">기혼</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-10">병역구분</td>
+                                    <td class="td-10 p-lr5">
+                                        <select name="" id="" class="">
+                                            <option value="">필</option>
+                                            <option value="">미필</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-10">취미</td>
+                                    <td class="td-10 p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td class="td-10">특기</td>
+                                    <td class="td-10 p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td class="td-10">장애여부</td>
+                                    <td class="p-lr5">
+                                        <select name="" id="" class="">
+                                            <option value="">장애</option>
+                                            <option value="">비장애</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-10">장애등록번호</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td class="td-10">보훈대상여부</td>
+                                    <td class="p-lr5">
+                                        <select name="" id="" class="">
+                                            <option value="">대상</option>
+                                            <option value="">비대상</option>
+                                        </select>
+                                    </td>
+                                    <td class="td-10">보훈번호</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td class="td-10">최종학력</td>
+                                    <td colspan="2" class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td class="td-10">키/몸무게</td>
+                                    <td colspan="2" class="p-lr5">
+                                        <input type="text" name="" id="" class="input-40" placeholder="cm"/>
+                                        <input type="text" name="" id="" class="input-40" placeholder="kg"/>
+                                    </td>
+                                    <td class="td-10">종교</td>
+                                    <td class="p-lr5">
+                                        <select name="" id="" class="">
+                                            <option value="">무교</option>
+                                            <option value="">기독교</option>
+                                            <option value="">불교</option>
+                                            <option value="">천주교</option>
+                                            <option value="">기타</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>보유자격1</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>보유자격2</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>보유자격3</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>보유자격4</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>어학사항1</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>어학사항2</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>어학사항3</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                    <td>어학사항4</td>
+                                    <td class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                </tr>
+                                <tr class="center">
+                                    <td>비고</td>
+                                    <td colspan="7" class="p-lr5">
+                                        <input type="text" name="" id="" class="input-100" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="btn-grp center">
+                            <button type="submit" class="btn-on">내용저장</button>                        
+                            <button type="reset" class="btn-off">새로고침</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
+        </div>
+    </main>
+</body>
+</html>

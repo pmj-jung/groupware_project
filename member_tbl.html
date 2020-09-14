@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">  
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<style>
+    tr:first-child {
+        background-color: #005AA7;
+        color: #fff;
+    }
+    tr:nth-child(2n) {
+        background-color: #eee;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn"><i class="fas fa-caret-down"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul class="menu">
+                <li><a href="member_tbl.html">사용자 관리</a>
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="">사용자 신청 목록</a></li>
+                        <li><a href="">사용자 그룹 설정</a></li>
+                        <li><a href="">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">전자결재</a>
+                    <ul class="submenu">
+                        <li><a href="">전자결재 설정</a></li>
+                        <li><a href="">전사문서함 관리</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">게시판</a>
+                    <ul class="submenu">
+                        <li><a href="board.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">환경설정</a>
+                    <ul class="submenu">
+                        <li><a href="#">관리자 목록</a></li>
+                        <li><a href="#">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3>사용자 관리 > 사용자 목록</h3>
+                <div class="search-box">
+                    <form name="search-frm" class="search-frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">이름</option>
+                            <option value="">휴대전화</option>
+                            <option value="">부서명</option>
+                        </select>
+                        <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" class="search-btn">사원검색</button>
+                    </form>
+                </div>
+            </div>
+            <div class="member-tbl-btns">
+                <button type="button" class="btn-on" onclick="location.href='member_tbl_insert.html'">사용자추가</button>
+                <button type="button" class="btn-off">선택삭제</button>
+            </div>
+            <div class="member-tbl">
+                <table>
+                    <tr class="center">
+                        <td class="td-3"><input type="checkbox"></td>
+                        <td class="td-5">번호</td>
+                        <td class="td-8">사원명</td>
+                        <td class="td-5">성별</td>
+                        <td class="td-8">부서</td>
+                        <td class="td-8">직급</td>
+                        <td class="td-22">이메일</td>
+                        <td class="td-10">전화번호</td>
+                        <td class="td-12">내선번호</td>
+                        <td class="td-7">입사일</td>
+                        <td class="">관리</td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>6</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>5</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>4</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>3</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>2</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>1</td>
+                        <td>밧대리</td>
+                        <td>여자</td>
+                        <td>경영지원실</td>
+                        <td>대리</td>
+                        <td>batterley@hanmail.net</td>
+                        <td>0510335588</td>
+                        <td>8282</td>
+                        <td>1999/05/15</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
+        </div>
+        </div>
+    </main>
+</body>
+</html>
