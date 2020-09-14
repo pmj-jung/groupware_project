@@ -1,4 +1,22 @@
 @charset 'utf-8';
+
+/* font size */
+.font14 {
+    font-size:14px;
+}
+
+.font16 {
+    font-size:16px;
+}
+
+.font18 {
+    font-size:18px;
+}
+
+.font20 {
+    font-size:20px;
+}
+
 /* padding */
 .p-tb10 {
     padding-top:10px;
@@ -115,6 +133,18 @@ button {
     color:#000;
 }
 
+.btn-del {
+    display:inline-block;
+    width:75px;
+    height:35px;
+    text-align: center;    
+    line-height: 37px;
+    border-radius: 2px;
+    background-color:#A7005A;
+    border:1px solid #d4d4d4;
+    color:#fff;
+}
+
 .s-btn-on { /* 활성화 */
     display:inline-block;
     width:35px;
@@ -138,6 +168,19 @@ button {
     background-color:#edeff5;
     border:1px solid #d4d4d4;
     color:#000;
+    font-size:12px;
+}
+
+.s-btn-del { /* 비활성화 */
+    display:inline-block;
+    width:35px;
+    height:25px;
+    text-align: center;    
+    line-height: 25px;
+    border-radius: 2px;
+    background-color:#A7005A;
+    border:1px solid #d4d4d4;
+    color:#fff;
     font-size:12px;
 }
 

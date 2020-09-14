@@ -4,7 +4,11 @@
 .contentHead {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 10px;
+}
+
+.contentHead h3{
+    color:#A7005A;
+    font-weight:700;
 }
 
 .mainContent h3,
