@@ -55,6 +55,10 @@
     padding-bottom:10px;
 }
 
+.p-t10 {
+    padding-top:10px;
+}
+
 .p-tb10 {
     padding-top:10px;
     padding-bottom:10px;
@@ -270,4 +274,10 @@ button {
 
 .bg-gray {
     background-color: #eee;
+}
+
+/* contentHead */
+.contentHead h3{
+    color:#A7005A;
+    padding-bottom:10px;
 }

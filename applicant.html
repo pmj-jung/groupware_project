@@ -83,7 +83,7 @@
                 </li>
                 <li class="menu">환경설정
                     <ul class="submenu">
-                        <li><a href="#">관리자 목록</a></li>
+                        <li><a href="admin_list.html">관리자 목록</a></li>
                         <li><a href="#">메뉴 설정</a></li>
                     </ul>
                 </li>
@@ -92,7 +92,14 @@
 
         <div class="mainContent">
             <div class="contentHead">
-                <h3 class="font20">사용자 관리 > 사용자 목록</h3>
+                <h3 class="font18">사용자 관리 > 사용자 목록</h3>
+            </div>
+            <div class="member-tbl-btns flex flex-justify">
+                <div class="btn-grp">
+                    <button type="button" class="btn-on">선택승인</button>
+                    <button type="button" class="btn-off">선택거부</button>
+                    <button type="button" class="btn-del">선택삭제</button>
+                </div>
                 <div class="search-box">
                     <form name="search-frm" class="search-frm" method="post" action="search.do">
                         <select class="sel">
@@ -104,11 +111,6 @@
                         <button type="submit" class="search-btn">사원검색</button>
                     </form>
                 </div>
-            </div>
-            <div class="member-tbl-btns">
-                <button type="button" class="btn-on">선택승인</button>
-                <button type="button" class="btn-off">선택거부</button>
-                <button type="button" class="btn-del">선택삭제</button>
             </div>
             <div class="member-tbl">
                 <table>

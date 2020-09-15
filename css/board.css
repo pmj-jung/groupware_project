@@ -1,11 +1,6 @@
 @charset 'utf-8';
 
 /* search form css */
-.contentHead h3{
-    color:#A7005A;
-    padding-bottom:10px;
-}
-
 .mainContent h3,
 .search-box {
     display: inline-block;
@@ -33,6 +28,7 @@
 
 .member-tbl-btns {
     padding: 5px 0;
+    align-items: flex-end;
 }
 
 /* table css */
