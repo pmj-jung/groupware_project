@@ -92,7 +92,8 @@ header {
 
 .changeStatus li:hover {
     background-color:#69A2D3;
-    color:#ddd;
+    color:#000;
+    font-weight:700;
 }
 
 .logout, .changePage{
@@ -159,6 +160,6 @@ main .mainContent {
 }
 
 .submenu > li:hover {
-    /* font-weight:700; */
+    font-weight:700;
     background-color:#eee;
 }

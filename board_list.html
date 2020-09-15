@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">  
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+
+<style>
+    .board-list tr:first-child {
+        background-color: #005AA7;
+        color: #fff;
+    }
+    .board-list tr:nth-child(2n) {
+        background-color: #eee;
+    }
+    td {
+        border: 1px solid #d6dce7;
+    }
+</style>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">사용자 관리
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="applicant.html">사용자 신청 목록</a></li>
+                        <li><a href="">사용자 그룹 설정</a></li>
+                        <li><a href="">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">전자결재
+                    <ul class="submenu">
+                        <li><a href="">전자결재 설정</a></li>
+                        <li><a href="">전사문서함 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">게시판
+                    <ul class="submenu">
+                        <li><a href="board_list.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">환경설정
+                    <ul class="submenu">
+                        <li><a href="#">관리자 목록</a></li>
+                        <li><a href="#">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+
+            <div class="page-main-wrap">
+                <div class="contentHead">
+                    <h3>게시판 > 게시판 등록</h3>
+                </div>
+                <div class="board-maker">
+                    <form method="post" action="">
+                        <table>
+                            <tr class="center">
+                                <td class="bg-gray td-10">게시판그룹</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="">전사</option>
+                                        <option value="">영업부</option>
+                                        <option value="">구매부</option>
+                                        <option value="">홍보부</option>
+                                    </select>
+                                </td>
+                                <td class="bg-gray td-10">게시판코드</td>
+                                <td class="td-15 p-lr3">
+                                    <input type="text" class="input-100" placeholder="영어로 입력" />
+                                </td>
+                                <td class="bg-gray td-10">게시판색상</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="#ff0000">#ff0000</option>
+                                        <option value="#0000ff">#0000ff</option>
+                                    </select>
+                                    <span class="color"></span>
+                                </td>
+                                <td class="bg-gray td-10">게시판 관리자</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="">greenart</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td class="bg-gray td-10">게시판제목</td>
+                                <td colspan="7" class="td-90 p-lr3">
+                                    <input type="text" class="input-100" />
+                                </td>
+                            </tr>
+                            <tr class="center">
+                                <td class="bg-gray td-10">읽기권한</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="">9</option>
+                                        <option value="">8</option>
+                                    </select>
+                                </td>
+                                <td class="bg-gray td-10">쓰기권한</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="">9</option>
+                                        <option value="">8</option>
+                                    </select>
+                                </td>
+                                <td class="bg-gray td-10">댓글권한</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="">9</option>
+                                        <option value="">8</option>
+                                    </select>
+                                </td>
+                                <td class="bg-gray td-10">다운권한</td>
+                                <td class="td-15 p-lr3">
+                                    <select class="sel-100">
+                                        <option value="">9</option>
+                                        <option value="">8</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="btn-grp center m-t10">
+                            <button class="btn-on">게시판생성</button>
+                            <button class="btn-off" type="reset">취소하기</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="contentHead">
+                    <h3>게시판 > 게시판 목록</h3>
+                </div>
+
+                <div class="board-list">
+                    <table>
+                        <tr class="center font14">
+                            <td class="td-5"><input type="checkbox" /></td>
+                            <td class="td-10">게시판그룹</td>
+                            <td class="td-10">게시판코드</td>
+                            <td class="td-10">게시판색상</td>
+                            <td>게시판제목</td>
+                            <td class="td-5">읽기권한</td>
+                            <td class="td-5">쓰기권한</td>
+                            <td class="td-5">댓글권한</td>
+                            <td class="td-5">다운권한</td>
+                            <td class="td-10">게시판관리</td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
+                            <td>전사</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">notice</a>
+                            </td>
+                            <td>#cccccc</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">그린컴퓨터학원 전사 공지사항</a>
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                <span class="s-btn-on">수정</span>
+                                <span class="s-btn-off">삭제</span>
+                            </td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
+                            <td>영업부</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">notice</a>
+                            </td>
+                            <td>#cccccc</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">그린컴퓨터학원 영업부 공지사항</a>
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                <span class="s-btn-on">수정</span>
+                                <span class="s-btn-off">삭제</span>
+                            </td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
+                            <td>구매부</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">notice</a>
+                            </td>
+                            <td>#cccccc</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">그린컴퓨터학원 구매부 공지사항</a>
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                <span class="s-btn-on">수정</span>
+                                <span class="s-btn-off">삭제</span>
+                            </td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox" />
+                            </td>
+                            <td>홍보부</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">notice</a>
+                            </td>
+                            <td>#cccccc</td>
+                            <td>
+                                <a href="board_list.html" target="_blank" class="under">그린컴퓨터학원 홍보부 공지사항</a>
+                            </td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>
+                                <span class="s-btn-on">수정</span>
+                                <span class="s-btn-off">삭제</span>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
+        </div>
+        </div>
+    </main>
+</body>
+</html>
