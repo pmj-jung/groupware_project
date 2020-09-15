@@ -63,6 +63,8 @@ header {
     flex-direction: column;
     justify-content: space-around;
     flex-wrap: wrap;
+
+    cursor: pointer;
 }
 
 .detail-btn {
@@ -73,21 +75,28 @@ header {
 
 .changeStatus {
     position: absolute;
-    right:20px;
-    top:55px;
-
-    display:flex;
-    flex-direction: column;
-    align-content: space-around;
+    right:25px;
+    top:58px;
 
     width:150px;
+    border: 1px solid #ccc;
+
+    display: none;
 }
-.changeStatus span {
-    padding: 10px;
+.changeStatus li {
+    padding: 15px 10px;
+    background-color:#fff;
+    display:flex;
+    justify-content: space-between;
+}
+
+.changeStatus li:hover {
     background-color:#69A2D3;
+    color:#ddd;
 }
-.logout a, .adminPage a {
-    color:#fff;
+
+.logout, .changePage{
+    color:#a7a7a7;
 }
 
 

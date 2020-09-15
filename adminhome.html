@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/home.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">사용자 관리
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="applicant.html">사용자 신청 목록</a></li>
+                        <li><a href="">사용자 그룹 설정</a></li>
+                        <li><a href="">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">전자결재
+                    <ul class="submenu">
+                        <li><a href="">전자결재 설정</a></li>
+                        <li><a href="">전사문서함 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">게시판
+                    <ul class="submenu">
+                        <li><a href="board_list.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">환경설정
+                    <ul class="submenu">
+                        <li><a href="#">관리자 목록</a></li>
+                        <li><a href="#">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="h-dashboard">
+                <div class="h-calendar">
+                    <h3>캘린더</h3>
+                    <div class="Container">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint corporis, officiis nemo
+                            corrupti, numquam eaque quaerat tenetur vitae aut labore possimus officia optio quam ut!
+                            Beatae soluta velit, similique necessitatibus non atque. Eligendi magnam quidem recusandae
+                            nisi error natus exercitationem amet, non dicta ut nemo quaerat. Quas, aut placeat? Facilis?
+                        </p>
+                    </div>
+                </div>
+                <div class="h-mail">
+                    <h3>메일</h3>
+                    <div class="Container">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus odio ipsum temporibus
+                            laborum, numquam reprehenderit earum eaque quibusdam maxime obcaecati cumque nulla ratione
+                            laudantium, veniam ab expedita odit minima accusamus esse similique vero quo deleniti!
+                            Accusamus asperiores magnam quis molestias. Magnam sunt facere repellat vitae fugiat eos
+                            quis maxime cupiditate deserunt modi! Voluptas explicabo possimus dignissimos pariatur qui
+                            odit, iusto repellendus nemo officia. Eum consequatur aspernatur tempore ipsum
+                            necessitatibus, quas officia ut ex! Delectus error maiores eius beatae laborum repellat
+                            saepe aspernatur repellendus doloremque vitae culpa omnis cupiditate facere autem aperiam
+                            quos, reprehenderit veniam magnam illo eligendi. Laboriosam, sed voluptatum!</p>
+                    </div>
+                </div>
+                <div class="h-notice">
+                    <h3>공지사항</h3>
+                    <div class="Container">
+                        <table class="h-noticeTbl">
+                            <tr>
+                                <td>2020년도 건강검진 안내</td>
+                                <td>윤부장</td>
+                                <td>2020.09.01</td>
+                            </tr>
+                            <tr>
+                                <td>9월 구내식당 메뉴 안내</td>
+                                <td>구내식당</td>
+                                <td>2020.08.29</td>
+                            </tr>
+                            <tr>
+                                <td>회사 소개자료 공유</td>
+                                <td>김차장</td>
+                                <td>2020.01.13</td>
+                            </tr>
+                            <tr>
+                                <td>공지사항 테스트용</td>
+                                <td>관리자</td>
+                                <td>2020.01.01</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="h-memo">
+                    <h3>메모</h3>
+                    <div class="Container">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit obcaecati non dolorum
+                            nisi saepe aut quisquam nulla dolor nostrum? Repellat error rerum adipisci perferendis
+                            provident praesentium debitis illo modi dignissimos obcaecati, necessitatibus et accusamus
+                            cum quis possimus distinctio aliquid aut, doloremque nesciunt vel aliquam culpa eius
+                            voluptas. Ducimus, odit. Magni hic labore voluptatem beatae perferendis repellendus
+                            explicabo eos dolorum adipisci accusantium? Id ducimus in quae tempore minima vel ea eveniet
+                            deserunt aliquam, rem ut unde odio commodi, necessitatibus magni voluptatum?</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -41,11 +41,18 @@
                 <span class="userName">김대리</span>
                 <span class="userEmail">kimdaeri@naver.com</span>
                 <span class="detail-btn">
-                    <i class="fas fa-caret-down"></i>
-                    <ul>
-                        <li></li>
-                        <li></li>
-                    </ul>
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
                 </span>
             </div>
         </div>
@@ -54,7 +61,6 @@
     <main>
         <div class="menu-wrap">
             <ul>
-                <button type="button">전체메뉴</button>
                 <li class="menu">사용자 관리
                     <ul class="submenu">
                         <li><a href="member_tbl.html">사용자 목록</a></li>

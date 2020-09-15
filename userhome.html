@@ -29,11 +29,17 @@
                 <span class="userName">김대리</span>
                 <span class="userEmail">kimdaeri@naver.com</span>
                 <span class="detail-btn">
-                    <i class="chgBtn fas fa-caret-down">
-                        <div class="changeStatus">
-                            <span class="logout"><a href="login.html">로그아웃</a></span>
-                            <span class="adminPage"><a href="adminhome.html">관리자페이지</a></span>
-                        </div>
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='adminhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>관리자페이지</p>
+                            </li>
+                        </ul>
                     </i>
                 </span>
             </div>
