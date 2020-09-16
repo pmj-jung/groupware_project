@@ -1,1 +1,4 @@
 admin_list.html : <table>에 <button> type을 어떻게 지정해야하는가
+
+admin_user_group.html : tree-wrap에 button2개(부서/직급)만들어서 부서btn 누르면 tree-dept-wrap을보여주기(=tree-rank-wrap의 display:none; 주기)
+

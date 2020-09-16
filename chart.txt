@@ -1,0 +1,161 @@
+<script type="text/javascript">
+    $(function () {
+
+        var datascource = {
+            'name': '대표이사',
+            'title': 'CEO',
+            'className': 'top-level',
+            'children': [{
+                    'name': '관리부',
+                    'title': '관리부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '관리과',
+                        'title': '관리과장',
+                        'className': 'middle-level',
+                        'children': [{
+                            'name': '관리과',
+                            'title': '대리',
+                            'className': 'low-level',
+                            'children': [{
+                                'name': '관리과',
+                                'title': '사원',
+                                'className': 'bottom-level'
+                            }]
+                        }]
+                    }]
+
+                },
+                {
+                    'name': '기획부',
+                    'title': '기획부장',
+                    'className': 'high-level',
+                    'children': [{
+                            'name': '기획과',
+                            'title': '기획과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '기획과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '기획과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+
+                                }]
+                            }]
+                        }, {
+                            'name': 'TF팀',
+                            'title': 'TF팀장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': 'TF팀',
+                                'title': '팀원',
+                                'className': 'low-level',
+
+                            }]
+                        }
+
+                    ]
+
+                },
+                {
+                    'name': '인사부',
+                    'title': '인사부장',
+                    'className': 'high-level',
+                    'children': [{
+                            'name': '총무과',
+                            'title': '총무과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '총무과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '총무과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+
+                                }]
+                            }]
+                        },
+                        {
+                            'name': '인사과',
+                            'title': '인사과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '인사과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '인사과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+                                }]
+                            }]
+                        }
+                    ]
+                },
+                {
+                    'name': '영업부',
+                    'title': '영업부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '영업부',
+                        'title': '영업과장',
+                        'className': 'middle-level'
+                    }, {
+                        'name': '영업외주',
+                        'title': '영업팀장',
+                        'className': 'middle-level'
+                    }]
+                },
+                {
+                    'name': '생산부',
+                    'title': '생산부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '생산부',
+                        'title': '공장장',
+                        'className': 'middle-level'
+                    }]
+                },
+                {
+                    'name': '자재부',
+                    'title': '자재부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '재재부',
+                        'title': '자재처리부',
+                        'className': 'middle-level',
+                    }]
+                }
+            ]
+        };
+
+        $('#chart-container').orgchart({
+            'visibleLevel': 5,
+            'pan': true,
+            'data': datascource,
+            'nodeContent': 'title',
+            'createNode': function ($node, data) {
+                $node.on('click', function (event) {
+                    if (!$(event.target).is('.edge, .toggleBtn')) {
+                        var $this = $(this);
+                        var $chart = $this.closest('.orgchart');
+                        var newX = window.parseInt(($chart.outerWidth(true) / 2) - ($this
+                            .offset().left - $chart.offset().left) - ($this
+                            .outerWidth(true) / 2));
+                        var newY = window.parseInt(($chart.outerHeight(true) / 2) - ($this
+                            .offset().top - $chart.offset().top) - ($this
+                            .outerHeight(true) / 2));
+                        $chart.css('transform', 'matrix(1, 0, 0, 1, ' + newX + ', ' + newY +
+                            ')');
+                    }
+                });
+            }
+        });
+
+    });
+</script>

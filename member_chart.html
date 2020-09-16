@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/jquery.orgchart.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/jquery.orgchart.js"></script>
+
+</head>
+<style>
+    .orgchart .top-level .title {
+        background-color:#005AA7;
+        text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
+        color:#fff;
+    }
+    .orgchart .high-level .title {
+        background-color:#2F7BBD;
+        color:#fff;
+    }
+    .orgchart .middle-level .title {
+        background-color:#69A2D3;
+    }
+    .orgchart .low-level .title {
+        background-color:#e0e0e0;
+    }
+    .orgchart .bottom-level .title {
+        background-color:#f0f0f0;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">사용자 관리
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="applicant.html">사용자 신청 목록</a></li>
+                        <li><a href="admin_user_group.html">사용자 그룹 설정</a></li>
+                        <li><a href="member_chart.html">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">전자결재
+                    <ul class="submenu">
+                        <li><a href="approval_main.html" target="_blank">전자결재시스템</a></li>
+                    </ul>
+                </li>
+                <li class="menu">게시판
+                    <ul class="submenu">
+                        <li><a href="board_list.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">환경설정
+                    <ul class="submenu">
+                        <li><a href="admin_list.html">관리자 목록</a></li>
+                        <li><a href="menu_setting.html">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3 class="font18">사용자 관리 > 조직도 관리</h3>                
+            </div>
+            <div class="btn-wrap">
+                <button class="btn-on">사용자 등록</button>
+                <button class="btn-off">조직도 등록</button>
+            </div>
+            <div class="content-wrap">
+                <div id="chart-container" class="bg-white"></div>
+            </div>       
+
+        </div>
+        </div>
+    </main>
+</body>
+<script type="text/javascript">
+    $(function () {
+
+        var datascource = {
+            'name': '대표이사',
+            'title': 'CEO',
+            'className': 'top-level',
+            'children': [{
+                    'name': '관리부',
+                    'title': '관리부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '관리과',
+                        'title': '관리과장',
+                        'className': 'middle-level',
+                        'children': [{
+                            'name': '관리과',
+                            'title': '대리',
+                            'className': 'low-level',
+                            'children': [{
+                                'name': '관리과',
+                                'title': '사원',
+                                'className': 'bottom-level'
+                            }]
+                        }]
+                    }]
+
+                },
+                {
+                    'name': '기획부',
+                    'title': '기획부장',
+                    'className': 'high-level',
+                    'children': [{
+                            'name': '기획과',
+                            'title': '기획과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '기획과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '기획과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+
+                                }]
+                            }]
+                        }, {
+                            'name': 'TF팀',
+                            'title': 'TF팀장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': 'TF팀',
+                                'title': '팀원',
+                                'className': 'low-level',
+
+                            }]
+                        }
+
+                    ]
+
+                },
+                {
+                    'name': '인사부',
+                    'title': '인사부장',
+                    'className': 'high-level',
+                    'children': [{
+                            'name': '총무과',
+                            'title': '총무과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '총무과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '총무과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+
+                                }]
+                            }]
+                        },
+                        {
+                            'name': '인사과',
+                            'title': '인사과장',
+                            'className': 'middle-level',
+                            'children': [{
+                                'name': '인사과',
+                                'title': '대리',
+                                'className': 'low-level',
+                                'children': [{
+                                    'name': '인사과',
+                                    'title': '사원',
+                                    'className': 'bottom-level'
+                                }]
+                            }]
+                        }
+                    ]
+                },
+                {
+                    'name': '영업부',
+                    'title': '영업부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '영업부',
+                        'title': '영업과장',
+                        'className': 'middle-level'
+                    }, {
+                        'name': '영업외주',
+                        'title': '영업팀장',
+                        'className': 'middle-level'
+                    }]
+                },
+                {
+                    'name': '생산부',
+                    'title': '생산부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '생산부',
+                        'title': '공장장',
+                        'className': 'middle-level'
+                    }]
+                },
+                {
+                    'name': '자재부',
+                    'title': '자재부장',
+                    'className': 'high-level',
+                    'children': [{
+                        'name': '재재부',
+                        'title': '자재처리부',
+                        'className': 'middle-level',
+                    }]
+                }
+            ]
+        };
+
+        $('#chart-container').orgchart({
+            'visibleLevel': 5,
+            'pan': true,
+            'data': datascource,
+            'nodeContent': 'title',
+            'createNode': function ($node, data) {
+                $node.on('click', function (event) {
+                    if (!$(event.target).is('.edge, .toggleBtn')) {
+                        var $this = $(this);
+                        var $chart = $this.closest('.orgchart');
+                        var newX = window.parseInt(($chart.outerWidth(true) / 2) - ($this
+                            .offset().left - $chart.offset().left) - ($this
+                            .outerWidth(true) / 2));
+                        var newY = window.parseInt(($chart.outerHeight(true) / 2) - ($this
+                            .offset().top - $chart.offset().top) - ($this
+                            .outerHeight(true) / 2));
+                        $chart.css('transform', 'matrix(1, 0, 0, 1, ' + newX + ', ' + newY +
+                            ')');
+                    }
+                });
+            }
+        });
+
+    });
+</script>
+</html>

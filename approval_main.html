@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/admin_list.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">사용자 관리
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="applicant.html">사용자 신청 목록</a></li>
+                        <li><a href="admin_user_group.html">사용자 그룹 설정</a></li>
+                        <li><a href="member_chart.html">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">전자결재
+                    <ul class="submenu">
+                        <li><a href="approval_main.html" target="_blank">전자결재시스템</a></li>
+                    </ul>
+                </li>
+                <li class="menu">게시판
+                    <ul class="submenu">
+                        <li><a href="board_list.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">환경설정
+                    <ul class="submenu">
+                        <li><a href="admin_list.html">관리자 목록</a></li>
+                        <li><a href="menu_setting.html">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3 class="font18">환경설정 > 관리자 목록</h3>
+            </div>
+            <div class="content-wrap flex flex-justify">
+                
+                
+                            
+            </div>
+            
+        </div>
+        </div>
+    </main>
+</body>
+</html>
