@@ -12,11 +12,12 @@ header {
     padding: 0 20px;
 }
 
-/* *********관리자페이지에서만 보임************* */
+
 .logo {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    min-width:150px;
 }
 
 .logo-admin {
@@ -24,7 +25,6 @@ header {
     padding-left: 10px;
     font-family: 'Roboto', sans-serif;
 }
-/* ********************************************** */
 
 .logo i {
     display: inline-block;
@@ -33,6 +33,15 @@ header {
     text-align: center;
     color: #fff;
     font-size: 50px;
+}
+
+.logo-approval-home {
+    width:100%;
+    font-size:20px;
+}
+
+.logo-approval-home a {
+    color: #fff;
 }
 
 .info {
