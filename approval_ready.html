@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">  
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<style>
+    tr:first-child {
+        background-color: #005AA7;
+        color: #fff;
+    }
+    tr:nth-child(2n) {
+        background-color: #eee;
+    }
+    .approval_urgent {
+        background-color:#f00;
+        border-radius: 2px;
+        padding: 4px 8px;
+        color:#fff;
+    }
+
+    .approval_nonurgent {
+        background-color:#080;
+        border-radius: 2px;
+        padding: 4px 8px;
+        color:#fff;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">결재하기
+                    <ul class="submenu">
+                        <li><a href="approval_ready.html">결재 대기 문서</a></li>
+                        <li><a href="approval_status.html">결재 문서 상태</a>
+                        </li>
+                        <li><a href="approval_ref.html">참조/열람 대기 문서</a></li>
+                    </ul>
+                </li>   
+                
+                <li class="menu">개인문서함
+                    <ul class="submenu">
+                        <li><a href="approval_send_save.html">발송 문서함</a></li>
+                        <li><a href="approval_receive_save.html">수신 문서함</a>
+                        </li>
+                        <li><a href="approval_ref_save.html">참조/열람 문서함</a></li>
+                        <li><a href="approval_temp_save.html">임시/보관 문서함</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">문서양식함
+                    <ul class="submenu">
+                        <li><a href="approval_hr.html">인사부</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">결재환경설정
+                    <ul class="submenu">
+                        <li><a href="approval_sign.html">기본설정</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3 class="font18">결재하기 > 결재 대기 문서</h3>                
+            </div>
+            <div class="member-tbl-btns flex flex-justify">
+                <div class="btn-grp">
+                    <button type="button" class="btn-on">일괄결재</button>
+                    <button type="button" class="btn-off">결재문서작성</button>
+                </div>
+                <div class="search-box">
+                    <form name="search-frm" class="search-frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">기안자</option>
+                            <option value="">문서제목</option>
+                            <option value="">문서번호</option>
+                        </select>
+                        <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" class="search-btn">문서검색</button>
+                    </form>
+                </div>
+            </div>
+            <div class="table-wrap">
+                <table>
+                    <tr class="center">
+                        <td class="td-5"><input type="checkbox"></td>
+                        <td class="td-10">기안일</td>
+                        <td class="td-15">결재양식</td>
+                        <td class="td-10">구분</td>
+                        <td>문서제목</td>
+                        <td class="td-8">문서번호</td>
+                        <td class="td-8">기안자</td>
+                        <td class="td-8">첨부파일</td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>2020.09.16</td>
+                        <td>경영지원실>업무일지</td>
+                        <td>
+                            <span class="approval_urgent">긴급</span>
+                        </td>
+                        <td>[업무일지] 일일 업무일지 기안입니다</td>
+                        <td>1600-0143</td>
+                        <td>김대리</td>
+                        <td>-</td>
+                    </tr>
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
+                        <td>2020.09.16</td>
+                        <td>인사부>업무일지</td>
+                        <td>
+                            <span class="approval_nonurgent">일반</span>
+                        </td>
+                        <td>[업무일지] 일일 업무일지 기안입니다</td>
+                        <td>1100-0123</td>                     
+                        <td>박사원</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>
