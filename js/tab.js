@@ -1,7 +1,7 @@
 $(function () {
-    $("#open-dept").click(function() {
-        $("#open-dept").addClass("active");
-        $("#close-dept").removeClass("active");
+    $("#open").click(function() {
+        $("#open").addClass("active");
+        $("#close").removeClass("active");
     });
 
     $("#close-dept").click(function() {

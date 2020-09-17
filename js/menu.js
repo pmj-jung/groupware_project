@@ -18,6 +18,5 @@ $(function(){
             $(this).find(".changeStatus").slideDown(200);
         }
     });
-
     
 });

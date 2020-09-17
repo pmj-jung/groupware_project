@@ -75,6 +75,12 @@
                         <li><a href="board_list.html">게시판목록</a></li>
                     </ul>
                 </li>
+                <li class="menu">근태관리
+                    <ul class="submenu">
+                        <li><a href="attend_status.html">내 근태현황</a></li>
+                        <li><a href="attend_info.html">내 근태현황</a></li>
+                    </ul>
+                </li>
                 <li class="menu">환경설정
                     <ul class="submenu">
                         <li><a href="admin_list.html">관리자 목록</a></li>
@@ -88,105 +94,109 @@
             <div class="contentHead">
                 <h3 class="font18">사용자 관리 > 사용자 그룹 설정</h3>
             </div>
-            <div class="tree-wrap flex flex-justify">
-                
-                <div class="tree-dept-wrap bg-white">
-                    <div class="tree-head flex flex-justify">
-                        <h3 class="p-tb10">부서</h3>
-                        <div class="btn-wrap p-tb10">
-                            <button class="tree-btn-on">추가</button>
-                            <button class="tree-btn-off">수정</button>
-                            <button class="tree-btn-del">삭제</button>
+            <form style="width:100%;">
+                <div class="tree-wrap flex flex-justify">
+                    
+                    <div class="tree-dept-wrap bg-white">
+                        <div class="tree-head flex flex-justify">
+                            <h3 class="p-tb10">부서</h3>
+                            <div class="btn-wrap p-tb10">
+                                <button class="tree-btn-on">추가</button>
+                                <button class="tree-btn-off">수정</button>
+                                <button class="tree-btn-del">삭제</button>
+                            </div>
                         </div>
-                    </div>
-                    <div id="sidetreecontrol-dept" class="control flex flex-justify">
-                        <a href="#" class="tab active" id="open-dept">전체닫기</a>
-                        <a href="#" class="tab" id="close-dept">전체열기</a>
-                    </div>           
+                        <div id="sidetreecontrol-dept" class="control flex flex-justify">
+                            <a href="#" class="tab active" id="open-dept">전체닫기</a>
+                            <a href="#" class="tab" id="close-dept">전체열기</a>
+                        </div>           
 
-                    <ul id="tree-dept">
-                        <li>
-                            <img src="images/folder-closed.gif" />본사
-                            <ul>
-                                <li><img src="images/folder.gif" /><a href="#">인사부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">총무부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">회계부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">기획부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">영업부</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <img src="images/folder-closed.gif" />부산지사
-                            <ul>
-                                <li><img src="images/folder.gif" /><a href="#">인사부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">총무부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">회계부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">기획부</a></li>
-                                <li><img src="images/folder.gif" /><a href="#">영업부</a></li>
-                            </ul>
-                        </li>                          
-                    </ul>
-                </div>
-                
-                <div class="tree-rank-wrap bg-white">
-                    <div class="tree-head flex flex-justify">
-                        <h3 class="p-tb10">직위</h3>
-                        <div class="btn-wrap p-tb10">
-                            <button class="tree-btn-on">추가</button>
-                            <button class="tree-btn-off">수정</button>
-                            <button class="tree-btn-del">삭제</button>
+                        <ul id="tree-dept">
+                            <li>
+                                <img src="images/folder-closed.gif" />본사
+                                <ul>
+                                    <li><img src="images/folder.gif" /><a href="#">인사부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">총무부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">회계부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">기획부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">영업부</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <img src="images/folder-closed.gif" />부산지사
+                                <ul>
+                                    <li><img src="images/folder.gif" /><a href="#">인사부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">총무부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">회계부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">기획부</a></li>
+                                    <li><img src="images/folder.gif" /><a href="#">영업부</a></li>
+                                </ul>
+                            </li>                          
+                        </ul>
+                    </div>
+                    
+                    <div class="tree-rank-wrap bg-white">
+                        <div class="tree-head flex flex-justify">
+                            <h3 class="p-tb10">직위</h3>
+                            <div class="btn-wrap p-tb10">
+                                <button class="tree-btn-on">추가</button>
+                                <button class="tree-btn-off">수정</button>
+                                <button class="tree-btn-del">삭제</button>
+                            </div>
                         </div>
+
+                        <div id="sidetreecontrol-rank" class="control flex flex-justify">
+                            <a href="#" class="tab active" id="open-rank">전체닫기</a>
+                            <a href="#" class="tab" id="close-rank">전체열기</a>
+                        </div>  
+
+                        <ul id="tree-rank">
+                            <li>
+                                <img src="images/folder-closed.gif" />직위
+                                <ul>
+                                    <li><img src="images/folder.gif" /><a href="">인턴</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">사원</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">대리</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">과장</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">차장</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">부장</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">이사</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">사장</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
 
-                    <div id="sidetreecontrol-rank" class="control flex flex-justify">
-                        <a href="#" class="tab active" id="open-rank">전체닫기</a>
-                        <a href="#" class="tab" id="close-rank">전체열기</a>
-                    </div>  
-
-                    <ul id="tree-rank">
-                        <li>
-                            <img src="images/folder-closed.gif" />직위
-                            <ul>
-                                <li><img src="images/folder.gif" /><a href="">인턴</a></li>
-                                <li><img src="images/folder.gif" /><a href="">사원</a></li>
-                                <li><img src="images/folder.gif" /><a href="">대리</a></li>
-                                <li><img src="images/folder.gif" /><a href="">과장</a></li>
-                                <li><img src="images/folder.gif" /><a href="">차장</a></li>
-                                <li><img src="images/folder.gif" /><a href="">부장</a></li>
-                                <li><img src="images/folder.gif" /><a href="">이사</a></li>
-                                <li><img src="images/folder.gif" /><a href="">사장</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="tree-recruit-wrap bg-white">
-                    <div class="tree-head flex flex-justify">
-                        <h3 class="p-tb10">채용형태</h3>
-                        <div class="btn-wrap p-tb10">
-                            <button class="tree-btn-on">추가</button>
-                            <button class="tree-btn-off">수정</button>
-                            <button class="tree-btn-del">삭제</button>
+                    <div class="tree-recruit-wrap bg-white">
+                        <div class="tree-head flex flex-justify">
+                            <h3 class="p-tb10">채용형태</h3>
+                            <div class="btn-wrap p-tb10">
+                                <button class="tree-btn-on">추가</button>
+                                <button class="tree-btn-off">수정</button>
+                                <button class="tree-btn-del">삭제</button>
+                            </div>
                         </div>
+                        <div id="sidetreecontrol-recruit" class="control flex flex-justify">
+                            <a href="#" class="tab active" id="open-recruit">전체닫기</a>
+                            <a href="#" class="tab" id="close-recruit">전체열기</a>
+                        </div>  
+                        <ul id="tree-recruit">
+                            <li>
+                                <img src="images/folder-closed.gif" />채용형태
+                                <ul>
+                                    <li><img src="images/folder.gif" /><a href="">인턴</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">임시직</a></li>
+                                    <li><img src="images/folder.gif" /><a href="">정규직</a></li>
+                                </ul>
+                            </li>
+                        </ul>
                     </div>
-                    <div id="sidetreecontrol-recruit" class="control flex flex-justify">
-                        <a href="#" class="tab active" id="open-recruit">전체닫기</a>
-                        <a href="#" class="tab" id="close-recruit">전체열기</a>
-                    </div>  
-                    <ul id="tree-recruit">
-                        <li>
-                            <img src="images/folder-closed.gif" />채용형태
-                            <ul>
-                                <li><img src="images/folder.gif" /><a href="">인턴</a></li>
-                                <li><img src="images/folder.gif" /><a href="">임시직</a></li>
-                                <li><img src="images/folder.gif" /><a href="">정규직</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
-            </div>
-        
-        </div>
+                <div class="btn-grp center p-t10" style="width:100%;">
+                    <button type="submit" class="btn-on">내용저장</button>                        
+                    <button type="reset" class="btn-off">새로고침</button>
+                </div>
+            </form>
         </div>
     </main>
 </body>
