@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<style>
+    tr:first-child {
+        background-color: #005AA7;
+        color: #fff;
+    }
+    tr:nth-child(2n) {
+        background-color: #eee;
+    }
+    .survey-close {
+        background-color:#f00;
+        border-radius: 2px;
+        padding: 8px 14px;
+        color:#fff;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">사용자 관리
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="applicant.html">사용자 신청 목록</a></li>
+                        <li><a href="admin_user_group.html">사용자 그룹 설정</a></li>
+                        <li><a href="member_chart.html">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">전자결재
+                    <ul class="submenu">
+                        <li><a href="approval_main.html" target="_blank">전자결재시스템</a></li>
+                    </ul>
+                </li>
+                <li class="menu">게시판
+                    <ul class="submenu">
+                        <li><a href="board_list.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">일정관리
+                    <ul class="submenu">
+                        <li><a href="calendar_list.html">일정목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">근태관리
+                    <ul class="submenu">
+                        <li><a href="my_attend_status.html">내 근태현황</a></li>
+                        <li><a href="my_attend_info.html">내 인사정보</a></li>
+                    </ul>
+                </li>
+                <li class="menu">설문조사
+                    <ul class="submenu">
+                        <li><a href="survey_open.html">진행중인 설문</a>
+                        </li>
+                        <li><a href="survey_close.html">종료된 설문</a>
+                        </li>
+                        <li><a href="my_survey.html">내가 만든 설문</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu">자료실
+                    <ul class="submenu">
+                        <li><a href="file_upload.html">문서양식</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">자산관리
+                    <ul class="submenu">
+                        <li><a href="company_list_manage.html">자산관리</a></li>
+                        <li><a href="company_pc_manage.html">PC관리</a></li>
+                        <li><a href="company_goods_manage.html">물품관리</a></li>
+                        <li><a href="company_room_manage.html">회의실예약관리</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">회사정보
+                    <ul class="submenu">
+                        <li><a href="company_info.html">회사기본정보</a></li>
+                        <li><a href="company_info_register.html">회사기본정보 등록</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">환경설정
+                    <ul class="submenu">
+                        <li><a href="admin_list.html">관리자 목록</a></li>
+                        <li><a href="menu_setting.html">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            
+            <div class="contentHead">
+                <h3 class="font18">설문조사 > 종료된 설문</h3>                
+            </div>
+
+            <div class="survey-view flex flex-justify m-b10">
+                <!-- line-height:1.8; 로 안쪽의 span,h2,p 모두 같은 간격으로 만들 수 있음 -->
+                <div class="survey-wrap bg-white">
+                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
+                        <span class="survey-close">설문상태 : 종료</span>
+                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
+                        <p>2020-09-14 ~ 2020-09-16</p>
+                        <p>작성자 : 홍길동</p>
+                        <p>설문결과 : 공개</p>
+                    </div>
+                    <div class="center weight700 p10 bg-gray">결과보기</div>
+                </div>
+
+                <div class="survey-wrap bg-white">
+                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
+                        <span class="survey-close">설문상태 : 종료</span>
+                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
+                        <p>2020-09-14 ~ 2020-09-16</p>
+                        <p>작성자 : 홍길동</p>
+                        <p>설문결과 : 공개</p>
+                    </div>
+                    <div class="center weight700 p10 bg-gray">결과보기</div>
+                </div>
+
+                <div class="survey-wrap bg-white">
+                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
+                        <span class="survey-close">설문상태 : 종료</span>
+                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
+                        <p>2020-09-14 ~ 2020-09-16</p>
+                        <p>작성자 : 홍길동</p>
+                        <p>설문결과 : 공개</p>
+                    </div>
+                    <div class="center weight700 p10 bg-gray">결과보기</div>
+                </div>
+                
+                <div class="survey-wrap bg-white">
+                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
+                        <span class="survey-close">설문상태 : 종료</span>
+                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
+                        <p>2020-09-14 ~ 2020-09-16</p>
+                        <p>작성자 : 홍길동</p>
+                        <p>설문결과 : 공개</p>
+                    </div>
+                    <div class="center weight700 p10 bg-gray">결과보기</div>
+                </div>
+            </div>
+
+            <div class="survey-list">
+                <table>
+                    <tr class="center font14">
+                        <td class="td-5">번호</td>
+                        <td class="td-10">설문상태</td>
+                        <td>설문제목</td>
+                        <td class="td-22">설문기간</td>
+                        <td class="td-10">설문작성자</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>10</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>9</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>8</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>7</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>6</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>5</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>4</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>3</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>1</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
+                    </tr>
+                </table>
+                
+            </div>
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
+        </div>
+        </div>
+    </main>
+</body>
+</html>

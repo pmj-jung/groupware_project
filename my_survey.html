@@ -22,36 +22,17 @@
     tr:nth-child(2n) {
         background-color: #eee;
     }
-
-    .attend-progress {
-        background-color:#f00;
-        border-radius: 2px;
-        padding: 4px 8px;
-        color:#fff;
-    }
-
-    .attend-complete {
+    .survey-open {
         background-color:#080;
         border-radius: 2px;
-        padding: 4px 14px;
+        padding: 8px 14px;
         color:#fff;
     }
-    .arrow i {
-            font-size: 25px;
-            color: #2F7BBD;
-            vertical-align: middle;
-    }
-
-    .cal {
-        display: inline-block;
-        width: 150px;
-        height: 40px;
-        font-size: 20px;
-        text-align: center;
-        line-height: 40px;
-        color:#2F7BBD;
-        font-weight: 700;
-        vertical-align: middle;
+    .survey-close {
+        background-color:#f00;
+        border-radius: 2px;
+        padding: 8px 14px;
+        color:#fff;
     }
 </style>
 <body>
@@ -165,141 +146,156 @@
         <div class="mainContent">
             
             <div class="contentHead">
-                <h3 class="font18">근태관리 > 내 근태현황</h3>
+                <h3 class="font18">설문조사 > 내가 만든 설문</h3>                
             </div>
 
-            <div class="content-wrap">
-
-                <div class="">
-                    <span class="arrow">
-                        <a href="#">
-                            <i class="fas fa-chevron-left"></i>
-                        </a>
-                    </span>
-                    <span class="cal">
-                        2020년 9월
-                    </span>
-                    <span class="arrow">
-                        <a href="#">
-                            <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </span>
+            <div class="member-tbl-btns flex flex-justify">
+                <div class="btn-grp">
+                    <button type="button" class="btn-on">설문작성</button>
+                    <button type="button" class="btn-off">선택삭제</button>
                 </div>
+                <div class="search-box">
+                    <form name="search-frm" class="search-frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">번호</option>
+                            <option value="">설문제목</option>
+                        </select>
+                        <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" class="search-btn">검색</button>
+                    </form>
+                </div>
+            </div>
 
+            <div class="survey-list">
                 <table>
                     <tr class="center font14">
-                        <td class="td-10">일자</td>
-                        <td class="td-10">업무시작</td>
-                        <td class="td-10">업무종료</td>
-                        <td class="td-15">총 근무시간</td>
-                        <td>근무시간 상세보기</td>
-                        <td class="td-10">승인내역</td>
+                        <td class="td-5">
+                            <input type="checkbox">
+                        </td>
+                        <td class="td-5">번호</td>
+                        <td class="td-10">설문상태</td>
+                        <td>설문제목</td>
+                        <td class="td-22">설문기간</td>
+                        <td class="td-10">설문작성자</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.17</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-progress">처리중</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>10</td>
+                        <td>진행중</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.16</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-progress">처리중</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>9</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.15</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>8</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.14</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>7</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.13</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>6</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.12</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>5</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.11</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>4</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.10</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>3</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.09</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>2</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center font14">
-                        <td>2020.09.08</td>
-                        <td>09:00:00</td>
-                        <td>18:20:00</td>
-                        <td>09H 20M 00S</td>
-                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
-                        <td><span class="attend-complete">완료</span></td>
+                        <td>
+                            <input type="checkbox">
+                        </td>
+                        <td>1</td>
+                        <td>종료</td>
+                        <td>연휴 사용 유효기간에 대한 설문조사</td>
+                        <td>2020.09.11 ~ 2020.09.18</td>
+                        <td>인사부장</td>
                     </tr>
                 </table>
-
-                <table class="m-t10">
-                    <tr class="center font14">
-                        <td class="td-10">총 근무일</td>
-                        <td class="td-20">총 근무시간</td>
-                        <td class="td-20">정규 근무시간</td>
-                        <td class="td-20">야간 근무시간</td>
-                        <td class="td-10">처리중</td>
-                        <td class="td-10">승인완료</td>
-                    </tr>
-                    <tr class="center font14">
-                        <td>10 일</td>
-                        <td>93H 20M 00S</td>
-                        <td>90H 00M 00S</td>
-                        <td>03H 20M 00S</td>
-                        <td>2 건</td>
-                        <td>8 건</td>
-                    </tr>
-                </table>
-
-                <span class="font12 m-t10" style="color:#f00;display: inline-block;">*근무일로부터 2~3일이내(주말/공휴일제외)로 승인처리됩니다.</span>
                 
             </div>
-            
+
+            <div class="page-grp">
+                <span class="page"><i class="fas fa-angle-left"></i></span>
+                <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                <span class="page active">1</span>
+                <span class="page">2</span>
+                <span class="page">3</span>
+                <span class="page">4</span>
+                <span class="page">5</span>
+
+                <span class="page"><i class="fas fa-angle-right"></i></span>
+                <span class="page"><i class="fas fa-angle-double-right"></i></span>
+            </div>
+
         </div>
         </div>
     </main>

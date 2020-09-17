@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+<style>
+    tr:first-child {
+        background-color: #005AA7;
+        color: #fff;
+    }
+    tr:nth-child(2n) {
+        background-color: #eee;
+    }
+
+    .attend-progress {
+        background-color:#f00;
+        border-radius: 2px;
+        padding: 4px 8px;
+        color:#fff;
+    }
+
+    .attend-complete {
+        background-color:#080;
+        border-radius: 2px;
+        padding: 4px 14px;
+        color:#fff;
+    }
+    
+    .arrow i {
+            font-size: 25px;
+            color: #2F7BBD;
+            vertical-align: middle;
+    }
+
+    .cal {
+        display: inline-block;
+        width: 150px;
+        height: 40px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 40px;
+        color:#2F7BBD;
+        font-weight: 700;
+        vertical-align: middle;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fab fa-digg"></i>
+            <span class="logo-admin">Adminator</span>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">사용자 관리
+                    <ul class="submenu">
+                        <li><a href="member_tbl.html">사용자 목록</a></li>
+                        <li><a href="member_tbl_insert.html">사용자 등록</a></li>
+                        <li><a href="applicant.html">사용자 신청 목록</a></li>
+                        <li><a href="admin_user_group.html">사용자 그룹 설정</a></li>
+                        <li><a href="member_chart.html">조직도 관리</a></li>
+                    </ul>
+                </li>
+                <li class="menu">전자결재
+                    <ul class="submenu">
+                        <li><a href="approval_main.html" target="_blank">전자결재시스템</a></li>
+                    </ul>
+                </li>
+                <li class="menu">게시판
+                    <ul class="submenu">
+                        <li><a href="board_list.html">게시판목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">일정관리
+                    <ul class="submenu">
+                        <li><a href="calendar_list.html">일정목록</a></li>
+                    </ul>
+                </li>
+                <li class="menu">근태관리
+                    <ul class="submenu">
+                        <li><a href="my_attend_status.html">내 근태현황</a></li>
+                        <li><a href="my_attend_info.html">내 인사정보</a></li>
+                    </ul>
+                </li>
+                <li class="menu">설문조사
+                    <ul class="submenu">
+                        <li><a href="survey_open.html">진행중인 설문</a>
+                        </li>
+                        <li><a href="survey_close.html">종료된 설문</a>
+                        </li>
+                        <li><a href="my_survey.html">내가 만든 설문</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu">자료실
+                    <ul class="submenu">
+                        <li><a href="file_upload.html">문서양식</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">자산관리
+                    <ul class="submenu">
+                        <li><a href="company_list_manage.html">자산관리</a></li>
+                        <li><a href="company_pc_manage.html">PC관리</a></li>
+                        <li><a href="company_goods_manage.html">물품관리</a></li>
+                        <li><a href="company_room_manage.html">회의실예약관리</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">회사정보
+                    <ul class="submenu">
+                        <li><a href="company_info.html">회사기본정보</a></li>
+                        <li><a href="company_info_register.html">회사기본정보 등록</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">환경설정
+                    <ul class="submenu">
+                        <li><a href="admin_list.html">관리자 목록</a></li>
+                        <li><a href="menu_setting.html">메뉴 설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            
+            <div class="contentHead">
+                <h3 class="font18">근태관리 > 내 근태현황</h3>
+            </div>
+
+            <div class="content-wrap">
+
+                <div class="">
+                    <span class="arrow">
+                        <a href="#">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                    </span>
+                    <span class="cal">
+                        2020년 9월
+                    </span>
+                    <span class="arrow">
+                        <a href="#">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </span>
+                </div>
+
+                <table>
+                    <tr class="center font14">
+                        <td class="td-10">일자</td>
+                        <td class="td-10">업무시작</td>
+                        <td class="td-10">업무종료</td>
+                        <td class="td-15">총 근무시간</td>
+                        <td>근무시간 상세보기</td>
+                        <td class="td-10">승인내역</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.17</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-progress">처리중</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.16</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-progress">처리중</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.15</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.14</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.13</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.12</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.11</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.10</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.09</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>2020.09.08</td>
+                        <td>09:00:00</td>
+                        <td>18:20:00</td>
+                        <td>09H 20M 00S</td>
+                        <td>정규 09h 00m 00s / 야간 00h 20m 00s</td>
+                        <td><span class="attend-complete">완료</span></td>
+                    </tr>
+                </table>
+
+                <table class="m-t10">
+                    <tr class="center font14">
+                        <td class="td-10">총 근무일</td>
+                        <td class="td-20">총 근무시간</td>
+                        <td class="td-20">정규 근무시간</td>
+                        <td class="td-20">야간 근무시간</td>
+                        <td class="td-10">처리중</td>
+                        <td class="td-10">승인완료</td>
+                    </tr>
+                    <tr class="center font14">
+                        <td>10 일</td>
+                        <td>93H 20M 00S</td>
+                        <td>90H 00M 00S</td>
+                        <td>03H 20M 00S</td>
+                        <td>2 건</td>
+                        <td>8 건</td>
+                    </tr>
+                </table>
+
+                <span class="font12 m-t10" style="color:#f00;display: inline-block;">*근무일로부터 2~3일이내(주말/공휴일제외)로 승인처리됩니다.</span>
+                
+            </div>
+            
+        </div>
+        </div>
+    </main>
+</body>
+</html>
