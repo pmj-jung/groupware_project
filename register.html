@@ -10,11 +10,13 @@
     <link rel="stylesheet" href="css/register.css">
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="js/register.js"></script>
 </head>
 
 <body>
     <header>
-        <div name="" id="" class="logo center">
+        <div class="logo center">
             <i class="fab fa-digg"></i>
         </div>
     </header>
@@ -25,37 +27,32 @@
             <h3 class="center">개인정보</h3>
 
             <p>아이디</p>
-            <input type="text" name="" id="userid" class="userid" required>
+            <input type="text" name="user-id" id="user-id" class="user-id" required>
 
             <p>비밀번호</p>
-            <input type="password" name="" id="userPwd" class="userPwd" required minlength="8">
+            <input type="password" name="user-pwd" id="user-pwd" class="user-pwd" required minlength="8">
+
+            <p>비밀번호 확인</p>
+            <input type="password" name="pwd-check" id="pwd-check" class="pwd-check" required minlength="8">
 
             <p>이름</p>
-            <input type="text" name="" id="userName" class="userName" required>
+            <input type="text" name="user-name" id="user-name" class="user-name" required>
 
-            <p>성별</p>
-            <div class="gender-wrap flex">
-                <span>남성</span>
-                <input type="radio" name="gender" value="male" checked>
-                <span>여성</span>
-                <input type="radio" name="gender" value="female">
-            </div>
-
-            <p>생년월일</p>
-            <div class="birth-wrap flex flex-justify">
-                <input type="text" name="" id="" class="userBirth_Y" placeholder="년(4자)">
-                <input type="text" name="" id="" class="userBirth_M" placeholder="월">
-                <input type="text" name="" id="" class="userBirth_D" placeholder="일">
+            <p>주민등록번호</p>
+            <div class="flex flex-justify">
+                <input size="7" type="text" id="user-id-num" style="width:45%;">
+                <p style="line-height: 35px;">-</p>
+                <input size="7" type="password" id="user-id-num-back" style="width:45%;">
             </div>
 
             <p>이메일</p>
-            <input type="text" name="" id="" class="userEmail" required>
+            <input type="text" name="" id="user-email" class="user-email" required>
 
             <p>휴대전화</p>
-            <input type="text" name="" id="" class="userCell" required>
+            <input type="text" name="" id="user-cell" class="user-cell" required>
 
             <p>주소</p>
-            <input type="text" name="" id="" class="userAddr">
+            <input type="text" name="" id="user-addr" class="user-addr">
 
             <hr />
 

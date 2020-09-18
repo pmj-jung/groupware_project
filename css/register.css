@@ -6,7 +6,6 @@ body {
     background: linear-gradient(to bottom right, #005AA7, #FFFDE4);
     background-repeat: no-repeat;
     background-size: cover;
-    /*100%로는 안되던데 어떻게해야 스크롤을 내려도 꽉차있는 상태가되죠*/
     font-family: 'Noto Sans KR', sans-serif;
 }
 
@@ -43,15 +42,6 @@ form h3 {
     border-radius: 2px;
     font-size: 14px;
     outline-color: #005AA7;
-}
-
-.gender-wrap {
-    margin: 5px auto;
-}
-
-.gender-wrap input {
-    width: 40px;
-    height: 25px;
 }
 
 .birth-wrap input,
