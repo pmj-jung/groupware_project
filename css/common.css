@@ -311,3 +311,8 @@ button {
     color:#A7005A;
     padding-bottom:10px;
 }
+
+/* display */
+.display-no {
+    display: none;
+}
