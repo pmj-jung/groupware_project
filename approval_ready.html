@@ -9,33 +9,12 @@
     <link rel="stylesheet" href="css/headNmenu.css">
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/board.css">  
+    <link rel="stylesheet" href="css/approval_system.css">
 
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
 </head>
-<style>
-    tr:first-child {
-        background-color: #005AA7;
-        color: #fff;
-    }
-    tr:nth-child(2n) {
-        background-color: #eee;
-    }
-    .approval_urgent {
-        background-color:#f00;
-        border-radius: 2px;
-        padding: 4px 8px;
-        color:#fff;
-    }
-
-    .approval_nonurgent {
-        background-color:#080;
-        border-radius: 2px;
-        padding: 4px 8px;
-        color:#fff;
-    }
-</style>
 <body>
     <header>
         <div class="logo">
@@ -81,28 +60,35 @@
     <main>
         <div class="menu-wrap">
             <ul>
-                <li class="menu">결재하기
+                <li class="menu">기안
+                    <ul class="submenu">
+                        <li><a href="approval_drafting.html">기안문 작성</a></li>
+                        <li><a href="approval_temporary_save.html">임시저장함</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">결재
                     <ul class="submenu">
                         <li><a href="approval_ready.html">결재 대기 문서</a></li>
-                        <li><a href="approval_status.html">결재 문서 상태</a>
-                        </li>
+                        <li><a href="approval_status.html">결재 진행 상태</a></li>
                         <li><a href="approval_ref.html">참조/열람 대기 문서</a></li>
+                        <li><a href="approval_complete.html">결재 완료 문서</a></li>
+                        <li><a href="approval_return.html">결재 반려 문서</a></li>
                     </ul>
-                </li>   
+                </li>
                 
                 <li class="menu">개인문서함
                     <ul class="submenu">
                         <li><a href="approval_send_save.html">발송 문서함</a></li>
-                        <li><a href="approval_receive_save.html">수신 문서함</a>
-                        </li>
+                        <li><a href="approval_receive_save.html">수신 문서함</a></li>
                         <li><a href="approval_ref_save.html">참조/열람 문서함</a></li>
-                        <li><a href="approval_temp_save.html">임시/보관 문서함</a></li>
                     </ul>
                 </li>
 
                 <li class="menu">문서양식함
                     <ul class="submenu">
                         <li><a href="approval_hr.html">인사부</a></li>
+                        <li><a href="approval_managesupport.html">경영지원실</a></li>
                     </ul>
                 </li>
 
@@ -111,7 +97,6 @@
                         <li><a href="approval_sign.html">기본설정</a></li>
                     </ul>
                 </li>
-
             </ul>
         </div>
 
@@ -119,8 +104,8 @@
             <div class="contentHead">
                 <h3 class="font18">결재하기 > 결재 대기 문서</h3>                
             </div>
-            <div class="member-tbl-btns flex flex-justify">
-                <div class="btn-grp">
+            <div class="btn-wrap flex flex-justify">
+                <div class="btns">
                     <button type="button" class="btn-on">일괄결재</button>
                     <button type="button" class="btn-off">결재문서작성</button>
                 </div>

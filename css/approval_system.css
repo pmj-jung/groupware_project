@@ -1,0 +1,51 @@
+@charset 'utf-8';
+
+/* tr:nth-child가 먼저, tr-first-child가 나중 */
+tr:nth-child(2n+1) {
+    background-color: #eee;
+}
+
+tr:first-child {
+    background-color: #005AA7;
+    color: #fff;
+}
+
+.approval_urgent {
+    background-color:#f00;
+    border-radius: 2px;
+    padding: 4px 8px;
+    color:#fff;
+}
+.approval_nonurgent {
+    background-color:#080;
+    border-radius: 2px;
+    padding: 4px 8px;
+    color:#fff;
+}
+
+.approval-status-s {
+    background-color:#080;
+    border-radius: 2px;
+    padding: 2px 4px;
+    color:#fff;
+}
+
+.approval-s {
+    border:0;
+    outline:0;
+    width:100%;
+    border-radius:2px;
+}
+
+.approval-s:hover {
+    background-color:#69A2D3;
+    color:#fff;
+    transition: 0.2s;
+}
+
+/* approval_main */
+.approval-ready-box {
+    border:1px solid #e7e7e7;
+    margin-right:10px;
+    min-width:200px;"
+}

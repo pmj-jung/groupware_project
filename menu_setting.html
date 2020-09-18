@@ -8,13 +8,23 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/headNmenu.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/temp.css">
 
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
 
 </head>
+<style>
+    .content-menu .menu:after, .content-menu li:after {
+    content: '●';
+    font-size: 1px;
+    color: #00f;
+    position: absolute;
+    right:0;
+    line-height: 40px;
+    margin-right:20px;
+    }
+</style>
 <body>
     <header>
         <div class="logo">
