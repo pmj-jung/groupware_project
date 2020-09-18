@@ -81,6 +81,9 @@ tr {
     width:22%;
 }
 
+.hover {
+    background-color: #2F7BBD;
+}
 
 /* page css */
 .page-grp {

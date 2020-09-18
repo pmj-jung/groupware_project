@@ -102,12 +102,12 @@
 
         <div class="mainContent">
             <div class="contentHead">
-                <h3 class="font18">결재 > 결재 대기 문서</h3>              
+                <h3 class="font18">결재 > 참조/열람 대기 문서</h3>              
             </div>
             <div class="btn-wrap flex flex-justify">
                 <div class="btns">
-                    <button type="button" class="btn-on">일괄결재</button>
-                    <button type="button" class="btn-off">결재문서작성</button>
+                    <button type="button" class="btn-on">읽음처리</button>
+                    <button type="button" class="btn-off">삭제</button>
                 </div>
                 <div class="search-box">
                     <form name="search-frm" class="search-frm" method="post" action="search.do">
@@ -128,6 +128,7 @@
                         <td class="td-10">기안일</td>
                         <td class="td-15">결재양식</td>
                         <td class="td-10">구분</td>
+                        <td class="td-10">참조/열람</td>
                         <td>문서제목</td>
                         <td class="td-8">문서번호</td>
                         <td class="td-8">기안자</td>
@@ -138,8 +139,9 @@
                         <td>2020.09.16</td>
                         <td>경영지원실>업무일지</td>
                         <td>
-                            <span style="color:#f00;">긴급</span>
+                            <span class="color-red weight700">긴급</span>
                         </td>
+                        <td>참조</td>
                         <td>[업무일지] 일일 업무일지 기안입니다</td>
                         <td>1600-0143</td>
                         <td>김대리</td>
@@ -152,6 +154,7 @@
                         <td>
                             <span>일반</span>
                         </td>
+                        <td>열람</td>
                         <td>[업무일지] 일일 업무일지 기안입니다</td>
                         <td>1100-0123</td>                     
                         <td>박사원</td>

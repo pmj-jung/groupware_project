@@ -102,14 +102,10 @@
 
         <div class="mainContent">
             <div class="contentHead">
-                <h3 class="font18">결재 > 결재 대기 문서</h3>              
+                <h3 class="font18">결재 > 결재 진행 상태</h3>              
             </div>
             <div class="btn-wrap flex flex-justify">
-                <div class="btns">
-                    <button type="button" class="btn-on">일괄결재</button>
-                    <button type="button" class="btn-off">결재문서작성</button>
-                </div>
-                <div class="search-box">
+                <div class="search-box" style="width:100%; flex-direction: row-reverse;">
                     <form name="search-frm" class="search-frm" method="post" action="search.do">
                         <select class="sel">
                             <option value="">기안자</option>
@@ -124,38 +120,64 @@
             <div class="table-wrap">
                 <table>
                     <tr class="center">
-                        <td class="td-5"><input type="checkbox"></td>
+                        <td class="td-5">번호</td>
+                        <td class="td-8">현재상태</td>
                         <td class="td-10">기안일</td>
-                        <td class="td-15">결재양식</td>
-                        <td class="td-10">구분</td>
-                        <td>문서제목</td>
+                        <td class="td-10">결재양식</td>
+                        <td class="td-7">구분</td>
+                        <td class="">문서제목</td>
                         <td class="td-8">문서번호</td>
                         <td class="td-8">기안자</td>
                         <td class="td-8">첨부파일</td>
+                        <td class="td-8">현재결재자</td>
                     </tr>
                     <tr class="center">
-                        <td><input type="checkbox"></td>
-                        <td>2020.09.16</td>
-                        <td>경영지원실>업무일지</td>
+                        <td>3</td>
                         <td>
-                            <span style="color:#f00;">긴급</span>
+                            <span class="approval-progress">진행중</span>
                         </td>
-                        <td>[업무일지] 일일 업무일지 기안입니다</td>
-                        <td>1600-0143</td>
-                        <td>김대리</td>
+                        <td>2020.09.18</td>
+                        <td>기안서</td>
+                        <td>
+                            <span class="color-red weight700">긴급</span>
+                        </td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
                         <td>-</td>
+                        <td>인사부장</td>
                     </tr>
                     <tr class="center">
-                        <td><input type="checkbox"></td>
-                        <td>2020.09.16</td>
-                        <td>인사부>업무일지</td>
+                        <td>2</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.18</td>
+                        <td>기안서</td>
                         <td>
                             <span>일반</span>
                         </td>
-                        <td>[업무일지] 일일 업무일지 기안입니다</td>
-                        <td>1100-0123</td>                     
-                        <td>박사원</td>
+                        <td>9월 영업부 기안서</td>
+                        <td>2020-1130</td>
+                        <td>영업부장</td>
                         <td>-</td>
+                        <td>사장</td>
+                    </tr>
+                    <tr class="center">
+                        <td>1</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.18</td>
+                        <td>품의서</td>
+                        <td>
+                            <span>일반</span>
+                        </td>
+                        <td>10월 물품 구매 품의서</td>
+                        <td>2020-0100</td>
+                        <td>구매부장</td>
+                        <td>-</td>
+                        <td>구매부장</td>
                     </tr>
                 </table>
             </div>

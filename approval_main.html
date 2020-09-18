@@ -15,11 +15,16 @@
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/table.js"></script>
 </head>
 <style>
     tr:first-child {
         background-color: #005AA7;
         color: #fff;
+    }
+    
+    .tr-even {
+        background-color:#eff3f9;
     }
 </style>
 <body>
@@ -111,12 +116,11 @@
             <div class="contentHead">
                 <h3 class="font18">전자결재시스템 메인화면</h3>
             </div>
-            <div class="approval-ready-wrap bg-white p10">
+            <div class="approval-ready-wrap bg-white p10" style="border:1px solid #e7e7e7;">
                 
                 <h2 class="p-b10">
                     <a href="approval_ready.html">결재 대기 문서</a>
                 </h2>
-               
                 
                 <div class="flex" style="flex-wrap: nowrap; overflow-x: auto;">
                     <div class="approval-ready-box p10">
@@ -201,7 +205,7 @@
                     </div>
                 </div>
             </div>
-            <div class="approval-status-wrap bg-white p10 m-t10">
+            <div class="approval-status-wrap bg-white p10 m-t10" style="border:1px solid #e7e7e7;">
                 <h2 class="p-b10">
                     <a href="approval_status.html">결재 진행 상태</a>
                 </h2>
@@ -223,7 +227,7 @@
                             <td>2020.09.10</td>
                             <td>기안서</td>
                             <td>
-                                <span class="approval_urgent">긴급</span>
+                                <span class="color-red weight700">긴급</span>
                             </td>
                             <td>인사부 기안서</td>
                             <td>인사부</td>
@@ -235,7 +239,7 @@
                             <td>2020.09.10</td>
                             <td>기안서</td>
                             <td>
-                                <span class="approval_nonurgent">일반</span>
+                                <span>일반</span>
                             </td>
                             <td>인사부 기안서</td>
                             <td>인사부</td>
@@ -244,7 +248,7 @@
                     </table>
                 </div>
             </div>
-            <div class="approval-ref-wrap bg-white p10 m-t10">
+            <div class="approval-ref-wrap bg-white p10 m-t10" style="border:1px solid #e7e7e7;">
                 <h2 class="p-b10">
                     <a href="approval_ref.html">참조/열람 대기 문서</a>                    
                 </h2>
@@ -265,7 +269,7 @@
                             <td>2020.09.10</td>
                             <td>기안서</td>
                             <td>
-                                <span class="approval_urgent">긴급</span>
+                                <span class="color-red weight700">긴급</span>
                             </td>
                             <td>인사부 기안서</td>
                             <td>인사부</td>
@@ -276,7 +280,7 @@
                             <td>2020.09.10</td>
                             <td>기안서</td>
                             <td>
-                                <span class="approval_nonurgent">일반</span>
+                                <span>일반</span>
                             </td>
                             <td>인사부 기안서</td>
                             <td>인사부</td>

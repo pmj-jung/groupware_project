@@ -12,7 +12,6 @@
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
-    <script src="js/table.js"></script>
 </head>
 
 <style>
@@ -20,8 +19,8 @@
         background-color: #005AA7;
         color: #fff;
     }
-    .tr-even {
-        background-color:#eff3f9;
+    tr:nth-child(2n) {
+        background-color: #eee;
     }
 </style>
 
@@ -137,19 +136,24 @@
 
         <div class="mainContent">
             <div class="contentHead">
-                <h3 class="font18">사용자 관리 > 사용자 목록</h3>
+                <h3 class="font18">자료실 > 문서양식</h3>
             </div>
             <div class="btn-wrap flex flex-justify">
                 <div class="btns">
-                    <button type="button" class="btn-on">선택승인</button>
-                    <button type="button" class="btn-off">선택거부</button>
-                    <button type="button" class="btn-del">선택삭제</button>
+                    <button type="button" class="btn-on font14">
+                        <i class="fas fa-folder-plus"></i> 새폴더
+                    </button>
+                    <button type="button" class="btn-off font14">
+                        <i class="fas fa-exchange-alt"></i> 이동
+                    </button>
+                    <button type="button" class="btn-off font14">
+                        <i class="far fa-trash-alt"></i> 삭제
+                    </button>
                 </div>
                 <div class="search-box">
                     <form name="search-frm" class="search-frm" method="post" action="search.do">
                         <select class="sel">
-                            <option value="">아이디</option>
-                            <option value="">신청자</option>
+                            <option value="">이름</option>
                             <option value="">부서명</option>
                         </select>
                         <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
@@ -160,115 +164,67 @@
             <div class="member-tbl">
                 <table>
                     <tr class="center">
-                        <td class="td-3"><input type="checkbox"></td>
-                        <td class="td-8">신청일</td>
-                        <td class="td-8">신청 아이디</td>
-                        <td class="td-8">신청자</td>
-                        <td class="td-8">부서</td>
-                        <td class="td-15">이메일</td>
-                        <td class="td-15">전화번호</td>
-                        <td class="">거부사유</td>
-                        <td class="">관리</td>
+                        <td class="td-5"><input type="checkbox"></td>
+                        <td class="">문서명</td>
+                        <td class="td-15">크기</td>
+                        <td class="td-10">확장자</td>
+                        <td class="td-15">등록일</td>
+                        <td class="td-15">최근수정일</td>
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020/09/04</td>
-                        <td>allwid4993</td>
-                        <td>이신입</td>
-                        <td>영업2팀</td>
-                        <td>kim4one@jyp.co.kr</td>
-                        <td>01055783321</td>
-                        <td>
-                            <select name="" id="" class="sel-100">
-                                <option value="">사유1</option>
-                                <option value="">사유2</option>
-                            </select>
+                        <td class="left">
+                            <i class="far fa-folder"></i>
+                            영업부 문서양식
                         </td>
-                        <td>
-                            <button type="button" class="s-btn-on">승인</button>
-                            <button type="button" class="s-btn-off">거부</button>
-                            <button type="button" class="s-btn-del">삭제</button>
-                        </td>
+                        <td>2,200KB</td>
+                        <td>폴더</td>
+                        <td>2019.05.03</td>
+                        <td>2019.10.08</td>                        
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020/09/03</td>
-                        <td>adlibke0066</td>
-                        <td>박구입</td>
-                        <td>홍보1팀</td>
-                        <td>kllde3@naver.com</td>
-                        <td>01055793221</td>
-                        <td>
-                            <select name="" id="" class="sel-100">
-                                <option value="">사유1</option>
-                                <option value="">사유2</option>
-                            </select>
+                        <td class="left">
+                            <i class="far fa-folder"></i>
+                            구매부 문서양식
                         </td>
-                        <td>
-                            <button type="button" class="s-btn-on" onClick="location.href=''">승인</button>
-                            <button type="button" class="s-btn-off">거부</button>
-                            <button type="button" class="s-btn-del">삭제</button>
-                        </td>
+                        <td>2,200KB</td>
+                        <td>폴더</td>
+                        <td>2019.05.03</td>
+                        <td>2019.10.08</td>                        
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020/09/04</td>
-                        <td>allwid4993</td>
-                        <td>이신입</td>
-                        <td>영업2팀</td>
-                        <td>kim4one@jyp.co.kr</td>
-                        <td>01055783321</td>
-                        <td>
-                            <select name="" id="" class="sel-100">
-                                <option value="">사유1</option>
-                                <option value="">사유2</option>
-                            </select>
+                        <td class="left">
+                            <i class="far fa-folder"></i>
+                            인사부 문서양식
                         </td>
-                        <td>
-                            <button type="button" class="s-btn-on">승인</button>
-                            <button type="button" class="s-btn-off">거부</button>
-                            <button type="button" class="s-btn-del">삭제</button>
-                        </td>
+                        <td>2,200KB</td>
+                        <td>폴더</td>
+                        <td>2019.05.03</td>
+                        <td>2019.10.08</td>                        
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020/09/04</td>
-                        <td>allwid4993</td>
-                        <td>이신입</td>
-                        <td>영업2팀</td>
-                        <td>kim4one@jyp.co.kr</td>
-                        <td>01055783321</td>
-                        <td>
-                            <select name="" id="" class="sel-100">
-                                <option value="">사유1</option>
-                                <option value="">사유2</option>
-                            </select>
+                        <td class="left">
+                            <i class="far fa-folder"></i>
+                            경영지원실 문서양식
                         </td>
-                        <td>
-                            <button type="button" class="s-btn-on">승인</button>
-                            <button type="button" class="s-btn-off">거부</button>
-                            <button type="button" class="s-btn-del">삭제</button>
-                        </td>
+                        <td>2,200KB</td>
+                        <td>폴더</td>
+                        <td>2019.05.03</td>
+                        <td>2019.10.08</td>                        
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020/09/04</td>
-                        <td>allwid4993</td>
-                        <td>이신입</td>
-                        <td>영업2팀</td>
-                        <td>kim4one@jyp.co.kr</td>
-                        <td>01055783321</td>
-                        <td>
-                            <select name="" id="" class="sel-100">
-                                <option value="">사유1</option>
-                                <option value="">사유2</option>
-                            </select>
+                        <td class="left">
+                            <i class="far fa-folder"></i>
+                            재무부 문서양식
                         </td>
-                        <td>
-                            <button type="button" class="s-btn-on">승인</button>
-                            <button type="button" class="s-btn-off">거부</button>
-                            <button type="button" class="s-btn-del">삭제</button>
-                        </td>
+                        <td>2,200KB</td>
+                        <td>폴더</td>
+                        <td>2019.05.03</td>
+                        <td>2019.10.08</td>                        
                     </tr>
 
                 </table>

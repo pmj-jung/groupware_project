@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/approval_system.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+</head>
+
+<style>
+    /* modal css */
+    .modal-wrapper {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        visibility: hidden;
+        /* 눌렀을 때 나와야 하니깐 = visibility */
+        transition: 0.3s;
+    }
+
+    .modal-wrapper.open {
+        visibility: visible;
+        opacity: 1;
+        transition: 0.3s;
+    }
+
+    .modal-wrapper.open .modal {
+        opacity: 1;
+    }
+
+    .modal {
+        width: 800px;
+        height: 800px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        opacity: 0;
+        border-radius: 5px;
+        padding: 20px;
+
+        box-shadow: -60px 0px 100px -90px #000,
+            60px 0px 100px -90px #000;
+    }
+
+    /* //modal css */
+</style>
+
+<script>
+    $(function () {
+        $(".popup").click(function () {
+            $(".modal-wrapper").toggleClass("open");
+        });
+    });
+</script>
+
+<body>
+    <div class="modal-wrapper">
+        <div class="modal flex flex-justify flex-wrap" style="align-content: flex-start;">
+            <h2>수임자의 결재내역</h2>
+            <a href="" class="popup font20">
+                <i class="fas fa-window-close"> 창닫기</i>
+            </a>
+            <div class="table-wrap m-t20 flex" style="width:100%;height:700px;flex-wrap: nowrap; overflow-y: auto;">
+                <table>
+                    <tr class="center">
+                        <td class="td-5">번호</td>
+                        <td class="td-8">현재상태</td>
+                        <td class="td-10">기안일</td>
+                        <td class="td-10">결재일</td>
+                        <td class="">문서제목</td>
+                        <td class="td-10">문서번호</td>
+                        <td class="td-8">기안자</td>
+                        <td class="td-8">상세보기</td>
+                    </tr>
+                    <tr class="center">
+                        <td>18</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.15</td>
+                        <td>2020.09.16</td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>17</td>
+                        <td>
+                            <span class="approval-progress">진행중</span>
+                        </td>
+                        <td>2020.09.13</td>
+                        <td>미결재</td>
+                        <td>9월 인사부 업무일지</td>
+                        <td>2020-1120</td>
+                        <td>인사부</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>16</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.11</td>
+                        <td>반려</td>
+                        <td>10월 자재 구매 품의서</td>
+                        <td>2020-1120</td>
+                        <td>구매부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>15</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.15</td>
+                        <td>2020.09.16</td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>14</td>
+                        <td>
+                            <span class="approval-progress">진행중</span>
+                        </td>
+                        <td>2020.09.13</td>
+                        <td>미결재</td>
+                        <td>9월 인사부 업무일지</td>
+                        <td>2020-1120</td>
+                        <td>인사부</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>13</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.11</td>
+                        <td>반려</td>
+                        <td>10월 자재 구매 품의서</td>
+                        <td>2020-1120</td>
+                        <td>구매부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>12</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.15</td>
+                        <td>2020.09.16</td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>11</td>
+                        <td>
+                            <span class="approval-progress">진행중</span>
+                        </td>
+                        <td>2020.09.13</td>
+                        <td>미결재</td>
+                        <td>9월 인사부 업무일지</td>
+                        <td>2020-1120</td>
+                        <td>인사부</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>10</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.11</td>
+                        <td>반려</td>
+                        <td>10월 자재 구매 품의서</td>
+                        <td>2020-1120</td>
+                        <td>구매부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>9</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.15</td>
+                        <td>2020.09.16</td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>8</td>
+                        <td>
+                            <span class="approval-progress">진행중</span>
+                        </td>
+                        <td>2020.09.13</td>
+                        <td>미결재</td>
+                        <td>9월 인사부 업무일지</td>
+                        <td>2020-1120</td>
+                        <td>인사부</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>7</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.11</td>
+                        <td>반려</td>
+                        <td>10월 자재 구매 품의서</td>
+                        <td>2020-1120</td>
+                        <td>구매부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>6</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.15</td>
+                        <td>2020.09.16</td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>5</td>
+                        <td>
+                            <span class="approval-progress">진행중</span>
+                        </td>
+                        <td>2020.09.13</td>
+                        <td>미결재</td>
+                        <td>9월 인사부 업무일지</td>
+                        <td>2020-1120</td>
+                        <td>인사부</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>4</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.11</td>
+                        <td>반려</td>
+                        <td>10월 자재 구매 품의서</td>
+                        <td>2020-1120</td>
+                        <td>구매부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>3</td>
+                        <td>
+                            <span class="approval-complete">완료</span>
+                        </td>
+                        <td>2020.09.15</td>
+                        <td>2020.09.16</td>
+                        <td>9월 인사부 기안서</td>
+                        <td>2020-1120</td>
+                        <td>인사부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>2</td>
+                        <td>
+                            <span class="approval-progress">진행중</span>
+                        </td>
+                        <td>2020.09.13</td>
+                        <td>미결재</td>
+                        <td>9월 인사부 업무일지</td>
+                        <td>2020-1120</td>
+                        <td>인사부</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                    <tr class="center">
+                        <td>1</td>
+                        <td>
+                            <span class="approval-return">반려</span>
+                        </td>
+                        <td>2020.09.11</td>
+                        <td>반려</td>
+                        <td>10월 자재 구매 품의서</td>
+                        <td>2020-1120</td>
+                        <td>구매부장</td>
+                        <td>
+                            <button type="button" class="s-btn-off">이동</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </div>
+
+    <header>
+        <div class="logo">
+            <a href="adminhome.html">
+                <i class="fab fa-digg"></i>
+                <span class="logo-admin">Adminator</span>
+            </a>
+        </div>
+
+        <div class="logo-approval-home">
+            <a href="approval_main.html">
+                <span>전자결재시스템</span>
+            </a>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;"
+                                onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">기안
+                    <ul class="submenu">
+                        <li><a href="approval_drafting.html">기안문 작성</a></li>
+                        <li><a href="approval_temporary_save.html">임시저장함</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">결재
+                    <ul class="submenu">
+                        <li><a href="approval_ready.html">결재 대기 문서</a></li>
+                        <li><a href="approval_status.html">결재 진행 상태</a></li>
+                        <li><a href="approval_ref.html">참조/열람 대기 문서</a></li>
+                        <li><a href="approval_complete.html">결재 완료 문서</a></li>
+                        <li><a href="approval_return.html">결재 반려 문서</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">개인문서함
+                    <ul class="submenu">
+                        <li><a href="approval_send_save.html">발송 문서함</a></li>
+                        <li><a href="approval_receive_save.html">수신 문서함</a></li>
+                        <li><a href="approval_ref_save.html">참조/열람 문서함</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">문서양식함
+                    <ul class="submenu">
+                        <li><a href="approval_hr.html">인사부</a></li>
+                        <li><a href="approval_managesupport.html">경영지원실</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">결재환경설정
+                    <ul class="submenu">
+                        <li><a href="approval_sign.html">기본설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            <div class="contentHead">
+                <h3 class="font18">결재환경설정 > 기본설정</h3>
+            </div>
+
+            <div class="sign-register m-t20">
+                <h3>1. 서명 관리</h3>
+                <div class="flex">
+                    <div class="img-wrap p20">
+                        <img src="images/sign/stamp.png" alt="">
+                    </div>
+                    <div>
+                        <div class="bg-white flex flex-justify" style="align-content: center;">
+                            <input type="file" style="widht:100%;">
+                            <button class="btn-off">저장</button>
+                        </div>
+                        <div class="" style="color:tomato;">
+                            <span class="" style="line-height: 35px;">* 서명은 최대 55px * 40px이며 사이즈가 크면 자동으로 비율이
+                                조정됩니다.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="approval-env">
+                <h3>2. 부재/위임 설정</h3>
+                <div class="btn-wrap flex flex-justify">
+                    <div class="btns">
+                        <button type="button" class="btn-on">추가</button>
+                        <button type="button" class="btn-off">삭제</button>
+                    </div>
+                    <div class="search-box">
+                        <form name="search-frm" class="search-frm" method="post" action="search.do">
+                            <select class="sel">
+                                <option value="">기안자</option>
+                                <option value="">문서제목</option>
+                                <option value="">문서번호</option>
+                            </select>
+                            <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
+                            <button type="submit" class="search-btn">문서검색</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <tr class="center">
+                            <td class="td-5">
+                                <input type="checkbox">
+                            </td>
+                            <td class="td-15">부재/위임 시작일</td>
+                            <td class="td-15">부재/위임 종료일</td>
+                            <td class="td-10">부재/위임자</td>
+                            <td class="td-10">대리/수임자</td>
+                            <td>부재/위임 사유</td>
+                            <td class="td-10">결재내역</td>
+                            <td class="td-10">사용여부</td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>2020.09.17</td>
+                            <td>2020.09.20</td>
+                            <td>김휴가</td>
+                            <td>홍대리</td>
+                            <td>업무 출장</td>
+                            <td>
+                                <button type="button" class="popup btn-off">상세보기</button>
+                            </td>
+                            <td>사용중</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="page-grp">
+                    <span class="page"><i class="fas fa-angle-left"></i></span>
+                    <span class="page"><i class="fas fa-angle-double-left"></i></span>
+
+                    <span class="page active">1</span>
+                    <span class="page">2</span>
+                    <span class="page">3</span>
+                    <span class="page">4</span>
+                    <span class="page">5</span>
+
+                    <span class="page"><i class="fas fa-angle-right"></i></span>
+                    <span class="page"><i class="fas fa-angle-double-right"></i></span>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

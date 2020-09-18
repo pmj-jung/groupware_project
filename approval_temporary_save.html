@@ -102,12 +102,12 @@
 
         <div class="mainContent">
             <div class="contentHead">
-                <h3 class="font18">결재 > 결재 대기 문서</h3>              
+                <h3 class="font18">기안 > 임시저장함</h3>              
             </div>
             <div class="btn-wrap flex flex-justify">
                 <div class="btns">
-                    <button type="button" class="btn-on">일괄결재</button>
-                    <button type="button" class="btn-off">결재문서작성</button>
+                    <button type="button" class="btn-on">선택삭제</button>
+                    <button type="button" class="btn-off">전체삭제</button>
                 </div>
                 <div class="search-box">
                     <form name="search-frm" class="search-frm" method="post" action="search.do">
@@ -125,37 +125,43 @@
                 <table>
                     <tr class="center">
                         <td class="td-5"><input type="checkbox"></td>
-                        <td class="td-10">기안일</td>
-                        <td class="td-15">결재양식</td>
+                        <td class="td-10">마지막 작성일</td>
+                        <td class="td-10">결재양식</td>
                         <td class="td-10">구분</td>
                         <td>문서제목</td>
                         <td class="td-8">문서번호</td>
-                        <td class="td-8">기안자</td>
                         <td class="td-8">첨부파일</td>
+                        <td class="td-10">관리</td>
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
                         <td>2020.09.16</td>
-                        <td>경영지원실>업무일지</td>
+                        <td>기안서</td>
                         <td>
-                            <span style="color:#f00;">긴급</span>
+                            <span class="color-red weight700">긴급</span>
                         </td>
-                        <td>[업무일지] 일일 업무일지 기안입니다</td>
+                        <td>업무일지 기안입니다.</td>
                         <td>1600-0143</td>
-                        <td>김대리</td>
                         <td>-</td>
+                        <td>
+                            <button type="button" class="s-btn-on">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
                         <td>2020.09.16</td>
-                        <td>인사부>업무일지</td>
+                        <td>품의서</td>
                         <td>
                             <span>일반</span>
                         </td>
-                        <td>[업무일지] 일일 업무일지 기안입니다</td>
+                        <td>8월 구매품의서입니다</td>
                         <td>1100-0123</td>                     
-                        <td>박사원</td>
                         <td>-</td>
+                        <td>
+                            <button type="button" class="s-btn-on">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
                 </table>
             </div>

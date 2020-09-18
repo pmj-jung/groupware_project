@@ -25,6 +25,10 @@
     font-weight: 700;
 }
 
+.color-red {
+    color:#f00;
+}
+
 /* margin */
 .m-t10 {
     margin-top:10px;

@@ -13,45 +13,46 @@
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
+    <script src="js/table.js"></script>
 </head>
 <style>
-.user-list-wrap, .admin-list-wrap {
-    width:49.5%;
-    border: 1px solid #ccc;
-}
+    .user-list-wrap, .admin-list-wrap {
+        width:49.5%;
+        border: 1px solid #ccc;
+    }
 
-.search-input {
-    height:25px;
-    width:100%;
-    margin-right:5px;
-}
+    .search-input {
+        height:25px;
+        width:100%;
+        margin-right:5px;
+    }
 
-/* table css */
+    /* table css */
 
-thead, tbody tr {
-    display:table;
-    width:100%;
-    table-layout:fixed;/* even columns width , fix width of table too*/
-}
+    thead, tbody tr {
+        display:table;
+        width:100%;
+        table-layout:fixed;/* even columns width , fix width of table too*/
+    }
 
-thead {
-    width: 100%;/* scrollbar is average 1em/16px width, remove it from thead width */
-}
+    thead {
+        width: 100%;/* scrollbar is average 1em/16px width, remove it from thead width */
+    }
 
-tbody {
-    display:block;
-    width:100%;
-    height:400px;
-    overflow-y: auto;
-}
+    tbody {
+        display:block;
+        width:100%;
+        height:400px;
+        overflow-y: auto;
+    }
 
-thead tr:first-child {
-    background-color: #005AA7;
-    color: #fff;
-}
-tr:nth-child(2n) {
-    background-color: #eee;
-}
+    thead tr:first-child {
+        background-color: #005AA7;
+        color: #fff;
+    }
+    .tr-even {
+        background-color:#eff3f9;
+    }
 </style>
 <body>
     <header>
