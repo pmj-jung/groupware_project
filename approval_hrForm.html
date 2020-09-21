@@ -112,22 +112,22 @@
 
         <div class="mainContent">
             <div class="contentHead">
-                <h3 class="font18">결재 > 참조/열람 대기 문서</h3>              
+                <h3 class="font18">문서양식함 > 인사부</h3>              
             </div>
             <div class="btn-wrap flex flex-justify">
                 <div class="btns">
-                    <button type="button" class="btn-on">읽음처리</button>
-                    <button type="button" class="btn-off">삭제</button>
+                    <button type="button" class="btn-on" onclick="location.href='approval_createForm_hr.html'">신규양식등록</button>
+                    <button type="button" class="btn-off">미사용 전환</button>
                 </div>
                 <div class="search-box">
                     <form name="search-frm" class="search-frm" method="post" action="search.do">
                         <select class="sel">
-                            <option value="">기안자</option>
-                            <option value="">문서제목</option>
-                            <option value="">문서번호</option>
+                            <option value="form-class">양식 구분</option>
+                            <option value="form-subject">양식명</option>
+                            <option value="form-id">문서코드</option>
                         </select>
                         <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
-                        <button type="submit" class="search-btn">문서검색</button>
+                        <button type="submit" class="search-btn">검색</button>
                     </form>
                 </div>
             </div>
@@ -135,40 +135,41 @@
                 <table>
                     <tr class="center">
                         <td class="td-5"><input type="checkbox"></td>
-                        <td class="td-10">기안일</td>
-                        <td class="td-15">결재양식</td>
-                        <td class="td-10">구분</td>
-                        <td class="td-10">참조/열람</td>
-                        <td>문서제목</td>
-                        <td class="td-8">문서번호</td>
-                        <td class="td-8">기안자</td>
-                        <td class="td-8">첨부파일</td>
+                        <td class="td-10">문서코드</td>
+                        <td class="td-10">양식 구분</td>
+                        <td>양식명</td>
+                        <td class="td-8">작성일</td>
+                        <td class="td-8">최종수정일</td>
+                        <td class="td-8">사용여부</td>
+                        <td class="td-10">관리</td>
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020.09.16</td>
-                        <td>경영지원실>업무일지</td>
+                        <td>HR-0001</td>
+                        <td>업무일지</td>
+                        <td>09월 하반기 인사부 업무일지</td>
+                        <td>2015.08.06</td>
+                        <td>2018.09.28</td>
                         <td>
-                            <span class="color-red weight700">긴급</span>
+                            <span class="approval-status-on">사용중</span></td>
+                        <td>
+                            <button type="button" class="s-btn-on">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
                         </td>
-                        <td>참조</td>
-                        <td>[업무일지] 일일 업무일지 기안입니다</td>
-                        <td>1600-0143</td>
-                        <td>김대리</td>
-                        <td>-</td>
                     </tr>
                     <tr class="center">
                         <td><input type="checkbox"></td>
-                        <td>2020.09.16</td>
-                        <td>인사부>업무일지</td>
+                        <td>HR-0100</td>
+                        <td>품의</td>
+                        <td>인사부 소모품 구매관련 품의서</td>
+                        <td>2012.08.06</td>
+                        <td>2019.10.28</td>
                         <td>
-                            <span>일반</span>
+                            <span class="approval-status-on">사용중</span></td>
+                        <td>
+                            <button type="button" class="s-btn-on">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
                         </td>
-                        <td>열람</td>
-                        <td>[업무일지] 일일 업무일지 기안입니다</td>
-                        <td>1100-0123</td>                     
-                        <td>박사원</td>
-                        <td>-</td>
                     </tr>
                 </table>
             </div>

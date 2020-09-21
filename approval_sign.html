@@ -424,8 +424,8 @@
 
                 <li class="menu">문서양식함
                     <ul class="submenu">
-                        <li><a href="approval_hr.html">인사부</a></li>
-                        <li><a href="approval_managesupport.html">경영지원실</a></li>
+                        <li><a href="approval_commonForm.html">공통문서양식함</a></li>
+                        <li><a href="approval_hrForm.html">인사부</a></li>
                     </ul>
                 </li>
 
@@ -443,20 +443,14 @@
             </div>
 
             <div class="sign-register m-t20">
-                <h3>1. 서명 관리</h3>
-                <div class="flex">
+                <h3 style="width:100%;">1. 서명 관리</h3>
+                <div class="bg-white" style="display: inline-block;">
+                    <input type="file">
+                    <button class="btn-off">저장</button>
+                    <span class="" style="line-height: 35px;color:tomato;">* 서명은 최대 55px * 40px이며 사이즈가 크면 자동으로 비율이
+                        조정됩니다.</span>
                     <div class="img-wrap p20">
                         <img src="images/sign/stamp.png" alt="">
-                    </div>
-                    <div>
-                        <div class="bg-white flex flex-justify" style="align-content: center;">
-                            <input type="file" style="widht:100%;">
-                            <button class="btn-off">저장</button>
-                        </div>
-                        <div class="" style="color:tomato;">
-                            <span class="" style="line-height: 35px;">* 서명은 최대 55px * 40px이며 사이즈가 크면 자동으로 비율이
-                                조정됩니다.</span>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -505,7 +499,41 @@
                             <td>
                                 <button type="button" class="popup btn-off">상세보기</button>
                             </td>
-                            <td>사용중</td>
+                            <td>
+                                <span class="approval-status-on">사용중</span>
+                            </td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>2020.07.21</td>
+                            <td>2020.07.23</td>
+                            <td>이부장</td>
+                            <td>김대리</td>
+                            <td>병가</td>
+                            <td>
+                                <button type="button" class="popup btn-off">상세보기</button>
+                            </td>
+                            <td>
+                                <span class="approval-status-off">종료</span>
+                            </td>
+                        </tr>
+                        <tr class="center font14">
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>2020.05.06</td>
+                            <td>2020.05.12</td>
+                            <td>최사원</td>
+                            <td>성대리</td>
+                            <td>외부 출장</td>
+                            <td>
+                                <button type="button" class="popup btn-off">상세보기</button>
+                            </td>
+                            <td>
+                                <span class="approval-status-off">종료</span>
+                            </td>
                         </tr>
                     </table>
                 </div>
