@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/jquery.treeview.css">
     <link rel="stylesheet" href="css/zTreeStyle.css">
-    <link rel="stylesheet" href="css/approval_system.css">
 
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -201,27 +200,53 @@
         </div>
 
         <div class="mainContent">
+            
             <div class="contentHead">
                 <h3 class="font18">기안 > 기안문 작성</h3>
             </div>
-            <div class="flex flex-justify">
-                <!-- 문서 폼 분류 -->
-                <div class="bg-white" style="width:25%;border:1px solid #e7e7e7;">
-                    <h3>결재 양식 선택</h3>
-                    <div class="form-list">
-                        <ul id="ztree" class="ztree">
+            <form action="" method="POST">
+                <div class="form-box" style="height:600px;">
+                    <div class="flex flex-justify">
+                        <!-- 문서 폼 분류 -->
+                        <div class="bg-white p10" style="width:25%;border:1px solid #e7e7e7;">
+                            <h3>결재 양식 선택</h3>
+                            <div class="form-list">
+                                <ul id="ztree" class="ztree">
 
-                        </ul>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 문서 폼 -->
+                        <div class="bg-white p10" style="width:74%;border:1px solid #e7e7e7;">
+                            <h3 class="m-b10">문서 작성</h3>
+                            <div class="" style="width:900px;border:1px solid #e7e7e7;margin:0 10px;padding:20px;">
+                                <iframe width="900px" 
+                                        height="500px"
+                                        id="formIframe" 
+                                        name="formIframe" 
+                                        src="html/sample.html" 
+                                        scrolling="auto" 
+                                        frameborder="0">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p10 m-t10" style="width:100%;">
+                        <h3>결재 라인</h3>
+                        <div class="">
+
+                        </div>
+                    </div>
+                    
+                    <div class="btn m-t10">
+                        <button type="submit" class="btn-on">결재요청</button>
+                        <button type="reset" class="btn-off">임시저장</button>
+                        <button type="button" class="btn-off">취소</button>
                     </div>
                 </div>
 
-                <!-- 문서 폼 -->
-                <div class="bg-white" style="width:74%;border:1px solid #e7e7e7;">
-                    <h3>문서 작성</h3>
-                </div>
-            </div>
-            
-            
+            </form>
         </div>
     </main>
 </body>
