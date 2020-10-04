@@ -21,7 +21,6 @@
         </div>
     </header>
     <main class="p-tb20">
-
         <form name="" method="post" class="register p-tb20 p-lr40 flex flex-justify flex-wrap">
             <div class="form-left" style="width:48%;">
                 <div class="h2-wrap">
@@ -80,27 +79,30 @@
                     <h2 class="center">회사정보</h2>
                 </div>
                 <div class="deptNrank flex flex-justify m-b10">
-                    <p>부서</p>
-                    <select id="dept" class="dept" required>
-                        <option value="" selected disabled hidden>선택</option>
-                        <option value="salesDept">영업부</option>
-                        <option value="hrDept">인사부</option>
-                        <option value="developDept">개발부</option>
-                        <option value="MADept">경영지원실</option>
-                    </select>
-
-                    <p>직급</p>
-                    <select id="rank" class="rank" required>
-                        <option value="" selected disabled hidden>선택</option>
-                        <option value="execDir">전무이사</option>
-                        <option value="Rep">대표</option>
-                        <option value="execMngr">부장</option>
-                        <option value="teamMngr">팀장</option>
-                        <option value="dgMngr">차장</option>
-                        <option value="deptMngr">과장</option>
-                        <option value="asstMngr">대리</option>
-                        <option value="staff">사원</option>
-                    </select>
+                    <div class="dept-wrap">
+                        <p>부서</p>
+                        <select id="dept" class="dept" required>
+                            <option value="" selected disabled hidden>선택</option>
+                            <option value="salesDept">영업부</option>
+                            <option value="hrDept">인사부</option>
+                            <option value="developDept">개발부</option>
+                            <option value="MADept">경영지원실</option>
+                        </select>
+                    </div>
+                    <div class="rank-wrap">
+                        <p>직급</p>
+                        <select id="rank" class="rank" required>
+                            <option value="" selected disabled hidden>선택</option>
+                            <option value="execDir">전무이사</option>
+                            <option value="Rep">대표</option>
+                            <option value="execMngr">부장</option>
+                            <option value="teamMngr">팀장</option>
+                            <option value="dgMngr">차장</option>
+                            <option value="deptMngr">과장</option>
+                            <option value="asstMngr">대리</option>
+                            <option value="staff">사원</option>
+                        </select>
+                    </div>    
                 </div>
                 <p>사내 이메일</p>
                 <input type="text" name="in-houseEmail" id="in-houseEmail" class="in-houseEmail">
@@ -112,6 +114,9 @@
                 <input type="text" name="entDate" id="entDate" class="entDate" placeholder=" yyyy - mm - dd ">
 
                 <p>사진 등록</p>
+                <div class="p10 flex flex-justify" style="height:135px;">
+                    <div class="userPic-content">사진없음</div>
+                </div>
                 <input type="file" name="userPic" id="userPic" class="userPic">
             </div>
 
