@@ -38,6 +38,10 @@
     margin-top: 20px;
 }
 
+.m-b5 {
+    margin-bottom:5px;
+}
+
 .m-b10 {
     margin-bottom:10px;
 }
@@ -279,14 +283,14 @@ button {
     font-size:12px;
 }
 
-.s-btn-del { /* 비활성화 */
+.s-btn-del {
     display:inline-block;
     width:35px;
     height:25px;
     text-align: center;    
     line-height: 25px;
     border-radius: 2px;
-    background-color:#A7005A;
+    background-color:#f00;
     border:1px solid #d4d4d4;
     color:#fff;
     font-size:12px;

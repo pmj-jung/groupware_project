@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | Project</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/headNmenu.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/jquery.treeview.css">
+    <link rel="stylesheet" href="css/zTreeStyle.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/jquery.treeview.js"></script>
+    <script src="js/jquery.ztree.core.js"></script>
+</head>
+<SCRIPT type="text/javascript">
+        
+    var aTree;
+    var formIframe;
+
+    var setting = {
+        view: {
+            dblClickExpand: false,
+            showLine: true,
+            selectedMulti: false
+        },
+
+        data: {
+            simpleData: {
+                enable: true,
+                idKey: "id",
+                pIdKey: "pId",
+                rootPId: ""
+            }
+        },
+        callback: {
+            beforeClick: function (treeId, treeNode) {
+                var zTree = $.fn.zTree.getZTreeObj("tree");
+                if (treeNode.isParent) {
+                    zTree.expandNode(treeNode);
+                    return false;
+                } else {
+                    formIframe.attr("src", treeNode.file + ".html");
+                    return true;
+                }
+            }
+        }
+    };
+
+    var zNodes = [{
+            id: 1,
+            pId: 0,
+            name: "[인사부 문서양식]",
+            open: false
+        },
+        {
+            id: 101,
+            pId: 1,
+            name: "업무기안",
+            file: "html/sample"
+        },
+
+
+        {
+            id: 2,
+            pId: 0,
+            name: "[자재부 문서양식]",
+            open: false
+        },
+        {
+            id: 201,
+            pId: 2,
+            name: "자재관리대장",
+            file: "html/manager"
+        },
+        {
+            id: 3,
+            pId: 0,
+            name: "[회계부 문서양식]",
+            open: false
+        },
+        {
+            id: 301,
+            pId: 3,
+            name: "회계관리대장",
+            file: "html/manager"
+        }
+
+    ];
+
+    $(document).ready(function () {
+        var t = $("#ztree");
+        t = $.fn.zTree.init(t, setting, zNodes);
+        formIframe = $("#formIframe");
+        formIframe.bind("load", loadReady);
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        zTree.selectNode(zTree.getNodeByParam("id", 101));
+
+    });
+
+    function loadReady() {
+        var bodyH = formIframe.contents().find("body").get(0).scrollHeight,
+            htmlH = formIframe.contents().find("html").get(0).scrollHeight,
+            maxH = Math.max(bodyH, htmlH),
+            minH = Math.min(bodyH, htmlH),
+            h = formIframe.height() >= maxH ? minH : maxH;
+        if (h < 760) h = 760;
+        formIframe.height(h);
+    }
+
+    //
+</SCRIPT>
+<body>
+    <header>
+        <div class="logo">
+            <a href="adminhome.html">
+                <i class="fab fa-digg"></i>
+                <span class="logo-admin">Adminator</span>
+            </a>
+        </div>
+
+        <div class="logo-approval-home">
+            <a href="approval_main.html">
+                <span>전자결재시스템</span>
+            </a>
+        </div>
+
+        <div class="info">
+            <div class="userInfo">
+                <div class="userPic">
+                    <img src="images/idPhoto.png">
+                </div>
+            </div>
+            <div class="userInfo_detail">
+                <span class="userName">김대리</span>
+                <span class="userEmail">kimdaeri@naver.com</span>
+                <span class="detail-btn">
+                    <i class="fas fa-caret-down">
+                        <ul class="changeStatus">
+                            <li class="logout font14" style="border-bottom:1px solid #ccc;" onclick="location.href='login.html'">
+                                <i class="fas fa-power-off"></i>
+                                <p style="display: inline-block;">로그아웃</p>
+                            </li>
+                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                                <i class="fas fa-user-cog"></i>
+                                <p>사용자페이지</p>
+                            </li>
+                        </ul>
+                    </i>
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="menu-wrap">
+            <ul>
+                <li class="menu">기안
+                    <ul class="submenu">
+                        <li><a href="approval_drafting.html">기안문 작성</a></li>
+                        <li><a href="approval_temporary_save.html">임시저장함</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">결재
+                    <ul class="submenu">
+                        <li><a href="approval_ready.html">결재 대기 문서</a></li>
+                        <li><a href="approval_status.html">결재 진행 상태</a></li>
+                        <li><a href="approval_ref.html">참조/열람 대기 문서</a></li>
+                        <li><a href="approval_complete.html">결재 완료 문서</a></li>
+                        <li><a href="approval_return.html">결재 반려 문서</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu">개인문서함
+                    <ul class="submenu">
+                        <li><a href="approval_send_save.html">발송 문서함</a></li>
+                        <li><a href="approval_receive_save.html">수신 문서함</a></li>
+                        <li><a href="approval_ref_save.html">참조/열람 문서함</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">문서양식함
+                    <ul class="submenu">
+                        <li><a href="approval_commonForm.html">공통문서양식함</a></li>
+                        <li><a href="approval_hrForm.html">인사부</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu">결재환경설정
+                    <ul class="submenu">
+                        <li><a href="approval_sign.html">기본설정</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mainContent">
+            
+            <div class="contentHead">
+                <h3 class="font18">기안 > 기안문 작성</h3>
+            </div>
+            <form action="" method="POST">
+                <div class="form-box" style="height:600px;">
+                    <div class="flex flex-justify">
+                        <!-- 문서 폼 분류 -->
+                        <div class="bg-white p10" style="width:25%;border:1px solid #e7e7e7;">
+                            <h3>결재 양식 선택</h3>
+                            <div class="form-list">
+                                <ul id="ztree" class="ztree">
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- 문서 폼 -->
+                        <div class="bg-white p10" style="width:74%;border:1px solid #e7e7e7;">
+                            <h3 class="m-b10">문서 작성</h3>
+                            <div class="" style="width:900px;border:1px solid #e7e7e7;margin:0 10px;padding:20px;">
+                                <iframe width="900px" 
+                                        height="500px"
+                                        id="formIframe" 
+                                        name="formIframe" 
+                                        src="html/sample.html" 
+                                        scrolling="auto" 
+                                        frameborder="0">
+                                </iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white p10 m-t10" style="width:100%;">
+                        <h3>결재 라인</h3>
+                        <div class="">
+
+                        </div>
+                    </div>
+                    
+                    <div class="btn m-t10">
+                        <button type="submit" class="btn-on">결재요청</button>
+                        <button type="reset" class="btn-off">임시저장</button>
+                        <button type="button" class="btn-off">취소</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+</body>
+</html>

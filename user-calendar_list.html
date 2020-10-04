@@ -8,19 +8,29 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/headNmenu.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/board.css">
 
+    <!-- calendar css -->
+    <link rel="stylesheet" href="calendar/core/main.css">
+    <link rel="stylesheet" href="calendar/daygrid/main.css">
+    <!-- //calendar css -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    
+
+    <!-- calendar css, js -->
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    <!-- //calendar css, js -->
+    
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
-
 </head>
-
 <body>
     <header>
         <div class="logo">
-            <a href="adminhome.html">
+            <a href="userhome.html">
                 <i class="fab fa-digg"></i>
-                <span class="logo-admin">Adminator</span>
             </a>
         </div>
 
@@ -40,9 +50,9 @@
                                 <i class="fas fa-power-off"></i>
                                 <p style="display: inline-block;">로그아웃</p>
                             </li>
-                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                            <li class="changePage font14" onclick="location.href='adminhome.html'">
                                 <i class="fas fa-user-cog"></i>
-                                <p>사용자페이지</p>
+                                <p>관리자페이지</p>
                             </li>
                         </ul>
                     </i>
@@ -126,16 +136,95 @@
         </div>
 
         <div class="mainContent">
-            <div class="page-main-wrap">
-                <div class="contentHead">
-                    <h3 class="font18">환경설정 > 메뉴 설정</h3>
-                </div>
-                
-                
+            <div class="contentHead">
+                <h3 class="font18">일정관리 > 일정등록</h3>
             </div>
-            
+            <div class="calendar-insert">
+                <form>
+                    <table class="bg-white">
+                        <tr>
+                            <td class="td-10 bg-gray weight700 center">시작일자</td>
+                            <td class="p-lr3">
+                                <input type="text" autocomplete="off" id="startDate" class="input-90">
+                                <i class="far fa-calendar-alt font16"></i>
+                            </td>
+                            <td class="td-10 bg-gray weight700 center">종료일자</td>
+                            <td class="p-lr3">
+                                <input type="text" autocomplete="off" id="endDate" class="input-90">
+                                <i class="far fa-calendar-alt font16"></i>
+                            </td>
+                            <td class="td-10 bg-gray weight700 center">일정내용</td>
+                            <td class="p-lr3">
+                                <input type="text" autocomplete="off" class="input-100">
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="btn-grp center m-t10">
+                        <button type="submit" class="btn-on">일정등록</button>
+                        <button type="reset" class="btn-off">새로고침</button>
+                    </div>
+                </form>
+            </div>
+            <div class="contentHead">
+                <h3 class="font18">일정관리 > 일정목록</h3>
+            </div>
+            <div class="calendar-content-wrap">
+                <div class="calendar-content">
+                    <div id="calendar" class="calendar"></div>
+                </div>
+            </div>
         </div>
         </div>
     </main>
 </body>
+<!-- calendar js -->
+<script src="calendar/core/main.js"></script>
+<script src="calendar/core/locales/ko.js"></script>
+<script src="calendar/interaction/main.js"></script>
+<script src="calendar/daygrid/main.js"></script>
+<!-- calendar js -->
+
+<!-- calendar customizing js -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEl = document.getElementById('calendar');
+
+        var calendar = new FullCalendar.Calendar(calendarEl, {
+            plugins: ['interaction', 'dayGrid'],
+            header: {
+                left: 'prevYear,prev,next,nextYear today',
+                center: 'title',
+                right: 'dayGridMonth,dayGridWeek,dayGridDay'
+            },
+            navLinks: true,
+            editable: true,
+            eventLimit: true,
+            locales: "ko",
+            events: [{
+                title: '포트폴리오 제출 금요일 까지',
+                start: '2020-09-14',
+                end: '2020-09-16'
+            },
+            {
+                title: 'UI 구현 능력단위',
+                start: '2020-09-13',
+                end: '2020-09-18',
+                color: '#f00'
+            }
+            ]
+        });
+
+        calendar.render();
+    });
+</script>
+<!-- calendar customizing js -->
+
+<!-- calendar click event -->
+<script>
+    $(function () {
+        $("#startDate, #endDate").datepicker({
+            dateFormat: 'yy-mm-dd'
+        });
+    });
+</script>
 </html>

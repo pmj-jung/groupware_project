@@ -16,4 +16,12 @@ $(function(){
         $(this).removeClass("hover");
         $(this).addClass("tr-even");
     });
+
+    $(".page").mouseover(function(){
+        $(this).addClass("hover");
+    });
+
+    $(".page").mouseout(function(){
+        $(this).removeClass("hover");
+    });
 });

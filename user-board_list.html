@@ -8,36 +8,29 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/headNmenu.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/board.css">
+    <link rel="stylesheet" href="css/board.css">  
 
     <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/menu.js"></script>
     <script src="js/table.js"></script>
 </head>
+
 <style>
     tr:first-child {
         background-color: #005AA7;
         color: #fff;
     }
-    
     .tr-even {
         background-color:#eff3f9;
     }
-
-    .survey-close {
-        background-color:#f00;
-        border-radius: 2px;
-        padding: 8px 14px;
-        color:#fff;
-    }
 </style>
+
 <body>
     <header>
         <div class="logo">
-            <a href="adminhome.html">
+            <a href="userhome.html">
                 <i class="fab fa-digg"></i>
-                <span class="logo-admin">Adminator</span>
             </a>
         </div>
 
@@ -57,9 +50,9 @@
                                 <i class="fas fa-power-off"></i>
                                 <p style="display: inline-block;">로그아웃</p>
                             </li>
-                            <li class="changePage font14" onclick="location.href='userhome.html'">
+                            <li class="changePage font14" onclick="location.href='adminhome.html'">
                                 <i class="fas fa-user-cog"></i>
-                                <p>사용자페이지</p>
+                                <p>관리자페이지</p>
                             </li>
                         </ul>
                     </i>
@@ -143,139 +136,140 @@
         </div>
 
         <div class="mainContent">
-            
             <div class="contentHead">
-                <h3 class="font18">설문조사 > 종료된 설문</h3>                
+                <h3 class="font18">사용자 관리 > 사용자 목록</h3>                
             </div>
-
-            <div class="survey-view flex flex-justify m-b10">
-                <!-- line-height:1.8; 로 안쪽의 span,h2,p 모두 같은 간격으로 만들 수 있음 -->
-                <div class="survey-wrap bg-white">
-                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
-                        <span class="survey-close">설문상태 : 종료</span>
-                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
-                        <p>2020-09-14 ~ 2020-09-16</p>
-                        <p>작성자 : 홍길동</p>
-                        <p>설문결과 : 공개</p>
-                    </div>
-                    <div class="center weight700 p10 bg-gray">결과보기</div>
+            <div class="btn-wrap flex flex-justify">
+                <div class="btns">
+                    <button type="button" class="btn-on" onclick="location.href='member_tbl_insert.html'">사용자추가</button>
+                    <button type="button" class="btn-off">선택삭제</button>
                 </div>
-
-                <div class="survey-wrap bg-white">
-                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
-                        <span class="survey-close">설문상태 : 종료</span>
-                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
-                        <p>2020-09-14 ~ 2020-09-16</p>
-                        <p>작성자 : 홍길동</p>
-                        <p>설문결과 : 공개</p>
-                    </div>
-                    <div class="center weight700 p10 bg-gray">결과보기</div>
-                </div>
-
-                <div class="survey-wrap bg-white">
-                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
-                        <span class="survey-close">설문상태 : 종료</span>
-                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
-                        <p>2020-09-14 ~ 2020-09-16</p>
-                        <p>작성자 : 홍길동</p>
-                        <p>설문결과 : 공개</p>
-                    </div>
-                    <div class="center weight700 p10 bg-gray">결과보기</div>
-                </div>
-                
-                <div class="survey-wrap bg-white">
-                    <div class="survey p20" style="line-height:1.8;border:1px solid #e7e7e7;">
-                        <span class="survey-close">설문상태 : 종료</span>
-                        <h2 class="m-t10">연차 사용 유효기간에 대한 설문조사</h2>
-                        <p>2020-09-14 ~ 2020-09-16</p>
-                        <p>작성자 : 홍길동</p>
-                        <p>설문결과 : 공개</p>
-                    </div>
-                    <div class="center weight700 p10 bg-gray">결과보기</div>
+                <div class="search-box">
+                    <form name="search-frm" class="search-frm" method="post" action="search.do">
+                        <select class="sel">
+                            <option value="">이름</option>
+                            <option value="">휴대전화</option>
+                            <option value="">부서명</option>
+                        </select>
+                        <input name="search" type="search" class="input" maxlength="20" tabindex="1" />
+                        <button type="submit" class="search-btn">사원검색</button>
+                    </form>
                 </div>
             </div>
-
-            <div class="survey-list">
+            <div class="member-tbl">
                 <table>
-                    <tr class="center font14">
+                    <tr class="center">
+                        <td class="td-3"><input type="checkbox"></td>
                         <td class="td-5">번호</td>
-                        <td class="td-10">설문상태</td>
-                        <td>설문제목</td>
-                        <td class="td-22">설문기간</td>
-                        <td class="td-10">설문작성자</td>
+                        <td class="td-8">사원명</td>
+                        <td class="td-5">성별</td>
+                        <td class="td-8">부서</td>
+                        <td class="td-8">직급</td>
+                        <td class="td-22">이메일</td>
+                        <td class="td-10">전화번호</td>
+                        <td class="td-12">내선번호</td>
+                        <td class="td-7">입사일</td>
+                        <td class="">관리</td>
                     </tr>
-                    <tr class="center font14">
-                        <td>10</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
-                    </tr>
-                    <tr class="center font14">
-                        <td>9</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
-                    </tr>
-                    <tr class="center font14">
-                        <td>8</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
-                    </tr>
-                    <tr class="center font14">
-                        <td>7</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
-                    </tr>
-                    <tr class="center font14">
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
                         <td>6</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
-                    <tr class="center font14">
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
                         <td>5</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
-                    <tr class="center font14">
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
                         <td>4</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
-                    <tr class="center font14">
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
                         <td>3</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
-                    <tr class="center font14">
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
                         <td>2</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
+                        <td>김사원</td>
+                        <td>남자</td>
+                        <td>영업부</td>
+                        <td>사원</td>
+                        <td>kim4one@jyp.co.kr</td>
+                        <td>0510003333</td>
+                        <td>5292</td>
+                        <td>2020/09/04</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
-                    <tr class="center font14">
+
+                    <tr class="center">
+                        <td><input type="checkbox"></td>
                         <td>1</td>
-                        <td>종료</td>
-                        <td>연휴 사용 유효기간에 대한 설문조사</td>
-                        <td>2020.09.11 ~ 2020.09.18</td>
-                        <td>인사부장</td>
+                        <td>밧대리</td>
+                        <td>여자</td>
+                        <td>경영지원실</td>
+                        <td>대리</td>
+                        <td>batterley@hanmail.net</td>
+                        <td>0510335588</td>
+                        <td>8282</td>
+                        <td>1999/05/15</td>
+                        <td>
+                            <button type="button" class="s-btn-on" onClick="location.href=''">수정</button>
+                            <button type="button" class="s-btn-off">삭제</button>
+                        </td>
                     </tr>
+
                 </table>
-                
             </div>
 
             <div class="page-grp">
@@ -292,7 +286,6 @@
                 <span class="page"><i class="fas fa-angle-double-right"></i></span>
             </div>
 
-        </div>
         </div>
     </main>
 </body>
