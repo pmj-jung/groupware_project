@@ -45,35 +45,6 @@ form .h2-wrap {
     outline-color: #005AA7;
 }
 
-<<<<<<< HEAD
-/* password(pwd) css */
-.pwd-wrap {
-    position:relative;
-}
-
-.pwd-icon {
-    position: absolute;
-    right:10px;
-    line-height:35px;
-    color:#ccc;
-}
-
-/* cell authentication css  */
-.auth-cell {
-    line-height:35px;
-    width:40%;
-    height:35px;
-    margin-left:5px;
-}
-
-hr {
-    width: 100%;
-    color: #ccc;
-    size: 2;
-    margin: 10px auto;
-}
-=======
->>>>>>> a0b6c632809b1f3ec3a85d34aed49d08a89f0d2e
 
 /* ********여기서 부터 회사정보********* */
 .deptNrank .dept, .deptNrank .rank {
