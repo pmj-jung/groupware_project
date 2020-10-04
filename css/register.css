@@ -44,9 +44,24 @@ form h3 {
     outline-color: #005AA7;
 }
 
-.birth-wrap input,
-.enter-wrap input {
-    width: 32%;
+/* password(pwd) css */
+.pwd-wrap {
+    position:relative;
+}
+
+.pwd-icon {
+    position: absolute;
+    right:10px;
+    line-height:35px;
+    color:#ccc;
+}
+
+/* cell authentication css  */
+.auth-cell {
+    line-height:35px;
+    width:40%;
+    height:35px;
+    margin-left:5px;
 }
 
 hr {
@@ -61,6 +76,10 @@ hr {
     width: 100px;
     height: 26px;
     padding: 2px;
+}
+
+.enter-wrap input{
+    width:32%;
 }
 
 .btn_submit {

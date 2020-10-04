@@ -27,34 +27,46 @@
             <h3 class="center">개인정보</h3>
 
             <p>아이디</p>
-            <input type="text" name="user-id" id="user-id" class="user-id" required>
+            <input type="text" name="user-id" id="user-id" class="user-id" placeholder="아이디">
 
             <p>비밀번호</p>
-            <input type="password" name="user-pwd" id="user-pwd" class="user-pwd" required minlength="8">
+            <div class="pwd-wrap">
+                <input type="password" name="user-pwd" id="user-pwd" class="user-pwd" minlength="8" placeholder="비밀번호">
+                <span class="pwd-icon">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
 
             <p>비밀번호 확인</p>
-            <input type="password" name="pwd-check" id="pwd-check" class="pwd-check" required minlength="8">
+            <div class="pwd-wrap">
+                <input type="password" name="pwd-check" id="pwd-check" class="pwd-check" minlength="8" placeholder="비밀번호 확인">
+                <span class="pwd-icon">
+                    <i class="fas fa-lock"></i>
+                </span>
+            </div>
 
             <p>이름</p>
-            <input type="text" name="user-name" id="user-name" class="user-name" required>
+            <input type="text" name="user-name" id="user-name" class="user-name" placeholder="이름">
 
             <p>주민등록번호</p>
             <div class="flex flex-justify">
-                <input size="7" type="text" id="user-id-num" style="width:45%;">
+                <input size="7" type="text" id="jumin-num" style="width:45%;" maxlength="6"/>
                 <p style="line-height: 35px;">-</p>
-                <input size="7" type="password" id="user-id-num-back" style="width:45%;">
+                <input size="7" type="password" id="jumin-num-back" style="width:45%;" maxlength="7"/>
             </div>
 
             <p>이메일</p>
-            <input type="text" name="" id="user-email" class="user-email" required>
+            <input type="text" name="" id="user-email" class="user-email" placeholder="이메일">
 
             <p>휴대전화</p>
-            <input type="text" name="" id="user-cell" class="user-cell" required>
+            <div class="flex flex-justify">
+                <input type="text" name="" id="user-cell" class="user-cell" placeholder="휴대전화">
+                <button type="button" class="auth-cell">인증번호 받기</button>
+            </div>
+            
 
             <p>주소</p>
-            <input type="text" name="" id="user-addr" class="user-addr">
-
-            <hr />
+            <input type="text" name="" id="user-addr" class="user-addr" placeholder="주소">
 
             <!-- 회사정보 : 부서, 직급, 사내이메일, 직통번호, 내선번호, 입사일, 사진등록 -->
             <h3 class="center">회사정보</h3>
@@ -98,6 +110,7 @@
             <input type="file" name="userPic" id="userPic" class="userPic">
 
             <button type="submit" name="submit" id="submit" class="btn_submit font18 m-tb10 p-tb10 weight700" value="">가입하기</button>
+            
             <div class="login right">
                 <a href="login.html">로그인</a>
             </div>
