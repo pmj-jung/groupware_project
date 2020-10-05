@@ -5,7 +5,7 @@ CREATE database groupware;
 
 use groupware;
 
-번호(사번이아님)/아이디/비밀번호/이름/성별/주민등록번호/이메일/휴대전화/주소/가입일
+번호(사번이아님)/아이디/비밀번호/이름/성별/주민등록번호/이메일/휴대전화/주소/가입일 +++ 회원등급/인증여부
 
 가입 승인 후 -> 부서/직급/사내이메일/내선번호/입사일/사진 등록하기.
 
@@ -21,10 +21,14 @@ mem_email varchar(50),
 mem_cell varchar(12),
 mem_addr varchar(125),
 mem_regdate date,
+
+mem_confirm char(1) default 'N',
+mem_level char(1) default '1',
 primary key(mem_num)
 );
 
 <register.html 회원가입html의 변수>
 memID / memPwd / memName / memGender / jumin / memEmail / memCell / memAddr
+
 
 *사용자관리>사용자목록 에서 '수정'이나 해당 사용자라인을 누르면 #모달#필요(사원 상세정보)
