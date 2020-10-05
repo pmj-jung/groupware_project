@@ -1,12 +1,14 @@
 <회원가입>
 
 
-CREATE database grp_project;
+CREATE database groupware;
 
-use grp_project;
+use groupware;
 
-번호(사번이아님)/아이디/비밀번호/이름/성별/주민등록번호/이메일/휴대전화/주소
-부서/직급/사내이메일/내선번호/입사일/사진
+번호(사번이아님)/아이디/비밀번호/이름/성별/주민등록번호/이메일/휴대전화/주소/가입일
+
+가입 승인 후 -> 부서/직급/사내이메일/내선번호/입사일/사진 등록하기.
+
 
 CREATE TABLE member(
 mem_num int not null auto_increment,
@@ -18,14 +20,11 @@ mem_jumin varchar(13) not null,
 mem_email varchar(50),
 mem_cell varchar(12),
 mem_addr varchar(125),
-
-mem_dept varchar(8) not null,
-mem_rank varchar(5) not null,
-mem_inEmail varchar(50),
-mem_extNum varchar(11),
-mem_entDate date,
+mem_regdate date,
 primary key(mem_num)
 );
 
+<register.html 회원가입html의 변수>
+memID / memPwd / memName / memGender / jumin / memEmail / memCell / memAddr
 
 *사용자관리>사용자목록 에서 '수정'이나 해당 사용자라인을 누르면 #모달#필요(사원 상세정보)

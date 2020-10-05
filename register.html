@@ -22,7 +22,7 @@
     </header>
     <main class="p-tb20">
         <form name="" method="post" class="register p-tb20 p-lr40 flex flex-justify flex-wrap">
-            <div class="form-left" style="width:48%;">
+            <div class="" style="width:100%;">
                 <div class="h2-wrap">
                     <h2 class="center">개인정보</h2>
                 </div>
@@ -60,6 +60,7 @@
                 <p>주민등록번호</p>
                 <div class="flex flex-justify">
                     <input type="text" id="jumin" style="width:45%;" required maxlength="6">
+                    <p style="line-height: 35px;">-</p>
                     <input type="password" id="jumin-back" style="width:45%;" required maxlength="7">
                 </div>
 
@@ -71,51 +72,6 @@
 
                 <p>주소</p>
                 <input type="text" name="memAddr" id="memAddr" class="memAddr">
-            </div>
-
-            <div class="form-right" style="width:48%;">
-                <div class="h2-wrap">
-                    <h2 class="center">회사정보</h2>
-                </div>
-                <div class="deptNrank flex flex-justify m-b10">
-                    <div class="dept-wrap">
-                        <p>부서</p>
-                        <select id="dept" class="dept" required>
-                            <option value="" selected disabled hidden>선택</option>
-                            <option value="salesDept">영업부</option>
-                            <option value="personnelDept">인사부</option>
-                            <option value="developmentDept">개발부</option>
-                            <option value="managementSupportDept">경영지원실</option>
-                        </select>
-                    </div>
-                    <div class="rank-wrap">
-                        <p>직급</p>
-                        <select id="rank" class="rank" required>
-                            <option value="" selected disabled hidden>선택</option>
-                            <option value="executiveDirector">전무이사</option>
-                            <option value="representative">대표</option>
-                            <option value="director">부장</option>
-                            <option value="deputyDirector">차장</option>
-                            <option value="manager">과장</option>
-                            <option value="assistantManager">대리</option>
-                            <option value="staff">사원</option>
-                        </select>
-                    </div>    
-                </div>
-                <p>사내 이메일</p>
-                <input type="text" name="memCompanyEmail" id="memCompanyEmail" class="memCompanyEmail">
-
-                <p>내선번호</p>
-                <input type="text" name="extNum" id="extNum" class="extNum">
-
-                <p>입사일</p>
-                <input type="text" name="hireDate" id="hireDate" class="hireDate" placeholder=" yyyy - mm - dd ">
-
-                <p>사진 등록</p>
-                <div class="p10 flex flex-justify" style="height:135px;">
-                    <div class="userPic-content">사진없음</div>
-                </div>
-                <input type="file" name="userPic" id="userPic" class="userPic">
             </div>
 
             <div class="form-bottom" style="width:100%;">

@@ -19,7 +19,7 @@ html, body {
 
 /* ****** */
 form {
-    width:800px;
+    width:400px;
     background-color: rgba(255, 255, 255, 0.8);
     margin: 0 auto;
     border-radius: 2px;
@@ -43,17 +43,6 @@ form .h2-wrap {
     border-radius: 2px;
     font-size: 14px;
     outline-color: #005AA7;
-}
-
-
-/* ********여기서 부터 회사정보********* */
-.deptNrank .dept, .deptNrank .rank {
-    height: 35px;
-    padding: 2px;
-}
-
-.enter-wrap input{
-    width:32%;
 }
 
 .btn_submit {
