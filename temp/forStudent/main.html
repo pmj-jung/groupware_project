@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK MIN JUNG</title>
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header class="flex justify_c_between align_i_center p_lr10">
+    <span class="logo white">
+      학원이름
+    </span>
+    <span class="user_menu">
+      <ul class="white flex justify_c_between">
+        <li class="m_r10">접속한사람+학생</li>
+        <li class="m_r10">
+          <select class="class_sel">
+            <option>수업명</option>
+          </select>
+        </li>
+        <li><a class="white" href="#">로그아웃</a></li>
+      </ul>
+    </span>
+  </header>
+  <div class="content_box flex justify_c_between">
+    <nav>
+      <ul>
+        <li class="myinfo_btn">
+          <a href="#">
+            <i class="far fa-user"></i>마이 페이지
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="myinfo_show">
+            <li><a href="#">나의 정보</a></li>
+            <li><a href="#">나의 진도</a></li>
+          </ul>
+        </li>
+        <!--현재 활성화되있는 강의실의 게시판만 보여주기-->
+        <li class="myclass_btn">
+          <a href="#">
+            <i class="fas fa-school"></i>학습 게시판
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="myclass_show">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">학습자료실</a></li>
+            <li><a href="#">자유게시판</a></li>
+            <li><a href="#">QnA</a></li>
+          </ul>
+        </li>
+          
+      </ul>
+    </nav>
+    <main class="w_100 p_10">메인</main>
+  </div>
+  <footer>푸터</footer>
+</body>
+<script>
+
+  $(".myinfo_btn").click(function(){
+    $("nav ul .myinfo_show").toggleClass("show");
+  });
+  
+  $(".myclass_btn").click(function(){
+    $("nav ul .myclass_show").toggleClass("show1");
+  });
+  
+</script>
+
+</html>

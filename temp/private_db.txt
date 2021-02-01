@@ -1,0 +1,220 @@
+>>> member(모든회원)
+
+is_employee boolean not null,
+mem_id int not null auto_increment primary key,
+mem_name varchar(5) not null,
+mem_email varchar(50),
+mem_auth boolean,
+grade_code int not null,
+branch_code int not null,
+mem_lecture varchar(50)
+
+is_employee boolean not null, // 직원인가(t/f)
+mem_id int not null auto_increment primary key, // 기본키
+mem_name varchar(5) not null, // 이름
+mem_email varchar(50), // 이메일
+mem_auth boolean, // 접근권한
+grade_code int not null, // 등급코드
+branch_code int not null,// 지점코드
+mem_lecture varchar(50) // 강의코드 (강의id를 배열로만듬-예. 1;6;7;)
+
+
+>>> employee(직원)
+
+mem_id int not null primary_key,
+emp_id varchar(20) not null,
+emp_pwd varchar(20) not null,
+emp_phone varchar(11) not null
+
+mem_id int not null primary_key, // member 테이블의 기본키
+emp_id varchar(20) not null, // 아이디
+emp_pwd varchar(20) not null, // 비밀번호
+emp_phone varchar(11) not null // 휴대폰번호
+
+
+>>>employee_detail(회원상세정보)
+
+mem_id_fk int not null primary key,
+emp_photo varchar(50),
+emp_addr varchar(100),
+emp_etc varchar(500)
+
+mem_id_fk int not null primary key, // employee 테이블의 기본키
+emp_photo varchar(50), // 사진
+emp_addr varchar(100), // 주소
+emp_etc varchar(500) // 부가정보
+
+
+>>> students (수강생)
+
+mem_id int not null primary key,
+std_phone varchar(11) not null,
+std_pwd varchar(20) not null,
+std_etc varchar(500)
+
+mem_id int not null primary key, // member 테이블의 기본키
+std_phone varchar(11) not null, // 휴대폰번호
+std_pwd varchar(20) not null, // 비밀번호
+std_etc varchar(500) // 부가정보
+
+
+>> academy(학원)
+
+CREATE TABLE academy 
+(ac_name varchar(20),
+ac_ceo_name varchar(4));
+
+CREATE TABLE academy 
+(ac_name varchar(20) not null, // 학원명
+ac_ceo_name varchar(4)); // 학원대표자명
+
+>>> branch(지점)
+
+CREATE TABLE branch 
+(br_id int not null auto_increment primary key,
+br_code int not null,
+br_name varchar(10) not null,
+br_ceo_name varchar(4),
+br_addr varchar(100),
+br_tel varchar(13),
+br_fax varchar(13),
+br_email varchar(50),
+br_license_num varchar(13),
+br_reg_num varchar(15)
+);
+
+CREATE TABLE branch 
+(br_id int not null auto_increment primary key, // 기본키
+br_code int not null, // 지점코드
+br_name varchar(10) not null, // 지점명
+br_ceo_name varchar(4), // 대표이사
+br_addr varchar(100), // 위치
+br_tel varchar(13), // 전화번호
+br_fax varchar(13), // 팩스번호
+br_email varchar(50), // 이메일주소
+br_license_num varchar(13), // 사업자번호
+br_reg_num varchar(15) // 학원등록번호
+);
+
+>>>grade(등급) : 일반강사, 직원, 매니저, 관리자
+
+CREATE TABLE grade 
+(grade_code int not null,
+grade_name varchar(6) not null);
+
+CREATE TABLE grade 
+(grade_code int not null, // 등급코드(member 연결)
+grade_name varchar(6) not null); // 등급명(일반강사/직원/매니저/관리자)
+
+
+>>> lecture(강의)
+
+CREATE TABLE lecture (
+lid int not null auto_increment primary key,
+lect_code varchar(6) not null,
+lect_name varchar(30) not null,
+lect_where varchar(20),
+lect_regdate date,
+br_code int not null,
+mid_fk int not null);
+
+
+CREATE TABLE lecture (
+lid int not null auto_increment primary key, // 기본키
+lect_code varchar(6) not null, // 강의코드
+lect_name varchar(30) not null, // 강의명
+lect_where varchar(20), // 강의장소
+lect_regdate date, // 강의개설일
+br_code int not null, //지점코드
+mid_fk int not null); // 멤버외래키(강사)
+
+
+>>> board(게시판)
+: grade_code(등급코드)로 게시판 설정권한을 주려함
+- 학생은 1, 직원 2, 관리자 3
+, board_use(게시판 사용여부)는 관리자권한만 수정가능
+
+CREATE TABLE board (
+bid int auto_increment primary key,
+lect_code varchar(6) not null,
+board_code varchar(10) not null,
+board_name varchar(20) not null,
+board_color varchar(8) not null,
+board_use boolean not null,
+board_regdate date,
+board_read int,
+board_write int,
+board_comment int,
+board_download int);
+
+CREATE TABLE board (
+bid int auto_increment primary key, //기본키
+lect_code varchar(6), // 어떤클래스의 게시판인가(ALL이면 모든클래스)
+board_code varchar(10) not null, // 게시판코드
+board_name varchar(20) not null, // 게시판이름
+board_color varchar(8) not null, // 게시판색깔
+board_use boolean not null, // 게시판 사용여부
+board_regdate date, // 게시판 생성일자
+board_read int, //읽기권한
+board_write int, // 쓰기권한
+board_comment int, // 댓글 권한
+board_download int); //다운로드 권한
+
+
+>>> article(게시글)
+
+CREATE TABLE board_article_'게시판코드' (
+aid int not null auto_increment primary key,
+bid int not null,
+division boolean,
+subject varchar(30) not null,
+writer varchar(5) not null,
+writer_id int not null,
+content text,
+hit int default 0,
+file_name varchar(300),
+file_origin_name varchar(300),
+file_url varchar(500),
+comment_hit int,
+secret boolean,
+regdate datetime not null);
+
+
+CREATE TABLE board_article_'게시판코드' (
+aid int not null auto_increment primary key, //기본키
+bid int not null, // 어떤게시판에 쓰는 가
+division boolean, // 공지여부(0=일반게시글,1=공지)
+subject varchar(30) not null, // 제목
+writer varchar(5) not null, // 작성자
+writer_id int not null, // 작성자의 기본키
+content text, // 작성내용
+hit int default 0, // 조회수
+file_name varchar(300), //저장할 파일 이름
+file_origin_name varchar(300),// 실제파일이름
+file_url varchar(500), // 파일경로
+comment_hit int, // 댓글수
+secret boolean, // 비밀글여부
+regdate datetime not null, // 작성일자
+
+
+>>> comment(댓글)
+
+CREATE TABLE board_comment_'board_code'
+cid int not null auto_increment primary key,
+aid int not null,
+comment text,
+who varchar(5),
+ref_who int, 
+ref int,
+ref_cid int,
+c_regdate datetime
+
+cid int not null auto_increment primary key, //기본키
+aid int not null, // 게시글 참조키
+comment text, // 댓글내용
+who varchar(5), // 댓글작성자의 기본키
+ref_who int, // 원댓글 작성자의 기본키
+ref int, // 댓글순서
+ref_cid int, // 원댓글 기본키 참조키
+c_regdate datetime // 댓글작성시간
+ 

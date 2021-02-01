@@ -1,0 +1,98 @@
+@charset 'utf-8';
+
+header {
+  height: 55px;
+  background-color: #4671f3;
+}
+
+.class_sel {
+  width: 130px;
+  height: 25px;
+  font-size: 12px;
+  border-radius: 0px;
+  background-color: #eee;
+  border:none;
+  outline: none;
+}
+
+.content_box {
+  height: 100%;
+  min-height: calc(100vh - 85px);
+}
+
+nav {
+  height: 100%;
+  min-height:calc(100vh - 85px);
+  min-width: 160px;
+  background-color: #f5f5f5;
+  border-right: 1px solid #ddd;
+}
+
+nav ul {
+  height: 100%;
+  width: 100%;
+  line-height: 40px;
+  list-style: none;
+}
+
+nav ul .myinfo_show.show {
+  display: block;
+}
+
+nav ul .myclass_show.show1 {
+  display: block;
+}
+
+nav ul .std_show.show2 {
+  display: block;
+}
+
+nav ul .mem_show.show3 {
+  display: block;
+}
+
+nav ul li {
+  line-height: 40px;
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul li i {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  color:#666;
+}
+
+nav ul li a {
+  position: relative;
+  display: block;
+  color:#666;
+}
+
+nav ul li a:hover {
+  color: #000;
+  background-color:#e3e3e3 ;
+}
+
+nav ul ul {
+  display: none;
+}
+
+nav ul ul li {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: none;
+  padding-left: 30px;
+}
+
+nav ul li a span {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+footer {
+  height: 30px;
+  background-color: #d8d8d8;
+}

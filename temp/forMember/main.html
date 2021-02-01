@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK MIN JUNG</title>
+
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/main.css">
+
+  <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header class="flex justify_c_between align_i_center p_lr10" style="background-color: #0067a3;">
+    <span class="logo white">
+      학원이름
+    </span>
+    <span class="user_menu">
+      <ul class="white flex justify_c_between">
+        <li class="m_r10">접속한사람+등급</li>
+        <li class="m_r10">
+          <select class="class_sel">
+            <option>ㅁㅁ</option>
+          </select>
+        </li>
+        <li><a class="white" href="#">로그아웃</a></li>
+      </ul>
+    </span>
+  </header>
+  <div class="content_box flex justify_c_between">
+    <nav>
+      <ul>
+        <!--강사: 자기반 학생만, 직원관리자는 모든 수강생-->
+        <li class="std_btn">
+          <a href="#">
+            <i class="fas fa-user-graduate"></i>학생관리
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="std_show">
+            <li><a href="#">수강생 목록</a></li>
+            <li><a href="#">수강생 등록</a></li>
+          </ul>
+        </li>
+        <!-- 강사:X , 직원:X(인사권있으면 O), 관리자:O-->
+        <li class="mem_btn">
+          <a href="#">
+            <i class="fas fa-users"></i>직원관리
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="mem_show">
+            <li><a href="#">직원 목록</a></li>
+            <li><a href="#">직원 등록</a></li>
+          </ul>
+        </li>
+        <!--강사:자기반 게시판만, 직원 관리자: O-->
+        <li class="myclass_btn">
+          <a href="#">
+            <i class="fas fa-school"></i>게시판 관리
+            <span class="fas fa-caret-down second"></span>
+          </a>
+          <ul class="myclass_show">
+            <li><a href="#">게시판 목록</a></li>
+            <li><a href="#">게시판 설정</a></li>
+          </ul>
+        </li>
+          
+      </ul>
+    </nav>
+    <main class="w_100 p_10">메인</main>
+  </div>
+  <footer>푸터</footer>
+</body>
+<script>
+  
+  $(".myinfo_btn").click(function(){
+    $("nav ul .myinfo_show").toggleClass("show");
+  });
+
+  $(".myclass_btn").click(function(){
+    $("nav ul .myclass_show").toggleClass("show1");
+  });
+
+  $(".std_btn").click(function(){
+    $("nav ul .std_show").toggleClass("show2");
+  });
+
+  $(".mem_btn").click(function(){
+    $("nav ul .mem_show").toggleClass("show3");
+  });
+</script>
+
+</html>

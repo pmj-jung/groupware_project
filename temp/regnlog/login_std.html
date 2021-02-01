@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARK MIN JUNG</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/regnlog.css">
+
+    <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="login_wrapper flex flex_col justify_c_center align_i_center w_100 h_100">
+      <h1 class="p_tb30">학원 이름(ac_name)</h1>
+      <div class="login_content p_30">
+        <ul class="login_gubun m_b30 flex justify_c_between">
+          <li class="current w_50 center">
+            <a href="">수강생 로그인</a>
+          </li>
+          <li class="w_50 center">
+            <a href="./login_mem.html">직원 로그인</a>
+          </li>
+        </ul>
+        <form method="POST">
+          <div class="lgnIpBox p_l5 m_b10 vertical_a_middle w_100">
+            <select name="brCode" id="brCode">
+              <option value="01" selected>지점1</option>
+              <option value="02">지점2</option>
+            </select>
+          </div>
+          <div class="login_tel m_b10">
+            <ul class="tel_ul flex justify_c_between w_100">
+              <li class="lgnIpBox w_30">
+                  <select name="tel1">
+                      <option value="010" selected>010</option>
+                      <option value="011">011</option>
+                      <option value="016">016</option>
+                      <option value="017">017</option>
+                      <option value="019">019</option>
+                  </select>
+              </li>
+              <li class="w_5">-</li>
+              <li class="lgnIpBox w_30">
+                <input class="p_l5" type="text" name="tel2" id="telIp" maxlength="4" onKeyUp="autoTab(this, this.value);" numberOnly />
+              </li>
+              <li class="w_5">-</li>
+              <li class="lgnIpBox w_30">
+                <input class="p_l5" type="text" name="tel3" id="telIp" maxlength="4" onKeyUp="autoTab(this, this.value);" numberOnly />
+              </li>
+            </ul>
+          </div>
+          <div class="lgnIpBox m_b10">
+            <input class="p_l5" type="password" name="stdPwd" placeholder="비밀번호" />
+          </div>
+          <p class="pwd_desc font_12 m_b20">※ 초기 비밀번호는 휴대폰번호 마지막 4자리 입니다.</p>
+          <p>
+            <button class="submit_btn" type="submit">로그인</button>
+          </p>
+        </form>
+        <div class="etc_text font_12 center m_t20">
+          (학원이름) 스터디룸 웹 사이트 입니다.<br/>
+          원서에 등록된 휴대폰번호를 통해 로그인 후<br/>
+          서비스 이용이 가능합니다.<br/><br/>
+          <span>스터디룸 관련문의 : </span>(지점별 이메일 혹은 전화번호)
+        </div>
+      </div>
+    </div>
+</body>
+<script>
+  $(function(){
+
+    $("input:text[numberOnly]").on("keyup", function() {
+      $(this).val($(this).val().replace(/[^0-9]/g,""));
+    });
+  });
+</script>
+</html>
