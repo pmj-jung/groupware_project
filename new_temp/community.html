@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK MIN JUNG</title>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/common_tbl.css">
+  <link rel="stylesheet" href="./css/board.css">
+
+  <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header class="flex justify_c_between align_i_center p_lr10">
+    <span class="logo">
+      <a href="main.html">학원이름</a>
+    </span>
+    <ul class="menu flex justify_c_between">
+      <li class="m_r15"><a href="community.html">커뮤니티</a></li>
+      <li class="m_r15"><a href="#">수강후기</a></li>
+      <li class="m_r15"><a href="#">문의사항</a></li>
+      <li class="m_r15"><a href="login.html">로그인</a></li>
+      <li><a href="register.html">회원가입</a></li>
+    </ul>
+  </header>
+  <div class="content_box flex justify_c_between">
+    <nav>
+      <ul>
+        <li class="std_btn">
+          <a href="#">
+            <i class="fas fa-user-graduate"></i>학생관리
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="std_show">
+            <li><a href="#">수강생 목록</a></li>
+            <li><a href="#">수강생 등록</a></li>
+          </ul>
+        </li>          
+      </ul>
+    </nav>
+    <div class="w_100 p_10">
+      <div class="flex justify_c_between m_b10">
+        <div class="btn_wrap white_s_no">
+          <button type="button" class="btn_all active">전체글</button>
+          <button type="button" class="btn_notice">공지</button>
+          <button type="button" class="btn_popular">인기글</button>
+        </div>
+        <form>
+          <ul class="search_wrap white_s_no">
+            <li>
+              <select class="sel_100">
+                <option value="all">전체</option>
+                <option value="subject">제목</option>
+                <option value="content">내용</option>
+                <option value="horsehead">말머리</option>
+              </select>
+            </li>
+            <li><input type="text" class="input_100" placeholder="입력"/></li>
+            <li><button type="submit" class="btn_search">검색</button></li>
+          </ul>
+        </form>
+      </div>
+      <table class="w_100 board_tbl">
+        <thead>
+          <tr>
+            <th class="td_5"><input type="checkbox" /></th>
+            <th class="td_5">번호</th>
+            <th class="td_5">말머리</th>
+            <th class="td_30">제목</th>
+            <th class="td_10">글쓴이</th>
+            <th class="td_10">작성일</th>
+            <th class="td_5">조회</th>
+            <th class="td_5">추천</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>1</td>
+            <td>공지</td>
+            <td class="board_subject left"><a href="#">테스트 제목입니다.</a></td>
+            <td class="board_writer">김지우</td>
+            <td>2020.12.31</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <td>
+              <input type="checkbox" />
+            </td>
+            <td>2</td>
+            <td>일반</td>
+            <td class="board_subject left"><a href="#">테스트 제목2입니다.</a></td>
+            <td class="board_writer">박지우</td>
+            <td>2020.12.31</td>
+            <td>2</td>
+            <td>1</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tbl_btm m_t10">
+        <button type="button" class="btn_delete">선택삭제</button>
+        <button type="button" class="btn_write">
+          <i class="fas fa-pencil-alt"></i> 글쓰기</button>
+        <div class="page_grp white_s_no">
+          <oi>
+            <li><i class="fas fa-angle-double-left"></i></li>
+            <li><i class="fas fa-angle-left"></i></i></li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li><i class="fas fa-angle-right"></i></li>
+            <li><i class="fas fa-angle-double-right"></i></li>
+          </oi>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>푸터</footer>
+</body>
+<script>
+  $(".std_btn").click(function(){
+    $("nav ul .std_show").toggleClass("show");
+  });
+</script>
+</html>

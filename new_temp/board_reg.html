@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK MIN JUNG</title>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/common_tbl.css">
+  <link rel="stylesheet" href="./css/board.css">
+
+  <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
+</head>
+<body>
+  <header class="flex justify_c_between align_i_center p_lr10">
+    <span class="logo">
+      <a href="main.html">학원이름</a>
+    </span>
+    <ul class="menu flex justify_c_between">
+      <li class="m_r15"><a href="community.html">커뮤니티</a></li>
+      <li class="m_r15"><a href="#">수강후기</a></li>
+      <li class="m_r15"><a href="#">문의사항</a></li>
+      <li class="m_r15"><a href="login.html">로그인</a></li>
+      <li><a href="register.html">회원가입</a></li>
+    </ul>
+  </header>
+  <div class="content_box flex justify_c_between">
+    <nav>
+      <ul>
+        <li class="std_btn">
+          <a href="#">
+            <i class="fas fa-user-graduate"></i>학생관리
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="std_show">
+            <li><a href="#">수강생 목록</a></li>
+            <li><a href="#">수강생 등록</a></li>
+          </ul>
+        </li>          
+      </ul>
+    </nav>
+    <div class="w_100 p_10">
+      <div class="write_top">
+        <h2>게시글 작성</h2>
+        asd
+      </div>
+      
+      <form>
+        
+        <textarea class="form-control" id="board_content"></textarea>
+      </form>    
+    </div>
+  </div>
+  <footer>푸터</footer>
+</body>
+<script>
+  $(".std_btn").click(function(){
+    $("nav ul .std_show").toggleClass("show");
+  });
+</script>
+<script type="text/javascript">
+  CKEDITOR.replace('board_content' , {height: 450});
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK MIN JUNG</title>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="css/regnlog.css">
+
+  <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header class="flex justify_c_between align_i_center p_lr10">
+    <span class="logo">
+      <a href="main.html">학원이름</a>
+    </span>
+    <ul class="menu flex justify_c_between">
+      <li class="m_r15"><a href="community.html">커뮤니티</a></li>
+      <li class="m_r15"><a href="#">수강후기</a></li>
+      <li class="m_r15"><a href="#">문의사항</a></li>
+      <li class="m_r15"><a href="login.html">로그인</a></li>
+      <li><a href="register.html">회원가입</a></li>
+    </ul>
+  </header>
+  <div class="content_box">
+    <div class="login_wrapper flex flex_col justify_c_center align_i_center w_100 h_100">
+      <div class="login_content p_30">
+        <h2 class="center m_b20">로그인</h2>
+        <form method="POST">
+          <div class="lgnIpBox m_b10">
+            <input class="p_l5" type="text" name="memId" placeholder="아이디" />
+          </div>
+          <div class="lgnIpBox m_b20">
+            <input class="p_l5" type="password" name="memPwd" placeholder="비밀번호" />
+          </div>
+          <p>
+            <button class="submit_btn" type="submit">로그인</button>
+          </p>
+          <div class="lgn_save m_tb10">
+            <input type="checkbox" id="chk_save"/>
+            <label for="chk_save">로그인 저장</label>
+            <a href="./register.html">회원가입</a>
+          </div>
+        </form>
+        <div class="etc_text font_12 center m_t20">
+          (학원이름) 웹 사이트 입니다.<br/>
+          회원가입시 등록한 아이디와 비밀번호를 통해<br/>
+          로그인 후 서비스 이용이 가능합니다.<br/><br/>
+          <span>학원 관련문의 : </span>(관리자 연락처 또는 이메일)
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>푸터</footer>
+</body>
+</html>

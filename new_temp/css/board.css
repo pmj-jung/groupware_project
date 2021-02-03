@@ -1,0 +1,160 @@
+@charset 'utf-8';
+
+/**/
+tr:first-child td {
+  border-top: none;
+}
+
+
+/* 게시판 테이블 */
+.board_tbl {
+  width: 100%;
+  min-width: 600px;
+  text-align: center;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-bottom: 1px solid #0067a3;
+  white-space: nowrap;
+}
+
+.board_tbl th {
+  height: 38px;
+  padding: 0 2px;
+  border-top: 1px solid #0067a3;
+  border-bottom: 1px solid #0067a3;
+}
+
+.board_tbl tbody tr {
+  height: 35px;
+  border-top: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #eee;
+}
+
+.board_subject a {
+  display: inline-block;
+  max-width: 60%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.board_subject a:-webkit-any-link:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.board_writer:hover {
+  cursor: pointer;
+}
+
+/* 버튼 스타일 */
+.btn_all,
+.btn_notice,
+.btn_popular,
+.btn_write {
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  background-color: transparent;
+  width: 70px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+}
+
+.btn_all:hover,
+.btn_notice:hover,
+.btn_popular:hover {
+  border: 1px solid #0067a3;
+}
+
+/* 버튼 클릭 후 css 변경 */
+.active {
+  background-color:#0067a3;
+  color:#fff;
+  border:1px solid #0067a3;
+}
+
+.search_wrap li {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.btn_search {
+  width:60px;
+  height:32px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  background-color: #0067a3;
+  color: #fff;
+  font-size: 14px;
+}
+
+.tbl_btm {
+  position:relative;
+}
+
+.btn_delete {
+  position: absolute;
+  top:0;
+  left:0;
+
+  text-align: center;
+  display: inline-block;
+  border:none;
+  border-radius: 2px;
+  background-color: transparent;
+  width: 70px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+  background-color: #c82848;
+  color:#fff;
+}
+
+.btn_write {
+  position: absolute;
+  top:0;
+  right: 0;
+  color: #0067a3;
+}
+
+.btn_write:hover {
+  border: 1px solid #0067a3;
+  background-color: rgba(0, 103, 163, 0.1);
+}
+
+.page_grp {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,0);
+  margin: 0 auto;
+}
+
+.page_grp li {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  background-color: #fff;
+  font-weight: normal;
+  text-align: center;
+}
+
+.page_grp li:hover {
+  background-color: rgba(0, 103, 163, 0.1);
+  cursor: pointer;
+  text-decoration: underline;
+}
