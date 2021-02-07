@@ -33,6 +33,10 @@
     font-size: 20px;
 }
 
+.font_50 {
+    font-size: 50px;
+}
+
 /* font-weight */
 .weight-n {
     font-weight: normal;
@@ -1235,6 +1239,10 @@ ol, ul, li {
 
 .w_50 {
   width: 50%;
+}
+
+.w_70 {
+    width: 70%;
 }
 
 .w_90 {

@@ -22,8 +22,6 @@
     </span>
     <ul class="menu flex justify_c_between">
       <li class="m_r15"><a href="community.html">커뮤니티</a></li>
-      <li class="m_r15"><a href="#">수강후기</a></li>
-      <li class="m_r15"><a href="#">문의사항</a></li>
       <li class="m_r15"><a href="login.html">로그인</a></li>
       <li><a href="register.html">회원가입</a></li>
     </ul>
@@ -40,19 +38,38 @@
             <li><a href="#">수강생 목록</a></li>
             <li><a href="#">수강생 등록</a></li>
           </ul>
-        </li>          
+        </li>
       </ul>
     </nav>
     <div class="w_100 p_10">
-      <div class="write_top">
-        <h2>게시글 작성</h2>
-        asd
-      </div>
-      
       <form>
-        
+        <div class="write_top">
+          <h2>게시글 작성</h2>
+          <div class="flex justify_c_between m_tb10 w_100">
+            <select class="sel_68">
+              <option value="">게시판을 선택해 주세요.</option>
+              <option value="">학습자료실</option>
+            </select>
+            <select class="sel_31">
+              <option value="">일반</option>
+              <option value="">공지</option>
+            </select>
+          </div>
+          <div class="m_b10">
+            <input type="text" class="input_box w_100" placeholder="제목을 입력해주세요."/>
+          </div>
+        </div>
         <textarea class="form-control" id="board_content"></textarea>
-      </form>    
+        <div class="btn_wrap m_t10 flex justify_c_between">
+          <div>
+            <button type="button" class="btn_reset" onclick="location.href='community.html'">이전으로</button>
+          </div>
+          <div>
+            <button type="reset" class="btn_reset">취소</button>
+            <button type="submit" class="btn_submit">등록</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
   <footer>푸터</footer>
@@ -63,6 +80,6 @@
   });
 </script>
 <script type="text/javascript">
-  CKEDITOR.replace('board_content' , {height: 450});
+  CKEDITOR.replace('board_content' , {height: 380});
 </script>
 </html>

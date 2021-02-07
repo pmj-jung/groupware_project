@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARK MIN JUNG</title>
+
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/common_tbl.css">
+  <link rel="stylesheet" href="./css/board_setting.css">
+
+  <script src="https://kit.fontawesome.com/2524621651.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+  <header class="flex justify_c_between align_i_center p_lr10">
+    <span class="logo">
+      <a href="main.html">학원이름</a>
+    </span>
+    <ul class="menu flex justify_c_between">
+      <li class="m_r15"><a href="community.html">커뮤니티</a></li>
+      <li class="m_r15"><a href="login.html">로그인</a></li>
+      <li><a href="register.html">회원가입</a></li>
+    </ul>
+  </header>
+  <div class="content_box flex justify_c_between">
+    <nav>
+      <ul>
+        <li class="brd_btn">
+          <a href="#">
+            <i class="fas fa-list-ul"></i>게시판 목록
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="brd_show">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">게시판 관리</a></li><!--직원이상가능-->
+          </ul>
+        </li>
+        <li class="std_btn">
+          <a href="#">
+            <i class="fas fa-users"></i>회원관리
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="std_show">
+            <li><a href="#">회원 목록</a></li>
+            <li><a href="#">회원 등록</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="w_100 p_10">
+      <h2>게시판 설정</h2>
+      <form class="board_frm" action="">
+        <table class="opt_tbl m_t10">
+          <tr>
+            <td class="td_title">게시판코드</td>
+            <td class="td_opt"><input type="text" class="input_100" placeholder="영문+숫자" /></td>
+            <td class="td_title">게시판이름</td>
+            <td class="td_opt" colspan="5"><input type="text" class="input_100" placeholder="게시판 이름을 정해주세요." /></td>
+          </tr>
+          <tr>
+            <td class="td_title">게시판설명</td>
+            <td class="td_opt" colspan="7"><input type="text" class="input_100" placeholder="게시판에 대한 설명을 적어주세요." /></td>
+          </tr>
+          <tr>
+            <td class="td_title">읽기권한</td>
+            <td class="td_15 td_opt">
+              <select name="" id="" class="sel_100">
+                <option value="0">비회원</option>
+                <option value="1">대기회원</option>
+                <option value="2">학생</option>
+                <option value="3">직원</option>
+                <option value="4">관리자</option>
+              </select>
+            </td>
+            <td class="td_title">쓰기권한</td>
+            <td class="td_15 td_opt">
+              <select name="" id="" class="sel_100">
+                <option value="0">비회원</option>
+                <option value="1">대기회원</option>
+                <option value="2">학생</option>
+                <option value="3">직원</option>
+                <option value="4">관리자</option>
+              </select>
+            </td>
+            <td class="td_title">댓글권한</td>
+            <td class="td_15 td_opt">
+              <select name="" id="" class="sel_100">
+                <option value="0">비회원</option>
+                <option value="1">대기회원</option>
+                <option value="2">학생</option>
+                <option value="3">직원</option>
+                <option value="4">관리자</option>
+              </select>
+            </td>
+            <td class="td_title">다운권한</td>
+            <td class="td_15 td_opt">
+              <select name="" id="" class="sel_100">
+                <option value="0">비회원</option>
+                <option value="1">대기회원</option>
+                <option value="2">학생</option>
+                <option value="3">직원</option>
+                <option value="4">관리자</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+        <div class="p_tb10 center">
+          <button type="reset" class="btn_reset">취소</button>
+          <button type="submit" class="btn_submit">등록</button>
+        </div>
+      </form>
+      <h2>게시판 목록</h2>
+      <table class="w_100 board_list m_t10">
+        <thead>
+          <tr>
+            <th><input type="checkbox" /></th>
+            <th>게시판코드</th>
+            <th>게시판이름</th>
+            <th>읽기</th>
+            <th>쓰기</th>
+            <th>댓글</th>
+            <th>다운</th>
+            <th>관리</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>qna</td>
+            <td>질문/답변</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td>학생</td>
+            <td><button type="button" class="btn_mod">수정</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="button" class="m_t10 btn_del">선택삭제</button>
+    </div>
+  </div>
+  <footer>푸터</footer>
+</body>
+<script>
+  $(".brd_btn").click(function(){
+    $("nav ul .brd_show").toggleClass("show1");
+  });
+
+  $(".std_btn").click(function(){
+    $("nav ul .std_show").toggleClass("show2");
+  });
+</script>
+</html>
