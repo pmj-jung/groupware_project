@@ -1,0 +1,47 @@
+member <<회원>>
+mid int not null auto_increment pimary key,
+mem_id varchar(16) not null,  // (필)아이디 : 4~16자 영문+숫자
+mem_pwd varchar(20) not null, // (필)비번 : 10~20자 영문+숫자
+mem_name varchar(20) not null, // (필)이름 : 혹시 외국인강사면 어뜩해
+mem_gender char(1), // m:남자 , f:여자
+mem_phone varchar(13), // 전화번호
+mem_email varchar(50) // 이메일
+mem_regdate date, // 가입일
+mem_gradecode int // 등급 : 1=대기,  2=학생, 3=직원, 4=관리자
+
+grade <<등급>>
+grade_code int not null primary key, // 등급 코드( 학생이상이 아니면 게시판을 읽지못하도록 하는 식으로 쓰기위해 숫자로 나타냄).
+grade_varchar(6) not null, // 등급명
+
+board
+bid int not null auto_increment primary key, // 기본키(모든게시판을 구분)
+board_code varchar(6) not null, // 게시판코드 : 최대6자 영문+숫자
+board_name varchar(20) not null, // 게시판이름 : 최대 20자
+board_desc varchar(60), // 게시판설명
+board_read int not null, // 읽기권한
+board_write int not null, // 쓰기권한
+board_comment int not null, // 댓글권한
+board_download int not null, // 다운권한
+	등급테이블의 등급코드(grade_code)와 같은 값을 공유하는 게시판권한(board_read, write, commet, download) -> 게시판의 읽기권한(board_read)이 0(비회원)이라면 이 게시판은 모든 사람이 읽을 수 있고. 쓰기권한=3(직원)이라면 직원만 쓸수있다.(grade_code>=3 일경우 글쓰기가능)
+
+article
+aid int not null auto_increment primary key,
+state char(1) not null , // 게시글 분류 (공지/일반)
+subject varchar(100) not null, // 게시글제목
+writer int not null, // 게시글 작성자 ->member테이블의 mid와 연결되는 외래키
+content text, // 게시글 내용
+regdate datetime, // 게시글 작성일
+hit int , //게시글 조회수
+likes int not null default 0, // 게시글 추천수
+file_name varchar(300), // 저장할 파일 이름
+file_origin varchar(300), // 실제 파일 이름
+file_url varchar(500), // 파일 경로
+
+comment
+cid int not null auto_increment primary key, // 기본키
+aid int, // 게시글(article) 참조키
+comment text, // 댓글 내용
+writer int, // 댓글 작성자 -> member테이블의 mid와 연결되는 외래키
+ref int , // 댓글 순서
+re_cid int , // 원댓글의 기본키
+regdate datetime, // 댓글등록시간
