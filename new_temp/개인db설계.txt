@@ -1,20 +1,20 @@
-member <<회원>>
-mid int not null auto_increment pimary key,
-mem_id varchar(16) not null,  // (필)아이디 : 4~16자 영문+숫자
-mem_pwd varchar(20) not null, // (필)비번 : 10~20자 영문+숫자
-mem_name varchar(20) not null, // (필)이름 : 혹시 외국인강사면 어뜩해
-mem_gender char(1), // m:남자 , f:여자
-mem_phone varchar(13), // 전화번호
-mem_email varchar(50) // 이메일
-mem_regdate date, // 가입일
-mem_gradecode int // 등급 : 1=대기,  2=학생, 3=직원, 4=관리자
+user <<회원>>
+id int not null unsigned auto_increment pimary key,
+user_id varchar(16) not null,  // (필)아이디 : 4~16자 영문+숫자
+user_pwd varchar(20) not null, // (필)비번 : 10~20자 영문+숫자
+user_name varchar(10) not null, // (필)이름
+user_gender char(1), // m:남자 , f:여자
+user_phone varchar(13), // 전화번호
+user_email varchar(50) // 이메일
+user_regdate date, // 가입일
+user_auth int // 권한 : 1=대기,  2=학생, 3=직원, 4=관리자
 
-grade <<등급>>
-grade_code int not null primary key, // 등급 코드( 학생이상이 아니면 게시판을 읽지못하도록 하는 식으로 쓰기위해 숫자로 나타냄).
-grade_varchar(6) not null, // 등급명
+user_auth <<유저권한>>
+id int not null, // 권한크기( 학생이상이 아니면 게시판을 읽지못하도록 하는 식으로 쓰기위해 숫자로 나타냄).
+auth_name varchar(6) not null, // 권한명
 
 board
-bid int not null auto_increment primary key, // 기본키(모든게시판을 구분)
+id int not null unsigned auto_increment primary key, // 기본키(모든게시판을 구분)
 board_code varchar(6) not null, // 게시판코드 : 최대6자 영문+숫자
 board_name varchar(20) not null, // 게시판이름 : 최대 20자
 board_desc varchar(60), // 게시판설명
@@ -24,24 +24,92 @@ board_comment int not null, // 댓글권한
 board_download int not null, // 다운권한
 	등급테이블의 등급코드(grade_code)와 같은 값을 공유하는 게시판권한(board_read, write, commet, download) -> 게시판의 읽기권한(board_read)이 0(비회원)이라면 이 게시판은 모든 사람이 읽을 수 있고. 쓰기권한=3(직원)이라면 직원만 쓸수있다.(grade_code>=3 일경우 글쓰기가능)
 
-article
-aid int not null auto_increment primary key,
-state char(1) not null , // 게시글 분류 (공지/일반)
-subject varchar(100) not null, // 게시글제목
-writer int not null, // 게시글 작성자 ->member테이블의 mid와 연결되는 외래키
-content text, // 게시글 내용
-regdate datetime, // 게시글 작성일
-hit int , //게시글 조회수
-likes int not null default 0, // 게시글 추천수
-file_name varchar(300), // 저장할 파일 이름
-file_origin varchar(300), // 실제 파일 이름
-file_url varchar(500), // 파일 경로
+posts_(board_code)
+id int not null unsigned auto_increment primary key,
+posts_category char(1) not null , // 게시글 분류(0:일반글/1:공지글/2:설문글)
+posts_subject varchar(100) not null, // 게시글제목
+user int not null, // 게시글 작성자 ->userber테이블의 mid와 연결되는 외래키
+posts_content text, // 게시글 내용
+posts_regdate datetime, // 게시글 작성일
+posts_hit int default 0, //게시글 조회수
+posts_likes int default 0, // 게시글 추천수
+posts_secret boolean not null, // 비밀글 설정(0/1) - 비밀글이면 제목을'비밀글입니다'로 해주자
+posts_file_name varchar(300), // 저장할 파일 이름
+posts_file_origin varchar(300), // 실제 파일 이름
+posts_file_url varchar(500), // 파일 경로
+posts_ref int, // 참조하는 게시글의 id
+posts_level int, // 게시글의 순서(원게시글=0, 답글=1)
 
-comment
-cid int not null auto_increment primary key, // 기본키
-aid int, // 게시글(article) 참조키
-comment text, // 댓글 내용
-writer int, // 댓글 작성자 -> member테이블의 mid와 연결되는 외래키
-ref int , // 댓글 순서
-re_cid int , // 원댓글의 기본키
-regdate datetime, // 댓글등록시간
+답글의 답글은 불가능
+
+comments_(board_code)
+id int not null unsigned auto_increment primary key, // 기본키
+posts_id int, // 게시글(article) 참조키
+cmnt_content text, // 댓글 내용
+user int, // 댓글 작성자 -> user테이블의 id와 연결되는 외래키
+cmnt_ref int , // 참조하는 댓글의 아이디
+cmnt_level int , // 댓글의 순서(댓글이면=0, 대댓글이면=1)
+cmnt_regdate datetime, // 댓글등록시간
+
+대댓글의 대댓글 불가능
+
+==============================================
+user <<회원>>
+CREATE TABLE user (
+id int not null auto_increment primary key,
+user_id varchar(16) not null,
+user_pwd varchar(20) not null,
+user_name varchar(10) not null,
+user_gender char(1),
+user_phone varchar(13),
+user_email varchar(50),
+user_regdate date,
+user_auth int
+);
+
+user_auth <<유저권한>>
+CREATE TABLE user_auth(
+id int not null,
+auth_name varchar(6) not null
+);
+
+board <<게시판설정>>
+CREATE TABLE board(
+id int not null auto_increment primary key,
+board_code varchar(6) not null,
+board_name varchar(20) not null,
+board_desc varchar(60),
+board_read int not null,
+board_write int not null,
+board_comment int not null,
+board_download int not null
+);
+
+posts_(board_code) <<게시글>>
+CREATE TABLE posts_*board_code*(
+id int not null auto_increment primary key,
+posts_category char(1) not null ,
+posts_subject varchar(100) not null,
+user int not null,
+posts_content text,
+posts_regdate datetime,
+posts_hit int default 0,
+posts_likes int default 0,
+posts_secret boolean not null,
+posts_file_name varchar(300),
+posts_file_origin varchar(300),
+posts_file_url varchar(500),
+posts_ref int,
+posts_level int
+);
+
+comments_(board_code) <<댓글>>
+CREATE TABLE comments_*board_code*(
+id int not null auto_increment primary key,
+posts_id int,
+cmnt_content text,
+user int,
+cmnt_ref int,
+cmnt_level int,
+cmnt_regdate datetime
+);
