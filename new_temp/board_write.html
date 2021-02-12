@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/main_common.css">
   <link rel="stylesheet" href="./css/common_tbl.css">
   <link rel="stylesheet" href="./css/board.css">
 
@@ -29,14 +29,24 @@
   <div class="content_box flex justify_c_between">
     <nav>
       <ul>
+        <li class="brd_btn">
+          <a href="#">
+            <i class="fas fa-list-ul"></i>게시판 목록
+            <span class="fas fa-caret-down first"></span>
+          </a>
+          <ul class="brd_show">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">게시판 관리</a></li><!--직원이상가능-->
+          </ul>
+        </li>
         <li class="std_btn">
           <a href="#">
-            <i class="fas fa-user-graduate"></i>학생관리
+            <i class="fas fa-users"></i>회원관리
             <span class="fas fa-caret-down first"></span>
           </a>
           <ul class="std_show">
-            <li><a href="#">수강생 목록</a></li>
-            <li><a href="#">수강생 등록</a></li>
+            <li><a href="#">회원 목록</a></li>
+            <li><a href="#">회원 등록</a></li>
           </ul>
         </li>
       </ul>
@@ -82,8 +92,12 @@
   <footer>푸터</footer>
 </body>
 <script>
+  $(".brd_btn").click(function(){
+    $("nav ul .brd_show").toggleClass("show1");
+  });
+
   $(".std_btn").click(function(){
-    $("nav ul .std_show").toggleClass("show");
+    $("nav ul .std_show").toggleClass("show2");
   });
 </script>
 <script type="text/javascript">
